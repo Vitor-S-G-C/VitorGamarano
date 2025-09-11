@@ -1,6 +1,0 @@
-.container {
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.9); /* sombra forte */
-  border-radius: 12px; /* opcional: cantos arredondados */
-  padding: 20px; /* espaçamento interno */
-  background-color: #fff; /* cor de fundo (pode mudar pra combinar com o layout) */
-}
