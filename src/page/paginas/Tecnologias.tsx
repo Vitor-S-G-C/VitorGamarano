@@ -2,9 +2,7 @@ import { Box, Container, Typography } from "@mui/material";
 import Backend from "./tecnologias/BackEnd";
 import DataBase from "./tecnologias/database";
 import Ferramenta from "./tecnologias/Ferramenta";
-import Frontend from "./tecnologias/FrontEnd";
-
-// Styled component for the technology images, similar to your Hero component
+import Frontend from "./tecnologias/frontend";
 
 export default function Tecnologias() {
   return (

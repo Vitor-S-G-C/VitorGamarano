@@ -10,9 +10,9 @@ const StyledImg = styled("img")(({}) => ({
   padding: 5,
 }));
 
-export default function Backend() {
-  const BackendArray = Object.values(imgData).filter(
-    (item) => item.txt === "Backend"
+export default function Frontend() {
+  const FrontendArray = Object.values(imgData).filter(
+    (item) => item.txt === "Frontend"
   );
 
   return (
@@ -36,30 +36,32 @@ export default function Backend() {
             fontFamily: "Georgia, serif",
           }}
         >
-          BackEnd
+          FrontEnd
         </Typography>
 
         <Grid container justifyContent="center" spacing={4}>
-          {BackendArray.map((tech: { name: string; src: string; txt: Key }) => (
-            <Grid size={{ xs: 6, sm: 4, md: 3, lg: 2 }} key={tech.name}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  textAlign: "center",
-                }}
-              >
-                <StyledImg
-                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-original.svg`}
-                  alt={`${tech.name} logo`}
-                />
-                <Typography variant="body1" sx={{ color: "grey.400", mt: 1 }}>
-                  {tech.name}
-                </Typography>
-              </Box>
-            </Grid>
-          ))}
+          {FrontendArray.map(
+            (tech: { name: string; src: string; txt: Key }) => (
+              <Grid size={{ xs: 6, sm: 4, md: 3, lg: 2 }} key={tech.name}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    textAlign: "center",
+                  }}
+                >
+                  <StyledImg
+                    src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-original.svg`}
+                    alt={`${tech.name} logo`}
+                  />
+                  <Typography variant="body1" sx={{ color: "grey.400", mt: 1 }}>
+                    {tech.name}
+                  </Typography>
+                </Box>
+              </Grid>
+            )
+          )}
         </Grid>
       </Container>
     </Box>
