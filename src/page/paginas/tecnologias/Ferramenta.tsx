@@ -10,15 +10,14 @@ const StyledImg = styled("img")(({}) => ({
   padding: 5,
 }));
 
-export default function Ferramentas() {
-  const FerramentasArray = Object.values(imgData).filter(
-    (item) => item.txt === "Ferramentas"
+export default function Ferramenta() {
+  const FerramentaArray = Object.values(imgData).filter(
+    (item) => item.txt === "Ferramenta"
   );
 
   return (
     <Box
       sx={{
-        backgroundColor: "black",
         py: "1rem",
         display: "flex",
         flexDirection: "column",
@@ -37,11 +36,11 @@ export default function Ferramentas() {
             fontFamily: "Georgia, serif",
           }}
         >
-          Ferramentas
+          Ferramenta
         </Typography>
 
         <Grid container justifyContent="center" spacing={4}>
-          {FerramentasArray.map(
+          {FerramentaArray.map(
             (tech: { name: string; src: string; txt: Key }) => (
               <Grid size={{ xs: 6, sm: 4, md: 3, lg: 2 }} key={tech.name}>
                 <Box

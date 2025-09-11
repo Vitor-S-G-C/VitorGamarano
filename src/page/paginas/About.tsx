@@ -20,7 +20,7 @@ const About = () => {
     [theme.breakpoints.up("md")]: {
       // >=mobile
       paddingTop: "0",
-      height: "80vh",
+      height: "100vh",
     },
   }));
 

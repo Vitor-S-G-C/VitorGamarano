@@ -18,7 +18,6 @@ export default function Backend() {
   return (
     <Box
       sx={{
-        backgroundColor: "black",
         py: "1rem",
         display: "flex",
         flexDirection: "column",

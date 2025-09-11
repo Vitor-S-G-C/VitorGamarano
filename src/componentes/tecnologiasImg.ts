@@ -6,13 +6,21 @@ const imgData = [
   { name: "JavaScript", src: "javascript", txt: "Frontend" },
   { name: "TypeScript", src: "typescript", txt: "Frontend" },
   { name: "React", src: "react", txt: "Frontend" },
-  { name: "Spring", src: "spring", txt: "Backend" },
-  { name: "MySQL", src: "mysql", txt: "DataBase" },
-  { name: "Python", src: "python", txt: "Backend" },
   { name: "Bootstrap", src: "bootstrap", txt: "Frontend" },
-  { name: "Tailwind", src: "tailwindcss", txt: "Frontend " },
-  { name: "Git", src: "git", txt: "Ferramentas " },
-  { name: "GitHub", src: "github", txt: "Ferramentas ", nota: 5 },
+  { name: "Tailwind", src: "tailwindcss", txt: "Frontend" },
+
+  { name: "Spring", src: "spring", txt: "Backend" },
+  { name: "Java", src: "java", txt: "Backend" },
+  { name: "Python", src: "python", txt: "Backend" },
+  { name: "Node.js", src: "nodejs", txt: "Backend" },
+  { name: "Express", src: "express", txt: "Backend" },
+  { name: "MongoDB", src: "mongodb", txt: "DataBase" },
+  { name: "MySQL", src: "mysql", txt: "DataBase" },
+
+  { name: "Docker", src: "docker", txt: "Ferramenta" },
+  { name: "RabbitMQ", src: "rabbitmq", txt: "Ferramenta" },
+  { name: "Git", src: "git", txt: "Ferramenta" },
+  { name: "GitHub", src: "github", txt: "Ferramenta" },
 ];
 
 export default imgData;
