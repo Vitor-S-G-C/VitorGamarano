@@ -3,7 +3,7 @@ import Avatar from "../../assets/Avatar.png";
 import DownloadIcon from "@mui/icons-material/Download";
 import StyledButton from "../../utils/styles";
 import { AnimatedBackground } from "../../componentes/animetion/Animated";
-import pdf from "./../../assets/Vitor.s.g.c (11).pdf";
+import pdf from "./../../assets/Vitor.s.g.c.pdf";
 import RedesSociais from "../social/RedesSociais";
 
 const About = () => {
@@ -94,3 +94,4 @@ const About = () => {
 };
 
 export default About;
+
