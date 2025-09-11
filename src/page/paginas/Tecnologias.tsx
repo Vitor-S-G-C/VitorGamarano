@@ -1,8 +1,8 @@
 import { Box, Container, Typography } from "@mui/material";
 import Backend from "./tecnologias/BackEnd";
-import DataBase from "./tecnologias/database";
+import DataBase from "./tecnologias/Database";
 import Ferramenta from "./tecnologias/Ferramenta";
-import Frontend from "./tecnologias/frontend";
+import Frontend from "./tecnologias/Frontend.tsx";
 
 export default function Tecnologias() {
   return (
@@ -41,3 +41,4 @@ export default function Tecnologias() {
     </Box>
   );
 }
+
