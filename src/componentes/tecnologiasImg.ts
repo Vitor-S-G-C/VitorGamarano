@@ -19,7 +19,7 @@ const imgData = [
   { name: "MySQL", src: "mysql", txt: "DataBase" },
   { name: "SQL", src: "sql", txt: "DataBase" },
 
-  { name: "Excel", src: "excel", txt: "Ferramenta" },
+  { name: "Excel", src: "https://www.svgrepo.com/show/504590/microsoft-excel.svg", txt: "Ferramenta" },
   { name: "Power BI", src: "powerbi", txt: "Ferramenta" },
 
   { name: "Docker", src: "docker", txt: "Ferramenta" },
@@ -31,3 +31,4 @@ const imgData = [
 ];
 
 export default imgData;
+
