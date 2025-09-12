@@ -17,10 +17,7 @@ const imgData = [
 
   { name: "MongoDB", src: "mongodb", txt: "DataBase" },
   { name: "MySQL", src: "mysql", txt: "DataBase" },
-  { name: "SQL", src: "sql", txt: "DataBase" },
-
-  { name: "Excel", src: "https://www.svgrepo.com/show/504590/microsoft-excel.svg", txt: "Ferramenta" },
-  { name: "Power BI", src: "powerbi", txt: "Ferramenta" },
+  
 
   { name: "Docker", src: "docker", txt: "Ferramenta" },
   { name: "RabbitMQ", src: "rabbitmq", txt: "Ferramenta" },
@@ -31,4 +28,5 @@ const imgData = [
 ];
 
 export default imgData;
+
 
