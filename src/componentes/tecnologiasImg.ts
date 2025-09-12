@@ -1,4 +1,4 @@
-// Meu icones de tecnologias
+// Meus ícones de tecnologias
 
 const imgData = [
   { name: "HTML5", src: "html5", txt: "Frontend" },
@@ -14,13 +14,20 @@ const imgData = [
   { name: "Python", src: "python", txt: "Backend" },
   { name: "Node.js", src: "nodejs", txt: "Backend" },
   { name: "Express", src: "express", txt: "Backend" },
+
   { name: "MongoDB", src: "mongodb", txt: "DataBase" },
   { name: "MySQL", src: "mysql", txt: "DataBase" },
+  { name: "SQL", src: "sql", txt: "DataBase" },
+
+  { name: "Excel", src: "excel", txt: "Ferramenta" },
+  { name: "Power BI", src: "powerbi", txt: "Ferramenta" },
 
   { name: "Docker", src: "docker", txt: "Ferramenta" },
   { name: "RabbitMQ", src: "rabbitmq", txt: "Ferramenta" },
   { name: "Git", src: "git", txt: "Ferramenta" },
   { name: "GitHub", src: "github", txt: "Ferramenta" },
+  { name: "npm", src: "npm", txt: "Ferramenta" },
+  { name: "Bun", src: "bun", txt: "Ferramenta" },
 ];
 
 export default imgData;
