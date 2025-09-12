@@ -26,18 +26,7 @@ export default function DataBase() {
       }}
     >
       <Container maxWidth="lg">
-        <Typography
-          variant="h4"
-          sx={{
-            color: "primary.main",
-            fontWeight: "bold",
-            textAlign: "center",
-            mb: 4,
-            fontFamily: "Georgia, serif",
-          }}
-        >
-          Banco de dados
-        </Typography>
+    
 
         <Grid container justifyContent="center" spacing={4}>
           {DataBaseArray.map(

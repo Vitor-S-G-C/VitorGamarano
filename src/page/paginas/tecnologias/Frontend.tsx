@@ -26,19 +26,6 @@ export default function Frontend() {
       }}
     >
       <Container maxWidth="lg">
-        <Typography
-          variant="h4"
-          sx={{
-            color: "primary.main",
-            fontWeight: "bold",
-            textAlign: "center",
-            mb: 4,
-            fontFamily: "Georgia, serif",
-          }}
-        >
-          FrontEnd
-        </Typography>
-
         <Grid container justifyContent="center" spacing={4}>
           {FrontendArray.map(
             (tech: { name: string; src: string; txt: Key }) => (

@@ -26,18 +26,7 @@ export default function Ferramenta() {
       }}
     >
       <Container maxWidth="lg">
-        <Typography
-          variant="h4"
-          sx={{
-            color: "primary.main",
-            fontWeight: "bold",
-            textAlign: "center",
-            mb: 4,
-            fontFamily: "Georgia, serif",
-          }}
-        >
-          Ferramenta
-        </Typography>
+        
 
         <Grid container justifyContent="center" spacing={4}>
           {FerramentaArray.map(

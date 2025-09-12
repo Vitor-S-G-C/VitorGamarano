@@ -1,8 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
-import Backend from "./tecnologias/BackEnd";
-import DataBase from "./tecnologias/Database";
-import Ferramenta from "./tecnologias/Ferramenta";
-import Frontend from "./tecnologias/Frontend.tsx";
+import { Acorde } from "./tecnologias/Acorde";
 
 export default function Tecnologias() {
   return (
@@ -27,16 +24,12 @@ export default function Tecnologias() {
             textAlign: "center",
             mb: 5,
             fontFamily: "-apple-system",
-            fontSize: 42,
+            fontSize: 45,
           }}
         >
           Habilidades
         </Typography>
-
-        <Frontend />
-        <Backend />
-        <DataBase />
-        <Ferramenta />
+        <Acorde />
       </Container>
     </Box>
   );

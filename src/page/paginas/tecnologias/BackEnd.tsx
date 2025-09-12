@@ -26,18 +26,7 @@ export default function Backend() {
       }}
     >
       <Container maxWidth="lg">
-        <Typography
-          variant="h4"
-          sx={{
-            color: "primary.main",
-            fontWeight: "bold",
-            textAlign: "center",
-            mb: 4,
-            fontFamily: "Georgia, serif",
-          }}
-        >
-          BackEnd
-        </Typography>
+        
 
         <Grid container justifyContent="center" spacing={4}>
           {BackendArray.map((tech: { name: string; src: string; txt: Key }) => (
