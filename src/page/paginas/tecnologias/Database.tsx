@@ -36,7 +36,7 @@ export default function DataBase() {
             fontFamily: "Georgia, serif",
           }}
         >
-          DataBase
+          Banco de dados
         </Typography>
 
         <Grid container justifyContent="center" spacing={4}>
@@ -67,3 +67,4 @@ export default function DataBase() {
     </Box>
   );
 }
+
