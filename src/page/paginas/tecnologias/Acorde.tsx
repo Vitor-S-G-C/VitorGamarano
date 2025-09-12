@@ -10,14 +10,7 @@ import Ferramenta from "./Ferramenta";
 import Frontend from "./Frontend";
 
 
-const titleStyle = {
-  color: "primary.main",
-  fontWeight: "bold",
-  textAlign: "center" as const,
-  mb: 5,
-  fontFamily: "Georgia, serif",
-  fontSize: 42,
-};
+
 
 
 export const Acorde: React.FC = () => {
