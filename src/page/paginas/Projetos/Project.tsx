@@ -1,4 +1,4 @@
-import{ useState } from "react";
+import React, { useState } from "react";
 import { Box, Container, Typography, IconButton } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { ProjetosData } from "../../../componentes/Componentes";
@@ -70,6 +70,7 @@ export default function Projetos() {
           ) : (
             <Box
               component="img"
+              src={currentProject.image}
               alt={currentProject.name}
               sx={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
