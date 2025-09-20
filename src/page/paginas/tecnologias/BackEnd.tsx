@@ -1,13 +1,19 @@
+// src/page/paginas/tecnologias/Backend.tsx
 import { Box, Container, Grid, Typography, styled } from "@mui/material";
 import { type Key } from "react";
-import imgData from "../../../componentes/tecnologiasImg";
+import { imgData } from "../../../componentes/Componentes";
 
-// Styled component for the technology images, similar to your Hero component
-const StyledImg = styled("img")(({}) => ({
+// Styled component para as imagens de tecnologia
+const StyledImg = styled("img")(() => ({
   height: 80,
   borderBottom: `3px solid #01579b`,
   borderRadius: "5px",
   padding: 5,
+  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+  "&:hover": {
+    transform: "scale(1.1)",
+    boxShadow: "0px 4px 15px rgba(0,0,0,0.3)",
+  },
 }));
 
 export default function Backend() {
@@ -18,7 +24,7 @@ export default function Backend() {
   return (
     <Box
       sx={{
-        py: "1rem",
+        py: "2rem",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -26,7 +32,13 @@ export default function Backend() {
       }}
     >
       <Container maxWidth="lg">
-        
+        <Typography
+          variant="h4"
+          align="center"
+          sx={{ mb: 4, fontWeight: "bold", color: "grey.100" }}
+        >
+          Tecnologias de Backend
+        </Typography>
 
         <Grid container justifyContent="center" spacing={4}>
           {BackendArray.map((tech: { name: string; src: string; txt: Key }) => (
@@ -43,7 +55,10 @@ export default function Backend() {
                   src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-original.svg`}
                   alt={`${tech.name} logo`}
                 />
-                <Typography variant="body1" sx={{ color: "grey.400", mt: 1 }}>
+                <Typography
+                  variant="body1"
+                  sx={{ color: "grey.400", mt: 1, fontWeight: 500 }}
+                >
                   {tech.name}
                 </Typography>
               </Box>

@@ -1,6 +1,6 @@
 import { Box, Container, Grid, Typography, styled } from "@mui/material";
 import { type Key } from "react";
-import imgData from "../../../componentes/tecnologiasImg";
+import { imgData } from "../../../componentes/Componentes";
 
 // Styled component for the technology images, similar to your Hero component
 const StyledImg = styled("img")(({}) => ({

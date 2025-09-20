@@ -1,8 +1,9 @@
-import { Container } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import Navbar from "../navabar/Navbar";
 import Hero from "./paginas/About";
 import Tecnologias from "./paginas/Tecnologias";
 
+import Projetos from "./paginas/Projetos/Project";
 
 const Home = () => {
   return (
@@ -15,7 +16,10 @@ const Home = () => {
         <div id="tecnologias">
           <Tecnologias />
         </div>
-       
+        <div id="projetos">
+          <Projetos />
+          {/* Apenas um componente, que gerencia o carrossel internamente */}
+        </div>
       </Container>
     </>
   );
