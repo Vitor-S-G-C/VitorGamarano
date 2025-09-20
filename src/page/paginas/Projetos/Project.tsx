@@ -32,16 +32,14 @@ export default function Projetos() {
         alignItems: "center",
       }}
     >
-           {" "}
       <Container maxWidth="lg" sx={{ textAlign: "center" }}>
-               {" "}
         <Typography
           variant="h4"
           sx={{ color: "primary.main", fontWeight: "bold", mb: 4 }}
         >
-                    Meus Projetos        {" "}
+          Meus Projetos
         </Typography>
-               {" "}
+
         <Box
           sx={{
             position: "relative",
@@ -54,46 +52,34 @@ export default function Projetos() {
             boxShadow: 3,
           }}
         >
-                    {/* Substituindo o <video> por um <iframe> responsivo */}   
-               {" "}
-          {currentProject.videoEmbedUrl ? (
+          {/* Renderiza vídeo .mp4 ou imagem */}
+          {currentProject.video ? (
             <Box
+              component="video"
+              src={currentProject.video}
+              controls
+              autoPlay={false}
+              muted={false}
               sx={{
-                position: "relative",
-                paddingBottom: "56.25%" /* 16:9 Aspect Ratio */,
-                height: 0,
-                overflow: "hidden",
-                maxWidth: "100%",
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: 3,
               }}
-            >
-                           {" "}
-              <iframe
-                src={currentProject.videoEmbedUrl}
-                title={`${currentProject.name} Video`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                }}
-              ></iframe>
-                         {" "}
-            </Box>
-          ) : currentProject ? (
+            />
+          ) : (
             <Box
               component="img"
-              src={currentProject.video}
+              src={currentProject.image}
               alt={currentProject.name}
               sx={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
-          ) : null}
-                    {/* Setas */}         {" "}
+          )}
+
+          {/* Botão anterior */}
           <IconButton
             onClick={handlePrev}
+            aria-label="Projeto anterior"
             sx={{
               position: "absolute",
               top: "50%",
@@ -104,11 +90,13 @@ export default function Projetos() {
               color: "#fff",
             }}
           >
-                        <ArrowBackIos />         {" "}
+            <ArrowBackIos />
           </IconButton>
-                   {" "}
+
+          {/* Botão próximo */}
           <IconButton
             onClick={handleNext}
+            aria-label="Próximo projeto"
             sx={{
               position: "absolute",
               top: "50%",
@@ -119,22 +107,22 @@ export default function Projetos() {
               color: "#fff",
             }}
           >
-                        <ArrowForwardIos />         {" "}
+            <ArrowForwardIos />
           </IconButton>
-                 {" "}
         </Box>
-               {" "}
+
         <Typography
           variant="h5"
           sx={{ color: "white", mt: 2, fontWeight: "bold" }}
         >
-                    {currentProject.name}       {" "}
+          {currentProject.name}
         </Typography>
-               {" "}
+
         <Typography variant="body1" sx={{ color: "grey.400", mt: 1 }}>
-                    {currentProject.description}       {" "}
+          {currentProject.description}
         </Typography>
-                {/* Tecnologias */}       {" "}
+
+        {/* Tecnologias */}
         <Box
           sx={{
             mt: 2,
@@ -143,7 +131,6 @@ export default function Projetos() {
             flexWrap: "wrap",
           }}
         >
-                   {" "}
           {currentProject.techs?.map((tech, idx) => (
             <Box
               key={idx}
@@ -153,11 +140,8 @@ export default function Projetos() {
               sx={{ margin: "0 8px", height: 50 }}
             />
           ))}
-                 {" "}
         </Box>
-             {" "}
       </Container>
-         {" "}
     </Box>
   );
 }
