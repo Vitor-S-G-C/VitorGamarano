@@ -1,7 +1,30 @@
-import React, { useState } from "react";
-import { Box, Container, Typography, IconButton } from "@mui/material";
+import { useState } from "react";
+import { Box, Container, Typography, IconButton, styled } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { ProjetosData } from "../../../componentes/Componentes";
+
+// Componente VideoContainer responsivo
+const VideoContainer = styled("div")(({ theme }) => ({
+  position: "relative",
+  width: "100%",
+  maxWidth: "100%",
+  overflow: "hidden",
+  borderRadius: 12,
+  boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+  "& video": {
+    width: "100%",
+    height: "auto",
+    display: "block",
+    objectFit: "cover",
+    borderRadius: 12,
+  },
+  [theme.breakpoints.down("md")]: {
+    borderRadius: 8,
+  },
+  [theme.breakpoints.down("sm")]: {
+    borderRadius: 6,
+  },
+}));
 
 export default function Projetos() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -47,30 +70,22 @@ export default function Projetos() {
             maxWidth: 900,
             height: 500,
             margin: "auto",
-            overflow: "hidden",
-            borderRadius: 3,
-            boxShadow: 3,
           }}
         >
-          {/* Renderiza vídeo .mp4 ou imagem */}
+          {/* Renderiza vídeo .mp4 responsivo ou imagem */}
           {currentProject.video ? (
-            <Box
-              component="video"
-              src={currentProject.video}
-              controls
-              autoPlay={false}
-              muted={false}
-              sx={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                borderRadius: 3,
-              }}
-            />
+            <VideoContainer>
+              <video
+                src={currentProject.video}
+                controls
+                autoPlay={false}
+                muted={false}
+                playsInline
+              />
+            </VideoContainer>
           ) : (
             <Box
               component="img"
-              src={currentProject.image}
               alt={currentProject.name}
               sx={{ width: "100%", height: "100%", objectFit: "cover" }}
             />

@@ -28,17 +28,6 @@ const imgData = [
 
 export const ProjetosData = [
   {
-    name: "NetFlix com tradução",
-    video: "/videos/netflix.mp4",
-    description:
-      "Clone da página inicial da Netflix com funcionalidade de tradução para diferentes idiomas.",
-    techs: [
-      { name: "JavaScript", src: "javascript", txt: "Frontend" },
-      { name: "HTML5", src: "html5", txt: "Frontend" },
-      { name: "CSS3", src: "css3", txt: "Frontend" },
-    ],
-  },
-  {
     name: "Projeto de Delivery",
     video: "/videos/restaurante.mp4", // fallback caso não tenha vídeo
     description:
@@ -47,6 +36,17 @@ export const ProjetosData = [
       { name: "React", src: "react", txt: "Frontend" },
       { name: "TypeScript", src: "typescript", txt: "Frontend" },
       { name: "Bootstrap", src: "bootstrap", txt: "Frontend" },
+    ],
+  },
+  {
+    name: "NetFlix com tradução",
+    video: "/videos/netflix.mp4",
+    description:
+      "Clone da página inicial da Netflix com funcionalidade de tradução para diferentes idiomas.",
+    techs: [
+      { name: "JavaScript", src: "javascript", txt: "Frontend" },
+      { name: "HTML5", src: "html5", txt: "Frontend" },
+      { name: "CSS3", src: "css3", txt: "Frontend" },
     ],
   },
 ];
