@@ -62,7 +62,7 @@ const About = () => {
                 textAlign="center"
                 sx={{ fontFamily: "Georgia, serif" }}
               >
-                Engenheiro do Software
+                Engenheiro de Software
               </Typography>
 
               <Grid
