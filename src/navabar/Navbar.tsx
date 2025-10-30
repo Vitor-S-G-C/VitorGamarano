@@ -67,7 +67,6 @@ export default function NavbarComponent() {
           onClick={() => scrollToSection("home")}
         >
           <HomeFilledIcon style={{ marginRight: "0.5rem", color: linkColor }} />
-          Vitor Gamarano
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
