@@ -3,6 +3,7 @@ import Navbar from "../navabar/Navbar";
 import Hero from "./paginas/About";
 import Tecnologias from "./paginas/Tecnologias";
 import Projetos from "./paginas/Projetos/Project";
+import RedesSociais from "../page/social/RedesSociais";
 
 const Home = () => {
   return (
@@ -19,7 +20,11 @@ const Home = () => {
           <Projetos />
           {/* Apenas um componente, que gerencia o carrossel internamente */}
         </div>
+        <div id="contato">
+          <RedesSociais />
+        </div>
       </Container>
+
     </>
   );
 };

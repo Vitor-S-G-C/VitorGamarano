@@ -1,16 +1,24 @@
 import { useState } from "react";
-import { Box, Container, Typography, IconButton, styled } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  IconButton,
+  styled,
+  useTheme,
+} from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { ProjetosData } from "../../../componentes/Componentes";
 import { FaGithub } from "react-icons/fa";
+import Particles from "react-tsparticles"; // 🔹 Animação de fundo
 
-// Container responsivo para vídeos ou iframe
+// 🔸 Estilo do container dos vídeos
 const VideoContainer = styled("div")(({ theme }) => ({
   position: "relative",
   width: "100%",
   overflow: "hidden",
   borderRadius: 12,
-  boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+  boxShadow: "0 4px 16px rgba(0,0,0,0.5)",
   "& video, & iframe": {
     width: "100%",
     height: "100%",
@@ -23,6 +31,7 @@ const VideoContainer = styled("div")(({ theme }) => ({
 }));
 
 export default function Projetos() {
+  const theme = useTheme();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () =>
@@ -41,27 +50,71 @@ export default function Projetos() {
     <Box
       id="projetos"
       sx={{
-        py: 5,
-        backgroundColor: "#1e1e1e",
-        minHeight: "80vh",
+        position: "relative",
+        backgroundColor: "#050505",
+        minHeight: "100vh",
+        py: 10,
         display: "flex",
         flexDirection: "column",
+        justifyContent: "center",
         alignItems: "center",
+        overflow: "hidden",
       }}
     >
-      <Container maxWidth="lg" sx={{ textAlign: "center" }}>
+      {/* 🔹 ANIMAÇÃO DE FUNDO */}
+      {/**<Box
+        sx={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 0,
+        }}
+      >
+        <Particles
+          options={{
+            background: { color: "#050505" },
+            particles: {
+              number: { value: 40 },
+              color: { value: "#ffffff" },
+              links: { enable: true, color: "#ffffff", distance: 120 },
+              move: { enable: true, speed: 0.5 },
+              opacity: { value: 0.3 },
+              size: { value: 1 },
+            },
+          }}
+        />
+      </Box>
+      =======================
+      Arrumar animação de fundo futuramente
+      ======================
+
+*/}
+      {/* 🔹 CONTEÚDO PRINCIPAL */}
+      <Container
+        maxWidth="lg"
+        sx={{
+          textAlign: "center",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
         <Typography
           variant="h4"
-          sx={{ color: "primary.main", fontWeight: "bold", mb: 4 }}
+          sx={{
+            color: "primary.main",
+            fontWeight: "bold",
+            mb: 6,
+            fontFamily: "-apple-system, Roboto, sans-serif",
+            fontSize: 42,
+          }}
         >
           Meus Projetos
         </Typography>
 
-       
-        <Box sx={{ position: "relative", margin: "auto" }}>
+        {/* 🧭 Carrossel de Projetos */}
+        <Box sx={{ position: "relative", margin: "auto", maxWidth: 900 }}>
           {currentProject.video ? (
             currentProject.video.includes("youtube") ? (
-              <VideoContainer style={{ height: 600 }}>
+              <VideoContainer style={{ height: 500 }}>
                 <iframe
                   src={currentProject.video}
                   title={currentProject.name}
@@ -71,21 +124,21 @@ export default function Projetos() {
                 />
               </VideoContainer>
             ) : (
-              <VideoContainer>
-                <video
-                  src={currentProject.video}
-                  controls
-                  autoPlay={false}
-                  muted={false}
-                  playsInline
-                />
+              <VideoContainer style={{ height: 500 }}>
+                <video src={currentProject.video} controls muted playsInline />
               </VideoContainer>
             )
           ) : (
             <Box
               component="img"
               alt={currentProject.name}
-              sx={{ width: "100%", objectFit: "cover" }}
+              sx={{
+                width: "100%",
+                height: 500,
+                objectFit: "cover",
+                borderRadius: 3,
+                boxShadow: "0 4px 16px rgba(0,0,0,0.5)",
+              }}
             />
           )}
 
@@ -125,23 +178,37 @@ export default function Projetos() {
           </IconButton>
         </Box>
 
-        {/* Nome do projeto */}
+        {/* 🔸 Nome e Descrição */}
         <Typography
           variant="h5"
-          sx={{ color: "white", mt: 3, fontWeight: "bold" }}
+          sx={{
+            color: "white",
+            mt: 3,
+            fontWeight: "bold",
+            letterSpacing: 0.5,
+          }}
         >
           {currentProject.name}
         </Typography>
 
-        {/* Descrição */}
-        <Typography variant="body1" sx={{ color: "grey.400", mt: 1 }}>
+        <Typography
+          variant="body1"
+          sx={{
+            color: "grey.400",
+            mt: 1,
+            maxWidth: 700,
+            mx: "auto",
+            fontSize: 16,
+            lineHeight: 1.6,
+          }}
+        >
           {currentProject.description}
         </Typography>
 
-        {/* Tecnologias */}
+        {/* 🔸 Tecnologias */}
         <Box
           sx={{
-            mt: 3,
+            mt: 4,
             display: "flex",
             justifyContent: "center",
             flexWrap: "wrap",
@@ -155,23 +222,35 @@ export default function Projetos() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                minWidth: 70,
+                transition: "0.3s",
+                "&:hover img": {
+                  filter: "none",
+                  transform: "scale(1.1)",
+                },
               }}
             >
               <Box
                 component="img"
                 src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-original.svg`}
                 alt={`${tech.name} logo`}
-                sx={{ height: 50, mb: 1 }}
+                sx={{
+                  height: 50,
+                  mb: 1,
+                  filter: "grayscale(100%) brightness(0.7)",
+                  transition: "0.3s",
+                }}
               />
-              <Typography variant="caption" sx={{ color: "grey.400" }}>
+              <Typography
+                variant="caption"
+                sx={{ color: "grey.400", fontWeight: 500 }}
+              >
                 {tech.name}
               </Typography>
             </Box>
           ))}
         </Box>
 
-        {/* GitHub */}
+        {/* 🔸 Link do GitHub */}
         {currentProject.github && (
           <Box>
             <a
@@ -181,8 +260,11 @@ export default function Projetos() {
             >
               <FaGithub
                 size={50}
-                color="#f3f3f3ff"
-                style={{ margin: "1rem" }}
+                color={theme.palette.primary.main}
+                style={{
+                  margin: "1.5rem",
+                  transition: "0.3s",
+                }}
               />
             </a>
           </Box>

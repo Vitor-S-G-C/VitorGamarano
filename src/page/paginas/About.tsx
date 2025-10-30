@@ -4,7 +4,7 @@ import DownloadIcon from "@mui/icons-material/Download";
 import StyledButton from "../../utils/styles";
 import { AnimatedBackground } from "../../componentes/animetion/Animated";
 import pdf from "./../../assets/CV.pdf";
-import RedesSociais from "../social/RedesSociais";
+
 
 const About = () => {
   const StyledAbout = styled("div")(({ theme }) => ({
@@ -84,7 +84,7 @@ const About = () => {
                   </a>
                 </Grid>
               </Grid>
-              <RedesSociais />
+              
             </Grid>
           </Grid>
         </Container>
