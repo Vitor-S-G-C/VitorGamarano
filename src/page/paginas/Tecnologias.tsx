@@ -1,6 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
 import { Acorde } from "./tecnologias/Acorde";
-import Particles from "react-tsparticles"; // animação de fundo com partículas
 
 export default function Tecnologias() {
   return (
@@ -19,7 +18,10 @@ export default function Tecnologias() {
       }}
     >
       {/* 🔹 ANIMAÇÃO DE FUNDO */}
-  { /**      <Box
+  { /**
+  import Particles from "react-tsparticles"; // animação de fundo com partículas
+
+  <Box
         sx={{
           position: "absolute",
           inset: 0,
