@@ -10,7 +10,7 @@ import {
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { ProjetosData } from "../../../componentes/Componentes";
 import { FaGithub } from "react-icons/fa";
-import Particles from "react-tsparticles"; // 🔹 Animação de fundo
+
 
 // 🔸 Estilo do container dos vídeos
 const VideoContainer = styled("div")(({ theme }) => ({
@@ -62,7 +62,9 @@ export default function Projetos() {
       }}
     >
       {/* 🔹 ANIMAÇÃO DE FUNDO */}
-      {/**<Box
+      {/**
+      import Particles from "react-tsparticles"; // 🔹 Animação de fundo
+      <Box
         sx={{
           position: "absolute",
           inset: 0,
