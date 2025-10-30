@@ -17,35 +17,7 @@ export default function Tecnologias() {
         overflow: "hidden", // impede as partículas de ultrapassar os limites
       }}
     >
-      {/* 🔹 ANIMAÇÃO DE FUNDO */}
-  { /**
-  import Particles from "react-tsparticles"; // animação de fundo com partículas
-
-  <Box
-        sx={{
-          position: "absolute",
-          inset: 0,
-          zIndex: 0,
-        }}
-      >
-     <Particles
-          options={{
-            background: { color: "#050505" },
-            particles: {
-              number: { value: 40 },
-              color: { value: "#ffffff" },
-              links: { enable: true, color: "#ffffff", distance: 120 },
-              move: { enable: true, speed: 0.5 },
-              opacity: { value: 0.3 },
-              size: { value: 1 },
-            },
-          }}
-        />
-      </Box>
-      =======================
-      Arrumar animação de fundo futuramente
-      ======================
-      */}
+    
 
       {/* 🔹 CONTEÚDO PRINCIPAL */}
       <Container
