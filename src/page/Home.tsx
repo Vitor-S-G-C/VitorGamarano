@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import Navbar from "../navabar/Navbar";
+import PermanentSidebar from "../navabar/Navbar";
 import Hero from "./paginas/About";
 import Tecnologias from "./paginas/Tecnologias";
 import Projetos from "./paginas/Projetos/Project";
@@ -8,7 +8,7 @@ import RedesSociais from "../page/social/RedesSociais";
 const Home = () => {
   return (
     <>
-      <Navbar />
+      <PermanentSidebar />
       <Container className="mb-4" maxWidth={false} disableGutters>
         <div id="home">
           <Hero />
@@ -24,7 +24,6 @@ const Home = () => {
           <RedesSociais />
         </div>
       </Container>
-
     </>
   );
 };
