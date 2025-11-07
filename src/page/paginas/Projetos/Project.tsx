@@ -10,7 +10,8 @@ import {
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { ProjetosData } from "../../../componentes/Componentes";
 import { FaGithub } from "react-icons/fa";
-import Particles from "react-tsparticles"; // 🔹 Animação de fundo
+import { AnimatedBackground } from "../../../componentes/animetion/Animated";
+
 
 // 🔸 Estilo do container dos vídeos
 const VideoContainer = styled("div")(({ theme }) => ({
@@ -61,42 +62,19 @@ export default function Projetos() {
         overflow: "hidden",
       }}
     >
-      {/* 🔹 ANIMAÇÃO DE FUNDO */}
-      {/**<Box
-        sx={{
-          position: "absolute",
-          inset: 0,
-          zIndex: 0,
-        }}
-      >
-        <Particles
-          options={{
-            background: { color: "#050505" },
-            particles: {
-              number: { value: 40 },
-              color: { value: "#ffffff" },
-              links: { enable: true, color: "#ffffff", distance: 120 },
-              move: { enable: true, speed: 0.5 },
-              opacity: { value: 0.3 },
-              size: { value: 1 },
-            },
-          }}
-        />
-      </Box>
-      =======================
-      Arrumar animação de fundo futuramente
-      ======================
-
-*/}
+     
       {/* 🔹 CONTEÚDO PRINCIPAL */}
       <Container
         maxWidth="lg"
+         background:{ AnimatedBackground },
         sx={{
           textAlign: "center",
           position: "relative",
           zIndex: 1,
+         
         }}
       >
+        
         <Typography
           variant="h4"
           sx={{

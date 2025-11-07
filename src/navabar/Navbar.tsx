@@ -5,17 +5,54 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  Typography,
   Box,
   IconButton,
+  Typography,
+  styled,
+  Button,
 } from "@mui/material";
-import HomeFilledIcon from "@mui/icons-material/HomeFilled";
 import MenuIcon from "@mui/icons-material/Menu";
+import DownloadIcon from "@mui/icons-material/Download";
+import Avatar from "../assets/Avatar.png";
+import pdf from "../assets/CV.pdf";
 
 interface NavItem {
   label: string;
   id: string;
 }
+
+const drawerWidth = 280;
+const COLORS = {
+  link: "#ffffff",
+  active: "#90caf9",
+  hover: "#b0d4ff",
+  background: "#212121",
+};
+
+// Avatar estilizado
+const StyledImg = styled("img")(({ theme }) => ({
+  width: "60%",
+  borderRadius: "50%",
+  border: `2px solid ${theme.palette.primary.contrastText}`,
+  marginBottom: theme.spacing(2),
+}));
+
+// Botão de download estilizado
+const StyledButton = styled(Button)(() => ({
+  color: "#fff",
+  borderColor: "#90caf9",
+  textTransform: "none",
+  fontWeight: "bold",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "8px",
+  marginTop: "8px",
+  "&:hover": {
+    backgroundColor: "#333",
+    borderColor: "#b0d4ff",
+  },
+}));
 
 export default function Sidebar() {
   const [activeSection, setActiveSection] = useState("home");
@@ -26,12 +63,6 @@ export default function Sidebar() {
     { label: "Projetos", id: "projetos" },
     { label: "Contato", id: "contato" },
   ];
-
-  const drawerWidth = 240;
-  const linkColor = "#ffffff";
-  const activeColor = "#90caf9";
-  const hoverColor = "#b0d4ff";
-  const drawerBgColor = "#212121";
 
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
@@ -46,60 +77,68 @@ export default function Sidebar() {
   useEffect(() => {
     const handleScroll = () => {
       let currentSection = "home";
-      navItems.forEach((item) => {
-        const section = document.getElementById(item.id);
-        if (section) {
-          const sectionTop = section.offsetTop - 100;
-          if (window.scrollY >= sectionTop) {
-            currentSection = item.id;
-          }
+      navItems.forEach(({ id }) => {
+        const section = document.getElementById(id);
+        if (section && window.scrollY >= section.offsetTop - 100) {
+          currentSection = id;
         }
       });
       setActiveSection(currentSection);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
+  const toggleDrawer = () => setMobileOpen((prev) => !prev);
 
   const drawerContent = (
     <Box
       sx={{
         textAlign: "center",
-        backgroundColor: drawerBgColor,
+        backgroundColor: COLORS.background,
         height: "100%",
-        p: 2,
+        p: 3,
+        mt: 5,
       }}
     >
+      {/* Avatar e informações pessoais */}
+      <StyledImg src={Avatar} alt="Avatar" />
       <Typography
-        variant="h6"
-        onClick={() => scrollToSection("home")}
-        sx={{
-          my: 2,
-          color: linkColor,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          cursor: "pointer",
-        }}
+        variant="h5"
+        color="white"
+        fontWeight="bold"
+        sx={{ fontFamily: "Georgia, serif" }}
       >
-        <HomeFilledIcon sx={{ mr: 1 }} /> Início
+        Vitor S.G.C
+      </Typography>
+      <Typography
+        variant="body1"
+        color="white"
+        sx={{ opacity: 0.8, fontFamily: "Georgia, serif" }}
+      >
+        Engenheiro de Software
       </Typography>
 
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item.id} disablePadding>
-            <ListItemButton onClick={() => scrollToSection(item.id)}>
+     
+      <a href={pdf} download style={{ textDecoration: "none",display: "flex", justifyContent:"center" }}>
+        <StyledButton variant="outlined">
+          <DownloadIcon /> Download CV
+        </StyledButton>
+      </a>
+
+      {/* Lista de navegação */}
+      <List sx={{ mt: 4 }}>
+        {navItems.map(({ id, label }) => (
+          <ListItem key={id} disablePadding>
+            <ListItemButton onClick={() => scrollToSection(id)}>
               <ListItemText
-                primary={item.label}
+                primary={label}
                 sx={{
                   textAlign: "center",
-                  color: activeSection === item.id ? activeColor : linkColor,
+                  color: activeSection === id ? COLORS.active : COLORS.link,
                   transition: "color 0.3s ease",
-                  "&:hover": { color: hoverColor },
+                  "&:hover": { color: COLORS.hover },
                 }}
               />
             </ListItemButton>
@@ -113,17 +152,15 @@ export default function Sidebar() {
     <Box sx={{ display: "flex" }}>
       {/* Botão de menu (mobile) */}
       <IconButton
-        color="inherit"
         aria-label="open drawer"
-        edge="start"
-        onClick={handleDrawerToggle}
+        onClick={toggleDrawer}
         sx={{
           position: "fixed",
           top: 16,
           left: 16,
           zIndex: 1300,
           display: { md: "none" },
-          backgroundColor: "#212121",
+          backgroundColor: COLORS.background,
           color: "#fff",
           "&:hover": { backgroundColor: "#333" },
         }}
@@ -137,12 +174,12 @@ export default function Sidebar() {
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          [`& .MuiDrawer-paper`]: {
-            width: drawerWidth,
-            boxSizing: "border-box",
-            backgroundColor: drawerBgColor,
-          },
           display: { xs: "none", md: "block" },
+          "& .MuiDrawer-paper": {
+            width: drawerWidth,
+            backgroundColor: COLORS.background,
+            boxSizing: "border-box",
+          },
         }}
         open
       >
@@ -153,13 +190,13 @@ export default function Sidebar() {
       <Drawer
         variant="temporary"
         open={mobileOpen}
-        onClose={handleDrawerToggle}
+        onClose={toggleDrawer}
         ModalProps={{ keepMounted: true }}
         sx={{
           display: { xs: "block", md: "none" },
-          [`& .MuiDrawer-paper`]: {
+          "& .MuiDrawer-paper": {
             width: drawerWidth,
-            backgroundColor: drawerBgColor,
+            backgroundColor: COLORS.background,
           },
         }}
       >
@@ -172,12 +209,10 @@ export default function Sidebar() {
         sx={{
           flexGrow: 1,
           p: 3,
-          ml: { md: `${drawerWidth}px` }, // Dá espaço pro drawer fixo
-          mt: { xs: 6, md: 0 }, // Evita sobreposição do botão mobile
+          ml: { md: `${drawerWidth}px` },
+          mt: { xs: 6, md: 0 },
         }}
-      >
-        {/* Aqui vai o conteúdo da página */}
-      </Box>
+      />
     </Box>
   );
 }

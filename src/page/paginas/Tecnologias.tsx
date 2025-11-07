@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
-import { Acorde } from "./tecnologias/Acorde";
+import {CarrosselTech } from "./tecnologias/CarrosselTech";
 export default function Tecnologias() {
   return (
     <Box
@@ -37,7 +37,7 @@ export default function Tecnologias() {
         >
           Habilidades
         </Typography>
-        <Acorde />
+        <CarrosselTech />
       </Container>
     </Box>
   );
