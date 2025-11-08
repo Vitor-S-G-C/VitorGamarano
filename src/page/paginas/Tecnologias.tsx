@@ -13,6 +13,7 @@ export default function Tecnologias() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+
         overflow: "hidden", // impede as partículas de ultrapassar os limites
       }}
     >
