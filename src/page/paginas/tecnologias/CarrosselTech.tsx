@@ -5,8 +5,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { imgData } from "../../../componentes/Componentes";
 
-const agruparTecnologias = (data) => {
-  return Object.values(data).reduce((acc, tech) => {
+interface Tecnologia {
+  name: string;
+  src: string;
+  txt: string;
+  level?: number;
+}
+
+type Agrupamento = Record<string, Tecnologia[]>;
+
+const agruparTecnologias = (data: Record<string, Tecnologia>): Agrupamento => {
+  return Object.values(data).reduce<Agrupamento>((acc, tech) => {
     const grupo = tech.txt;
     if (!acc[grupo]) acc[grupo] = [];
     acc[grupo].push(tech);
@@ -15,7 +24,9 @@ const agruparTecnologias = (data) => {
 };
 
 export function CarrosselTech() {
-  const tecnologiasAgrupadas = agruparTecnologias(imgData);
+  const tecnologiasAgrupadas = agruparTecnologias(
+    imgData as Record<string, Tecnologia>
+  );
   const grupos = Object.keys(tecnologiasAgrupadas);
 
   // 🔧 Ajuste das setas e dots
@@ -36,19 +47,18 @@ export function CarrosselTech() {
     document.head.appendChild(style);
   }, []);
 
-  // ⚙️ Ajuste de slidesToShow (-1 em cada)
   const settings = {
     dots: true,
     infinite: true,
     speed: 700,
-    slidesToShow: 4, // antes era 5
+    slidesToShow: 4,
     slidesToScroll: 2,
     autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
-      { breakpoint: 1200, settings: { slidesToShow: 3 } }, // antes era 4
-      { breakpoint: 900, settings: { slidesToShow: 2 } },  // antes era 3
-      { breakpoint: 600, settings: { slidesToShow: 1 } },  // antes era 2
+      { breakpoint: 1200, settings: { slidesToShow: 3 } },
+      { breakpoint: 900, settings: { slidesToShow: 2 } },
+      { breakpoint: 600, settings: { slidesToShow: 1 } },
     ],
   };
 
@@ -58,8 +68,6 @@ export function CarrosselTech() {
         const tecnologias = tecnologiasAgrupadas[grupo];
         return (
           <Box key={grupo} sx={{ mb: 6 }}>
-            {" "}
-            {/* aumentei a margem inferior */}
             <Typography
               variant="h5"
               textAlign="center"
@@ -67,12 +75,13 @@ export function CarrosselTech() {
                 color: "primary.main",
                 fontWeight: "bold",
                 textTransform: "uppercase",
-                mb: 2, // aumentei um pouco a distância do carrossel
+                mb: 2,
                 letterSpacing: 5,
               }}
             >
               {grupo}
             </Typography>
+
             <Slider {...settings}>
               {tecnologias.map((tech) => (
                 <Box key={tech.name} px={1} margin={5}>
@@ -108,9 +117,10 @@ export function CarrosselTech() {
                         component="img"
                         src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-original.svg`}
                         onError={(e) => {
-                          e.currentTarget.src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-plain.svg`;
-                          e.currentTarget.onerror = () => {
-                            e.currentTarget.src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-line.svg`;
+                          const target = e.currentTarget as HTMLImageElement;
+                          target.src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-plain.svg`;
+                          target.onerror = () => {
+                            target.src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-line.svg`;
                           };
                         }}
                         alt={tech.name}
