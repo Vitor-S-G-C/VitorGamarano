@@ -57,7 +57,9 @@ export function CarrosselTech() {
       {grupos.map((grupo) => {
         const tecnologias = tecnologiasAgrupadas[grupo];
         return (
-          <Box key={grupo} sx={{ mb: 6 }}> {/* aumentei a margem inferior */}
+          <Box key={grupo} sx={{ mb: 6 }}>
+            {" "}
+            {/* aumentei a margem inferior */}
             <Typography
               variant="h5"
               textAlign="center"
@@ -71,17 +73,18 @@ export function CarrosselTech() {
             >
               {grupo}
             </Typography>
-
             <Slider {...settings}>
               {tecnologias.map((tech) => (
                 <Box key={tech.name} px={1} margin={5}>
-                
                   <Card
                     sx={{
                       backgroundColor: "#111122",
                       borderRadius: 3,
                       textAlign: "center",
                       height: "100%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                       transition: "0.3s",
                       "&:hover": {
                         transform: "translateY(-6px)",
@@ -91,7 +94,16 @@ export function CarrosselTech() {
                       },
                     }}
                   >
-                    <CardContent>
+                    <CardContent
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: 1.2,
+                        py: 3,
+                      }}
+                    >
                       <Box
                         component="img"
                         src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-original.svg`}
@@ -125,7 +137,6 @@ export function CarrosselTech() {
                         size="small"
                         sx={{
                           color: "gold",
-                          mt: 1,
                           textShadow: "0 0 5px rgba(255,215,0,0.5)",
                         }}
                       />

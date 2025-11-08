@@ -10,7 +10,6 @@ import {
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { ProjetosData } from "../../../componentes/Componentes";
 import { FaGithub } from "react-icons/fa";
-import { AnimatedBackground } from "../../../componentes/animetion/Animated";
 
 
 // 🔸 Estilo do container dos vídeos
@@ -66,7 +65,6 @@ export default function Projetos() {
       {/* 🔹 CONTEÚDO PRINCIPAL */}
       <Container
         maxWidth="lg"
-         background:{ AnimatedBackground },
         sx={{
           textAlign: "center",
           position: "relative",
