@@ -1,16 +1,24 @@
-import { useEffect } from "react";
 import Slider from "react-slick";
-import { Box, Card, CardContent, Typography, Rating } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  Rating,
+  IconButton,
+} from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { imgData } from "../../../componentes/Componentes";
+import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
+import { useRef } from "react";
 
 interface Tecnologia {
   name: string;
   src: string;
   txt: string;
   level?: number;
-  tema?: string; // 👈 adiciona a cor temática
+  tema?: string;
 }
 
 type Agrupamento = Record<string, Tecnologia[]>;
@@ -24,42 +32,59 @@ const agruparTecnologias = (data: Record<string, Tecnologia>): Agrupamento => {
   }, {});
 };
 
+// --- Componentes personalizados das setas ---
+const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
+  <IconButton
+    onClick={onClick}
+    sx={{
+      color: "white",
+      backgroundColor: "rgba(255,255,255,0.1)",
+      "&:hover": { backgroundColor: "rgba(255,255,255,0.25)" },
+      mx: 1,
+      borderRadius: 2,
+      transition: "0.3s",
+    }}
+  >
+    <ArrowBackIosNew fontSize="small" />
+  </IconButton>
+);
+
+const NextArrow = ({ onClick }: { onClick?: () => void }) => (
+  <IconButton
+    onClick={onClick}
+    sx={{
+      color: "white",
+      backgroundColor: "rgba(255,255,255,0.1)",
+      "&:hover": { backgroundColor: "rgba(255,255,255,0.25)" },
+      mx: 1,
+      borderRadius: 2,
+      transition: "0.3s",
+    }}
+  >
+    <ArrowForwardIos fontSize="small" />
+  </IconButton>
+);
+
 export function CarrosselTech() {
   const tecnologiasAgrupadas = agruparTecnologias(
     imgData as Record<string, Tecnologia>
   );
   const grupos = Object.keys(tecnologiasAgrupadas);
 
-  // 🔧 Ajuste das setas e dots
-  useEffect(() => {
-    const style = document.createElement("style");
-    style.innerHTML = `
-      .slick-prev:before, .slick-next:before {
-        color: #ccc !important;
-        font-size: 28px !important;
-      }
-      .slick-dots li button:before {
-        color: #888 !important;
-      }
-      .slick-dots li.slick-active button:before {
-        color: #00bcd4 !important;
-      }
-    `;
-    document.head.appendChild(style);
-  }, []);
-
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
-    speed: 700,
-    slidesToShow: 4,
+    speed: 600,
+    slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
-    arrows: false,
-    autoplaySpeed: 3000,
+    swipeToSlide: true,
+    touchThreshold: 15,
+    pauseOnHover: true,
+    autoplay: false,
+    cssEase: "ease-in-out",
+    arrows: false, // remove as setas padrão
     responsive: [
-      { breakpoint: 1200, settings: { slidesToShow: 1 } },
-      { breakpoint: 900, settings: { slidesToShow: 1 } },
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
       { breakpoint: 600, settings: { slidesToShow: 1 } },
     ],
   };
@@ -68,14 +93,13 @@ export function CarrosselTech() {
     <Box>
       {grupos.map((grupo) => {
         const tecnologias = tecnologiasAgrupadas[grupo];
-        // Pega a cor do primeiro item do grupo (já que todos do grupo têm o mesmo txt/tema)
         const corGrupo = tecnologias[0]?.tema || "#00bcd4";
+        const sliderRef = useRef<Slider | null>(null); // 👈 ref único pra cada carrossel
 
         return (
-          <Box key={grupo} sx={{ mt:10 }}>
+          <Box key={grupo} sx={{ mt: 10, textAlign: "center" }}>
             <Typography
               variant="h5"
-              textAlign="center"
               sx={{
                 color: corGrupo,
                 fontWeight: "bold",
@@ -87,84 +111,97 @@ export function CarrosselTech() {
               {grupo}
             </Typography>
 
-            <Slider {...settings}>
-              {tecnologias.map((tech) => (
-                <Box
-                  key={tech.name}
-                  px={1}
-                 
-                >
-                  <Card
-                    sx={{
-                      margin:"1rem",
-                      backgroundColor: "#111122",
-                      borderRadius: 3,
-                      textAlign: "center",
-                      height: "100%",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      transition: "0.3s",
-                      border: `1px solid ${tech.tema || "#333"}`, // 👈 borda na cor do tema
-                      "&:hover": {
-                        transform: "translateY(-6px)",
-                        boxShadow: `0 0 16px ${tech.tema || "#61dafb"}`,
-                        "& img": { filter: "none" },
-                      },
-                    }}
-                  >
-                    <CardContent
+            {/* Container para slider e setas */}
+            <Box sx={{ position: "relative" }}>
+              <Slider ref={sliderRef} {...settings}>
+                {tecnologias.map((tech) => (
+                  <Box key={tech.name} px={1}>
+                    <Card
                       sx={{
+                        margin: "1rem",
+                        backgroundColor: "#111122",
+                        borderRadius: 3,
+                        textAlign: "center",
+                        height: "100%",
                         display: "flex",
-                        flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
-                        gap: 1.2,
-                        py: 3,
+                        transition: "0.3s",
+                        border: `1px solid ${tech.tema || "#333"}`,
+                        "&:hover": {
+                          transform: "translateY(-6px)",
+                          boxShadow: `0 0 16px ${tech.tema || "#61dafb"}`,
+                          "& img": { filter: "none" },
+                        },
                       }}
                     >
-                      <Box
-                        component="img"
-                        src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-original.svg`}
-                        onError={(e) => {
-                          const target = e.currentTarget as HTMLImageElement;
-                          target.src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-plain.svg`;
-                          target.onerror = () => {
-                            target.src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-line.svg`;
-                          };
-                        }}
-                        alt={tech.name}
+                      <CardContent
                         sx={{
-                          width: 64,
-                          height: 64,
-                          mb: 1,
-                          filter: "grayscale(100%) brightness(0.7)",
-                          transition: "0.3s",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: 1.2,
+                          py: 3,
                         }}
-                      />
-                      <Typography
-                        variant="h6"
-                        fontWeight="bold"
-                        sx={{ color: tech.tema || "#ddd" }} // 👈 nome na cor do tema
                       >
-                        {tech.name}
-                      </Typography>
-                      <Rating
-                        name={`rating-${tech.name}`}
-                        value={tech.level || 0}
-                        readOnly
-                        precision={0.5}
-                        size="small"
-                        sx={{
-                          color: "gold",
-                          textShadow: "0 0 5px rgba(255,215,0,0.5)",
-                        }}
-                      />
-                    </CardContent>
-                  </Card>
-                </Box>
-              ))}
-            </Slider>
+                        <Box
+                          component="img"
+                          src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-original.svg`}
+                          onError={(e) => {
+                            const target = e.currentTarget as HTMLImageElement;
+                            target.src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-plain.svg`;
+                            target.onerror = () => {
+                              target.src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-line.svg`;
+                            };
+                          }}
+                          alt={tech.name}
+                          sx={{
+                            width: 64,
+                            height: 64,
+                            mb: 1,
+                            filter: "grayscale(100%) brightness(0.7)",
+                            transition: "0.3s",
+                          }}
+                        />
+                        <Typography
+                          variant="h6"
+                          fontWeight="bold"
+                          sx={{ color: tech.tema || "#ddd" }}
+                        >
+                          {tech.name}
+                        </Typography>
+                        <Rating
+                          name={`rating-${tech.name}`}
+                          value={tech.level || 0}
+                          readOnly
+                          precision={0.5}
+                          size="small"
+                          sx={{
+                            color: "gold",
+                            textShadow: "0 0 5px rgba(255,215,0,0.5)",
+                          }}
+                        />
+                      </CardContent>
+                    </Card>
+                  </Box>
+                ))}
+              </Slider>
+
+              {/* Setas personalizadas abaixo */}
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  mt: 2,
+                  gap: 4,
+                }}
+              >
+                <PrevArrow onClick={() => sliderRef.current?.slickPrev()} />
+                <NextArrow onClick={() => sliderRef.current?.slickNext()} />
+              </Box>
+            </Box>
           </Box>
         );
       })}

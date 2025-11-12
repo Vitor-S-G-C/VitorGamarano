@@ -6,7 +6,7 @@ export default function Tecnologias() {
       id="tecnologias"
       sx={{
         position: "relative", // necessário para o background animado
-        backgroundColor: "#050505",
+        //backgroundColor: "#050505",
         minHeight: "100vh",
         py: 10,
         display: "flex",
@@ -21,7 +21,11 @@ export default function Tecnologias() {
         maxWidth="lg"
         sx={{
           position: "relative",
+          margin:0,
+          padding:0,
           zIndex: 1, // conteúdo acima das partículas
+        
+
         }}
       >
         <Typography
