@@ -27,7 +27,6 @@ const COLORS = {
   active: "#90caf9",
   hover: "#b0d4ff",
   background: "#212121",
-  
 };
 
 // Avatar estilizado
@@ -60,6 +59,7 @@ export default function Sidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navItems: NavItem[] = [
+    { label: "Certificados", id: "Certificados" },
     { label: "Habilidades", id: "tecnologias" },
     { label: "Projetos", id: "projetos" },
     { label: "Contato", id: "contato" },

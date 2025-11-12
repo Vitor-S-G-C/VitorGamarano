@@ -1,4 +1,9 @@
-const imgData = {
+import Poo from "../certificados/POO.pdf";
+import Desenvolvimento_Web_FrontEnd from "../certificados/Desenvolvimento_Web_FrontEnd.pdf";
+import Desenvolvimento_Mobile from "../certificados/Desenvolvimento_Mobile.pdf";
+import HTML_CSS_JS_basico from "../certificados/HTML_CSS_JS_basico.pdf";
+
+export const imgData = {
   // FRONTEND
   html5: {
     name: "HTML5",
@@ -230,4 +235,38 @@ export const ProjetosData = [
   },
 ];
 
-export { imgData };
+export const CertificadosData = [
+  {
+    id: 1,
+    nome: "Curso de Desenvolvimento Web FrontEnd",
+    cargaHoraria: "180 horas",
+    instituicao: " Codi Academy Treinamentos ",
+    periodo: "31/01/2024 a 29/03/2025",
+    arquivo: Desenvolvimento_Web_FrontEnd,
+  },
+  {
+    id: 2,
+    nome: "Introdução à Programação Orientada a Objetos (POO)",
+    cargaHoraria: "5 horas",
+    instituicao: "Fundação bradesco",
+    periodo: "21/08/2025 a 23/08/2025",
+    arquivo: Poo,
+  },
+
+  {
+    id: 3,
+    nome: "Desenvolvimento Mobile",
+    cargaHoraria: "15 horas",
+    instituicao: "Fundação bradesco",
+    periodo: "25/08/2025 a 27/08/2025",
+    arquivo: Desenvolvimento_Mobile,
+  },
+  {
+    id: 4,
+    nome: "Html, Css e JavaScript",
+    cargaHoraria: "2 horas",
+    instituicao: "Fundação bradesco",
+    periodo: "10/07/2025 a 15/07/2025",
+    arquivo: HTML_CSS_JS_basico,
+  },
+];

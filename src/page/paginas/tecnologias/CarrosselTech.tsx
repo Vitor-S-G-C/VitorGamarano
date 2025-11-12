@@ -75,7 +75,7 @@ export function CarrosselTech() {
     dots: false,
     infinite: true,
     speed: 600,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     swipeToSlide: true,
     touchThreshold: 15,
@@ -84,7 +84,7 @@ export function CarrosselTech() {
     cssEase: "ease-in-out",
     arrows: false, // remove as setas padrão
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 1000, settings: { slidesToShow: 2 } },
       { breakpoint: 600, settings: { slidesToShow: 1 } },
     ],
   };

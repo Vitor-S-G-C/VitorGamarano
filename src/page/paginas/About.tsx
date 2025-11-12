@@ -89,8 +89,6 @@ export default function Hero() {
           funcionalidade, design moderno e boas práticas de código.
         </Typography>
       </Box>
-
-      {/* Seção das tecnologias */}
       <Box
         sx={{
           display: "grid",
