@@ -63,7 +63,7 @@ export default function Hero() {
           variant="h3"
           fontWeight={600}
           sx={{
-            background: "linear-gradient(90deg, #4caf50, #81c784)",
+            background: "linear-gradient(90deg, #1976d2ab, #1976d2)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             mb: 2,

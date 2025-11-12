@@ -27,6 +27,7 @@ const COLORS = {
   active: "#90caf9",
   hover: "#b0d4ff",
   background: "#212121",
+  
 };
 
 // Avatar estilizado
