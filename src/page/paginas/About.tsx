@@ -36,7 +36,7 @@ export default function Hero() {
         }}
       >
         {/* Texto e tecnologias */}
-        <Box sx={{ maxWidth: 800, height: 450 }}>
+        <Box sx={{ maxWidth: 800 }}>
           <Typography
             variant="h3"
             fontWeight={600}
