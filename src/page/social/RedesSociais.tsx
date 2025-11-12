@@ -8,14 +8,42 @@ export default function RedesSociais() {
     flexWrap: "wrap",
     gap: "2rem",
     padding: "2rem 0",
-    backgroundColor: "#121212", // fundo escuro moderno
-    borderTop: "2px solid #1e1e1e",
+    backgroundColor: "#0d0d0d", // tom mais profundo para contraste
+    borderTop: "1px solid #1f1f1f",
+    boxShadow: "0 -4px 20px rgba(0, 0, 0, 0.4)",
+  };
+
+  const iconWrapper: React.CSSProperties = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "60px",
+    height: "60px",
+    borderRadius: "50%",
+    background: "rgba(255, 255, 255, 0.05)",
+    transition: "all 0.3s ease",
+    cursor: "pointer",
   };
 
   const iconStyle: React.CSSProperties = {
-    color: "#d9d9d9", // preto e branco (cinza claro neutro)
-    transition: "none",
-    cursor: "pointer",
+    color: "#d9d9d9",
+    transition: "color 0.3s ease, transform 0.3s ease",
+  };
+
+  const handleHover = (e: React.MouseEvent<HTMLElement>, color: string) => {
+    const target = e.currentTarget.querySelector("svg") as unknown as HTMLElement;
+    if (target) {
+      target.style.color = color;
+      target.style.transform = "scale(1.2)";
+    }
+  };
+
+  const handleLeave = (e: React.MouseEvent<HTMLElement>) => {
+    const target = e.currentTarget.querySelector("svg") as unknown as HTMLElement;
+    if (target) {
+      target.style.color = "#d9d9d9";
+      target.style.transform = "scale(1)";
+    }
   };
 
   return (
@@ -25,15 +53,11 @@ export default function RedesSociais() {
         href="https://www.instagram.com/vitor.s.g.c/"
         target="_blank"
         rel="noopener noreferrer"
-        style={iconStyle}
-        onMouseEnter={(e) =>
-          ((e.target as HTMLElement).style.color = "#E4405F")
-        }
-        onMouseLeave={(e) =>
-          ((e.target as HTMLElement).style.color = "#d9d9d9")
-        }
+        style={iconWrapper}
+        onMouseEnter={(e) => handleHover(e, "#E4405F")}
+        onMouseLeave={handleLeave}
       >
-        <FaInstagram size={40} />
+        <FaInstagram size={32} style={iconStyle} />
       </a>
 
       {/* GitHub */}
@@ -41,15 +65,11 @@ export default function RedesSociais() {
         href="https://github.com/Vitor-S-G-C"
         target="_blank"
         rel="noopener noreferrer"
-        style={iconStyle}
-        onMouseEnter={(e) =>
-          ((e.target as HTMLElement).style.color = "#90caf9")
-        }
-        onMouseLeave={(e) =>
-          ((e.target as HTMLElement).style.color = "#d9d9d9")
-        }
+        style={iconWrapper}
+        onMouseEnter={(e) => handleHover(e, "#90caf9")}
+        onMouseLeave={handleLeave}
       >
-        <FaGithub size={40} />
+        <FaGithub size={32} style={iconStyle} />
       </a>
 
       {/* LinkedIn */}
@@ -57,29 +77,21 @@ export default function RedesSociais() {
         href="https://www.linkedin.com/in/vitor-gamarano"
         target="_blank"
         rel="noopener noreferrer"
-        style={iconStyle}
-        onMouseEnter={(e) =>
-          ((e.target as HTMLElement).style.color = "#0A66C2")
-        }
-        onMouseLeave={(e) =>
-          ((e.target as HTMLElement).style.color = "#d9d9d9")
-        }
+        style={iconWrapper}
+        onMouseEnter={(e) => handleHover(e, "#0A66C2")}
+        onMouseLeave={handleLeave}
       >
-        <FaLinkedin size={40} />
+        <FaLinkedin size={32} style={iconStyle} />
       </a>
 
       {/* E-mail */}
       <a
         href="mailto:vitorgamarano1@gmail.com?subject=Assunto&body=Ol%C3%A1"
-        style={iconStyle}
-        onMouseEnter={(e) =>
-          ((e.target as HTMLElement).style.color = "#90caf9")
-        }
-        onMouseLeave={(e) =>
-          ((e.target as HTMLElement).style.color = "#d9d9d9")
-        }
+        style={iconWrapper}
+        onMouseEnter={(e) => handleHover(e, "#90caf9")}
+        onMouseLeave={handleLeave}
       >
-        <FaEnvelope size={40} />
+        <FaEnvelope size={32} style={iconStyle} />
       </a>
     </div>
   );

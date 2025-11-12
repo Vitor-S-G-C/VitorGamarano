@@ -10,6 +10,7 @@ interface Tecnologia {
   src: string;
   txt: string;
   level?: number;
+  tema?: string; // 👈 adiciona a cor temática
 }
 
 type Agrupamento = Record<string, Tecnologia[]>;
@@ -52,12 +53,13 @@ export function CarrosselTech() {
     infinite: true,
     speed: 700,
     slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     autoplay: true,
+    arrows: false,
     autoplaySpeed: 3000,
     responsive: [
-      { breakpoint: 1200, settings: { slidesToShow: 3 } },
-      { breakpoint: 900, settings: { slidesToShow: 2 } },
+      { breakpoint: 1200, settings: { slidesToShow: 1 } },
+      { breakpoint: 900, settings: { slidesToShow: 1 } },
       { breakpoint: 600, settings: { slidesToShow: 1 } },
     ],
   };
@@ -66,13 +68,16 @@ export function CarrosselTech() {
     <Box>
       {grupos.map((grupo) => {
         const tecnologias = tecnologiasAgrupadas[grupo];
+        // Pega a cor do primeiro item do grupo (já que todos do grupo têm o mesmo txt/tema)
+        const corGrupo = tecnologias[0]?.tema || "#00bcd4";
+
         return (
-          <Box key={grupo} sx={{ mb: 6 }}>
+          <Box key={grupo} sx={{ mt:10 }}>
             <Typography
               variant="h5"
               textAlign="center"
               sx={{
-                color: "primary.main",
+                color: corGrupo,
                 fontWeight: "bold",
                 textTransform: "uppercase",
                 mb: 2,
@@ -84,9 +89,14 @@ export function CarrosselTech() {
 
             <Slider {...settings}>
               {tecnologias.map((tech) => (
-                <Box key={tech.name} px={1} margin={5}>
+                <Box
+                  key={tech.name}
+                  px={1}
+                 
+                >
                   <Card
                     sx={{
+                      margin:"1rem",
                       backgroundColor: "#111122",
                       borderRadius: 3,
                       textAlign: "center",
@@ -95,10 +105,10 @@ export function CarrosselTech() {
                       alignItems: "center",
                       justifyContent: "center",
                       transition: "0.3s",
+                      border: `1px solid ${tech.tema || "#333"}`, // 👈 borda na cor do tema
                       "&:hover": {
                         transform: "translateY(-6px)",
-                        boxShadow: (theme) =>
-                          `0 0 16px ${theme.palette.primary.main}`,
+                        boxShadow: `0 0 16px ${tech.tema || "#61dafb"}`,
                         "& img": { filter: "none" },
                       },
                     }}
@@ -135,7 +145,7 @@ export function CarrosselTech() {
                       <Typography
                         variant="h6"
                         fontWeight="bold"
-                        sx={{ color: "#ddd" }}
+                        sx={{ color: tech.tema || "#ddd" }} // 👈 nome na cor do tema
                       >
                         {tech.name}
                       </Typography>

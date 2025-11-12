@@ -10,15 +10,16 @@ const SIDEBAR_WIDTH = 250;
 const Home = () => {
   return (
     <>
-      <PermanentSidebar />
-
       <Container
+        bg-black
         component="main"
         maxWidth={false}
         disableGutters
         sx={{
-          width: "80%",
-          pt: "64px", // espaço pro AppBar fixo (se existir)
+          backgroundColor: "black",
+          width: "100%",
+          height: "100%",
+
           "@media (min-width:960px)": {
             ml: `${SIDEBAR_WIDTH}px`,
             width: `calc(100% - ${SIDEBAR_WIDTH}px)`,
@@ -37,8 +38,10 @@ const Home = () => {
           </section>
           <section id="contato">
             <RedesSociais />
+            
           </section>
         </Box>
+        <PermanentSidebar />
       </Container>
     </>
   );
