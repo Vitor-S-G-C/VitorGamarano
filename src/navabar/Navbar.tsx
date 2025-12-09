@@ -104,12 +104,13 @@ export default function Sidebar() {
       }}
     >
       {/* Avatar e informações pessoais */}
-      <StyledImg src={Avatar} alt="Avatar" />
+      <StyledImg src={Avatar} alt="Foto de perfil de Vitor Gamarano" />
       <Typography
         variant="h5"
         color="white"
         fontWeight="bold"
         sx={{ fontFamily: "Georgia, serif" }}
+        component="h1"
       >
         Vitor S.G.C
       </Typography>
@@ -117,22 +118,31 @@ export default function Sidebar() {
         variant="body1"
         color="white"
         sx={{ opacity: 0.8, fontFamily: "Georgia, serif" }}
+        component="p"
       >
         Engenheiro de Software
       </Typography>
 
      
-      <a href={pdf} download style={{ textDecoration: "none",display: "flex", justifyContent:"center" }}>
+      <a 
+        href={pdf} 
+        download 
+        style={{ textDecoration: "none", display: "flex", justifyContent:"center" }}
+        aria-label="Baixar currículo em PDF"
+      >
         <StyledButton variant="outlined">
-          <DownloadIcon /> Download CV
+          <DownloadIcon aria-hidden="true" /> Download CV
         </StyledButton>
       </a>
 
       {/* Lista de navegação */}
-      <List sx={{ mt: 4 }}>
+      <List sx={{ mt: 4 }} component="nav" aria-label="Menu de navegação principal">
         {navItems.map(({ id, label }) => (
           <ListItem key={id} disablePadding>
-            <ListItemButton onClick={() => scrollToSection(id)}>
+            <ListItemButton 
+              onClick={() => scrollToSection(id)}
+              aria-label={`Navegar para seção ${label}`}
+            >
               <ListItemText
                 primary={label}
                 sx={{
@@ -153,7 +163,7 @@ export default function Sidebar() {
     <Box sx={{ display: "flex" }}>
       {/* Botão de menu (mobile) */}
       <IconButton
-        aria-label="open drawer"
+        aria-label="Abrir menu de navegação"
         onClick={toggleDrawer}
         sx={{
           position: "fixed",

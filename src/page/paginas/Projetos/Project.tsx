@@ -10,6 +10,7 @@ import {
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { ProjetosData } from "../../../componentes/Componentes";
 import { FaGithub } from "react-icons/fa";
+import type { IconType } from "react-icons";
 
 
 // 🔸 Estilo do container dos vídeos
@@ -191,39 +192,66 @@ export default function Projetos() {
             gap: 3,
           }}
         >
-          {currentProject.techs?.map((tech, idx) => (
-            <Box
-              key={idx}
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                transition: "0.3s",
-                "&:hover img": {
-                  filter: "none",
-                  transform: "scale(1.1)",
-                },
-              }}
-            >
+          {currentProject.techs?.map((tech, idx) => {
+            const TechIconComponent = tech.icon as IconType | undefined;
+            return (
               <Box
-                component="img"
-                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-original.svg`}
-                alt={`${tech.name} logo`}
+                key={idx}
                 sx={{
-                  height: 50,
-                  mb: 1,
-                  filter: "grayscale(100%) brightness(0.7)",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
                   transition: "0.3s",
+                  "&:hover .tech-icon": {
+                    filter: "none",
+                    transform: "scale(1.1)",
+                  },
                 }}
-              />
-              <Typography
-                variant="caption"
-                sx={{ color: "grey.400", fontWeight: 500 }}
               >
-                {tech.name}
-              </Typography>
-            </Box>
-          ))}
+                {TechIconComponent ? (
+                  <Box
+                    className="tech-icon"
+                    sx={{
+                      height: 50,
+                      width: 50,
+                      mb: 1,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: tech.tema || "#ddd",
+                      filter: "grayscale(100%) brightness(0.7)",
+                      transition: "0.3s",
+                      "& svg": {
+                        width: "100%",
+                        height: "100%",
+                      },
+                    }}
+                  >
+                    <TechIconComponent />
+                  </Box>
+                ) : (
+                  <Box
+                    className="tech-icon"
+                    component="img"
+                    src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-original.svg`}
+                    alt={`${tech.name} logo`}
+                    sx={{
+                      height: 50,
+                      mb: 1,
+                      filter: "grayscale(100%) brightness(0.7)",
+                      transition: "0.3s",
+                    }}
+                  />
+                )}
+                <Typography
+                  variant="caption"
+                  sx={{ color: "grey.400", fontWeight: 500 }}
+                >
+                  {tech.name}
+                </Typography>
+              </Box>
+            );
+          })}
         </Box>
 
         {/* 🔸 Link do GitHub */}

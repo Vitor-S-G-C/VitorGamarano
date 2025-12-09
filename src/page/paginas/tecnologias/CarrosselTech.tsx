@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { imgData } from "../../../componentes/Componentes";
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
 import { useRef } from "react";
+import type { IconType } from "react-icons";
 
 interface Tecnologia {
   name: string;
@@ -19,6 +20,7 @@ interface Tecnologia {
   txt: string;
   level?: number;
   tema?: string;
+  icon?: IconType;
 }
 
 type Agrupamento = Record<string, Tecnologia[]>;
@@ -36,6 +38,7 @@ const agruparTecnologias = (data: Record<string, Tecnologia>): Agrupamento => {
 const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
   <IconButton
     onClick={onClick}
+    aria-label="Anterior"
     sx={{
       color: "white",
       backgroundColor: "rgba(255,255,255,0.1)",
@@ -52,6 +55,7 @@ const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
 const NextArrow = ({ onClick }: { onClick?: () => void }) => (
   <IconButton
     onClick={onClick}
+    aria-label="Próximo"
     sx={{
       color: "white",
       backgroundColor: "rgba(255,255,255,0.1)",
@@ -131,9 +135,10 @@ export function CarrosselTech() {
                         "&:hover": {
                           transform: "translateY(-6px)",
                           boxShadow: `0 0 16px ${tech.tema || "#61dafb"}`,
-                          "& img": { filter: "none" },
+                          "& .tech-icon": { filter: "none" },
                         },
                       }}
+                      aria-label={`Tecnologia ${tech.name} - Nível ${tech.level} de 5`}
                     >
                       <CardContent
                         sx={{
@@ -145,25 +150,49 @@ export function CarrosselTech() {
                           py: 3,
                         }}
                       >
-                        <Box
-                          component="img"
-                          src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-original.svg`}
-                          onError={(e) => {
-                            const target = e.currentTarget as HTMLImageElement;
-                            target.src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-plain.svg`;
-                            target.onerror = () => {
-                              target.src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-line.svg`;
-                            };
-                          }}
-                          alt={tech.name}
-                          sx={{
-                            width: 64,
-                            height: 64,
-                            mb: 1,
-                            filter: "grayscale(100%) brightness(0.7)",
-                            transition: "0.3s",
-                          }}
-                        />
+                        {tech.icon ? (
+                          <Box
+                            className="tech-icon"
+                            sx={{
+                              width: 64,
+                              height: 64,
+                              mb: 1,
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              color: tech.tema || "#ddd",
+                              transition: "0.3s",
+                              filter: "grayscale(100%) brightness(0.7)",
+                              "& svg": {
+                                width: "100%",
+                                height: "100%",
+                              },
+                            }}
+                          >
+                            <tech.icon />
+                          </Box>
+                        ) : (
+                          <Box
+                            className="tech-icon"
+                            component="img"
+                            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-original.svg`}
+                            onError={(e) => {
+                              const target = e.currentTarget as HTMLImageElement;
+                              target.src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-plain.svg`;
+                              target.onerror = () => {
+                                target.src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-line.svg`;
+                              };
+                            }}
+                            alt={`Logo da tecnologia ${tech.name}`}
+                            sx={{
+                              width: 64,
+                              height: 64,
+                              mb: 1,
+                              filter: "grayscale(100%) brightness(0.7)",
+                              transition: "0.3s",
+                            }}
+                          />
+                        )}
                         <Typography
                           variant="h6"
                           fontWeight="bold"

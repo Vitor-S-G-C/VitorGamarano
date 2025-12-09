@@ -1,53 +1,110 @@
-# React + TypeScript + Vite
+# 🚀 Portfólio Vitor Gamarano
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio profissional desenvolvido com as mais modernas tecnologias web, apresentando projetos, habilidades técnicas e certificações.
 
-Currently, two official plugins are available:
+## 🎯 Sobre
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este é meu portfólio pessoal onde apresento:
+- 💼 Projetos desenvolvidos
+- 🎓 Certificados e conquistas
+- 💻 Stack de tecnologias
+- 📱 Redes sociais e contato
 
-## Expanding the ESLint configuration
+## ✨ Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Frontend
+- **React 19** - Biblioteca para construção de interfaces
+- **TypeScript** - Superset JavaScript com tipagem estática
+- **Material-UI (MUI)** - Framework de componentes React
+- **React Router DOM** - Navegação entre páginas
+- **React Icons** - Biblioteca de ícones
+- **React Slick** - Carrossel de imagens
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Ferramentas e Build
+- **Vite** - Build tool extremamente rápido
+- **ESLint** - Linter para manter código limpo
+- **TypeScript ESLint** - Regras específicas para TS
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Estilização
+- **Styled Components** - CSS-in-JS
+- **Emotion** - Biblioteca de estilização
+- **Bootstrap** - Framework CSS
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Como Executar
+
+### Pré-requisitos
+- Node.js >= 18.0.0
+- npm >= 9.0.0
+
+### Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/Vitor-S-G-C/VitorGamarano.git
+
+# Entre no diretório
+cd VitorGamarano
+
+# Instale as dependências
+npm install
+
+# Execute em modo de desenvolvimento
+npm run dev
+
+# Build para produção
+npm run build
+
+# Preview do build de produção
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Scripts Disponíveis
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm run dev      # Inicia servidor de desenvolvimento
+npm run build    # Gera build de produção
+npm run preview  # Preview do build
+npm run lint     # Executa linter
+```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
+## 🎨 Funcionalidades
+
+- ✅ Design responsivo para todos os dispositivos
+- ✅ Lazy loading para otimização de performance
+- ✅ SEO otimizado com meta tags
+- ✅ Acessibilidade com ARIA labels
+- ✅ Animações e transições suaves
+- ✅ Carrossel interativo de tecnologias
+- ✅ Download de currículo em PDF
+- ✅ Integração com GitHub
+
+## 📱 Responsividade
+
+O site é totalmente responsivo e otimizado para:
+- 📱 Mobile (< 600px)
+- 💻 Tablet (600px - 960px)
+- 🖥️ Desktop (> 960px)
+
+## 🌐 Deploy
+
+Este projeto pode ser facilmente deployado em:
+- [Vercel](https://vercel.com/)
+- [Netlify](https://www.netlify.com/)
+- [GitHub Pages](https://pages.github.com/)
+
+## 📄 Licença
+
+Este projeto é de uso pessoal.
+
+## 👤 Contato
+
+**Vitor Gamarano**
+- GitHub: [@Vitor-S-G-C](https://github.com/Vitor-S-G-C)
+
+---
+
+⭐ Se você gostou deste projeto, considere dar uma estrela no repositório!
+
   {
     files: ['**/*.{ts,tsx}'],
     extends: [

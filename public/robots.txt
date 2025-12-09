@@ -1,0 +1,15 @@
+# robots.txt for Vitor Gamarano Portfolio
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://vitor-gamarano.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

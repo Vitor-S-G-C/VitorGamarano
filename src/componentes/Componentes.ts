@@ -2,8 +2,24 @@ import Poo from "../certificados/POO.pdf";
 import Desenvolvimento_Web_FrontEnd from "../certificados/Desenvolvimento_Web_FrontEnd.pdf";
 import Desenvolvimento_Mobile from "../certificados/Desenvolvimento_Mobile.pdf";
 import HTML_CSS_JS_basico from "../certificados/HTML_CSS_JS_basico.pdf";
+import { 
+  SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiVuedotjs,
+  SiBootstrap, SiTailwindcss, SiVite, SiNpm, SiBun, SiSpring,
+  SiPython, SiNodedotjs, SiDotnet, SiExpress, SiFastapi, SiDocker,
+  SiRabbitmq, SiGit, SiGithub, SiMongodb, SiMysql
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa";
+import type { IconType } from "react-icons";
 
-export const imgData = {
+
+export const imgData: Record<string, {
+  name: string;
+  src: string;
+  txt: string;
+  level: number;
+  tema?: string;
+  icon?: IconType;
+}> = {
   // FRONTEND
   html5: {
     name: "HTML5",
@@ -11,6 +27,7 @@ export const imgData = {
     txt: "Frontend",
     level: 5,
     tema: "#61dafb",
+    icon: SiHtml5,
   },
   css3: {
     name: "CSS3",
@@ -18,6 +35,7 @@ export const imgData = {
     txt: "Frontend",
     level: 5,
     tema: "#61dafb",
+    icon: SiCss3,
   },
   javascript: {
     name: "JavaScript",
@@ -25,6 +43,7 @@ export const imgData = {
     txt: "Frontend",
     level: 4,
     tema: "#61dafb",
+    icon: SiJavascript,
   },
   typescript: {
     name: "TypeScript",
@@ -32,6 +51,7 @@ export const imgData = {
     txt: "Frontend",
     level: 4,
     tema: "#61dafb",
+    icon: SiTypescript,
   },
   react: {
     name: "React",
@@ -39,6 +59,7 @@ export const imgData = {
     txt: "Frontend",
     level: 4,
     tema: "#61dafb",
+    icon: SiReact,
   },
   vuejs: {
     name: "Vue.js",
@@ -46,6 +67,7 @@ export const imgData = {
     txt: "Frontend",
     level: 3,
     tema: "#61dafb",
+    icon: SiVuedotjs,
   },
   bootstrap: {
     name: "Bootstrap",
@@ -53,6 +75,7 @@ export const imgData = {
     txt: "Frontend",
     level: 4,
     tema: "#61dafb",
+    icon: SiBootstrap,
   },
   tailwindcss: {
     name: "Tailwind CSS",
@@ -60,6 +83,7 @@ export const imgData = {
     txt: "Frontend",
     level: 3,
     tema: "#61dafb",
+    icon: SiTailwindcss,
   },
   vite: {
     name: "Vite",
@@ -67,6 +91,7 @@ export const imgData = {
     txt: "Ferramentas",
     level: 3,
     tema: "#3c873a",
+    icon: SiVite,
   },
   npm: {
     name: "NPM",
@@ -74,6 +99,7 @@ export const imgData = {
     txt: "Ferramentas",
     level: 4,
     tema: "#3c873a",
+    icon: SiNpm,
   },
   bun: {
     name: "Bun",
@@ -81,6 +107,7 @@ export const imgData = {
     txt: "Ferramentas",
     level: 2,
     tema: "#3c873a",
+    icon: SiBun,
   },
 
   // BACKEND
@@ -90,6 +117,7 @@ export const imgData = {
     txt: "Backend",
     level: 3,
     tema: "#a56eff",
+    icon: SiSpring,
   },
   java: {
     name: "Java",
@@ -97,6 +125,7 @@ export const imgData = {
     txt: "Backend",
     level: 3,
     tema: "#a56eff",
+    icon: FaJava,
   },
   python: {
     name: "Python",
@@ -104,6 +133,7 @@ export const imgData = {
     txt: "Backend",
     level: 4,
     tema: "#a56eff",
+    icon: SiPython,
   },
   nodejs: {
     name: "Node.js",
@@ -111,13 +141,23 @@ export const imgData = {
     txt: "Backend",
     level: 4,
     tema: "#a56eff",
+    icon: SiNodedotjs,
   },
+  dotnet: {
+    name: ".NET",
+    src: "dot-net",
+    txt: "Backend",
+    level: 3,
+    tema: "#a56eff",
+    icon: SiDotnet,
+  },  
   express: {
     name: "Express",
     src: "express",
     txt: "Backend",
     level: 3,
     tema: "#a56eff",
+    icon: SiExpress,
   },
   fastapi: {
     name: "FastAPI",
@@ -125,14 +165,16 @@ export const imgData = {
     txt: "Backend",
     level: 2,
     tema: "#a56eff",
+    icon: SiFastapi,
   },
-  docker: { name: "Docker", src: "docker", txt: "DevOps", level: 3 }, // DevOps sem cor
+  docker: { name: "Docker", src: "docker", txt: "DevOps", level: 3, icon: SiDocker }, // DevOps sem cor
   rabbitmq: {
     name: "RabbitMQ",
     src: "rabbitmq",
     txt: "Backend",
     level: 2,
     tema: "#a56eff",
+    icon: SiRabbitmq,
   },
   git: {
     name: "Git",
@@ -140,6 +182,7 @@ export const imgData = {
     txt: "Ferramentas",
     level: 4,
     tema: "#3c873a",
+    icon: SiGit,
   },
   github: {
     name: "GitHub",
@@ -147,6 +190,7 @@ export const imgData = {
     txt: "Ferramentas",
     level: 4,
     tema: "#3c873a",
+    icon: SiGithub,
   },
 
   // DATABASE
@@ -156,6 +200,7 @@ export const imgData = {
     txt: "Banco de Dados",
     level: 3,
     tema: "#fad222ff",
+    icon: SiMongodb,
   },
   mysql: {
     name: "MySQL",
@@ -163,10 +208,35 @@ export const imgData = {
     txt: "Banco de Dados",
     level: 4,
     tema: "#fad222ff",
+    icon: SiMysql,
   },
 };
 
 export const ProjetosData = [
+  {
+    name: "TaskFlow",
+    video: "https://www.youtube.com/embed/IyeQJJ6uFxQ",
+    github: "https://github.com/Vitor-S-G-C/TaskFlow",
+    description:
+      "Sistema de gestão de tarefas desenvolvido em ASP.NET Core MVC com arquitetura em camadas. Permite criar, editar, listar, filtrar, concluir e excluir tarefas com validações server-side e interface responsiva.",
+    techs: [
+      { name: ".NET", src: "dot-net", txt: "Backend", tema: "#a56eff", icon: SiDotnet },
+      {
+        name: "Bootstrap",
+        src: "bootstrap",
+        txt: "Frontend",
+        tema: "#61dafb",
+        icon: SiBootstrap,
+      },
+      {
+        name: "MySQL",
+        src: "mysql",
+        txt: "Banco de Dados",
+        tema: "#fad222ff",
+        icon: SiMysql,
+      },
+    ],
+  },
   {
     name: "Projeto de Delivery",
     video: "https://www.youtube.com/embed/LXKtiyKVIJk",
@@ -174,20 +244,22 @@ export const ProjetosData = [
     description:
       "Site de delivery para um restaurante fictício, com menu interativo e sistema de pedidos online.",
     techs: [
-      { name: "React", src: "react", txt: "Frontend", tema: "#61dafb" },
+      { name: "React", src: "react", txt: "Frontend", tema: "#61dafb", icon: SiReact },
       {
         name: "TypeScript",
         src: "typescript",
         txt: "Frontend",
         tema: "#61dafb",
+        icon: SiTypescript,
       },
       {
         name: "Bootstrap",
         src: "bootstrap",
         txt: "Frontend",
         tema: "#61dafb",
+        icon: SiBootstrap,
       },
-      { name: "Vite", src: "vite", txt: "Frontend", tema: "#61dafb" },
+      { name: "Vite", src: "vite", txt: "Frontend", tema: "#61dafb", icon: SiVite },
     ],
   },
   {
@@ -202,18 +274,20 @@ export const ProjetosData = [
         src: "javascript",
         txt: "Frontend",
         tema: "#61dafb",
+        icon: SiJavascript,
       },
-      { name: "Vue.js", src: "vuejs", txt: "Frontend", tema: "#61dafb" },
-      { name: "Python", src: "python", txt: "Backend", tema: "#a56eff" },
-      { name: "FastAPI", src: "fastapi", txt: "Backend", tema: "#a56eff" },
+      { name: "Vue.js", src: "vuejs", txt: "Frontend", tema: "#61dafb", icon: SiVuedotjs },
+      { name: "Python", src: "python", txt: "Backend", tema: "#a56eff", icon: SiPython },
+      { name: "FastAPI", src: "fastapi", txt: "Backend", tema: "#a56eff", icon: SiFastapi },
       {
         name: "MongoDB",
         src: "mongodb",
         txt: "Banco de Dados",
         tema: "#fad222ff",
+        icon: SiMongodb,
       },
-      { name: "Docker", src: "docker", txt: "Backend", tema: "#a56eff" },
-      { name: "GitHub", src: "github", txt: "Ferramentas", tema: "#3c873a" },
+      { name: "Docker", src: "docker", txt: "Backend", tema: "#a56eff", icon: SiDocker },
+      { name: "GitHub", src: "github", txt: "Ferramentas", tema: "#3c873a", icon: SiGithub },
     ],
   },
   {
@@ -228,9 +302,10 @@ export const ProjetosData = [
         src: "javascript",
         txt: "Frontend",
         tema: "#61dafb",
+        icon: SiJavascript,
       },
-      { name: "HTML5", src: "html5", txt: "Frontend", tema: "#61dafb" },
-      { name: "CSS3", src: "css3", txt: "Frontend", tema: "#61dafb" },
+      { name: "HTML5", src: "html5", txt: "Frontend", tema: "#61dafb", icon: SiHtml5 },
+      { name: "CSS3", src: "css3", txt: "Frontend", tema: "#61dafb", icon: SiCss3 },
     ],
   },
 ];
