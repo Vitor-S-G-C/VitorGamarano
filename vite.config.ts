@@ -25,6 +25,8 @@ export default defineConfig({
       },
     },
     chunkSizeWarningLimit: 1000,
+    // Força usar o esbuild nativo e evita depender de terser no build do Vercel
+    minify: 'esbuild',
   },
   server: {
     port: 3000,
