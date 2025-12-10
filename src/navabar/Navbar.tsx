@@ -62,7 +62,7 @@ export default function Sidebar() {
     { label: "Certificados", id: "Certificados" },
     { label: "Habilidades", id: "tecnologias" },
     { label: "Projetos", id: "projetos" },
-    { label: "Contato", id: "contato" },
+    { label: "Contato", id: "Redes Sociais" },
   ];
 
   const scrollToSection = (id: string) => {
