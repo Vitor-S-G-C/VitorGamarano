@@ -77,7 +77,7 @@ export default function Hero() {
           utilizando React e TypeScript, criando interfaces modernas e
           responsivas. No backend, trabalho com Node.js, Java, .NET e Python,
           construindo APIs REST escaláveis e bem arquitetadas. Experiência com
-          bancos de dados relacionais (MySQL, SQL Server) e NoSQL (MongoDB),
+          bancos de dados relacionais  e NoSQL,
           além de práticas DevOps com Docker. Busco sempre unir funcionalidade,
           performance e boas práticas de código.
         </Typography>
