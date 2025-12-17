@@ -8,7 +8,8 @@ import {
   SiPython, SiNodedotjs, SiDotnet, SiExpress, SiFastapi, SiDocker,
   SiRabbitmq, SiGit, SiGithub, SiMongodb, SiMysql
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
+import { FaJava, FaDatabase } from "react-icons/fa";
+
 import type { IconType } from "react-icons";
 
 
@@ -194,6 +195,15 @@ export const imgData: Record<string, {
   },
 
   // DATABASE
+  
+  SqlServer: {
+  name: "SQL Server",
+  src: "SqlServer",
+  txt: "Banco de Dados",
+  level: 4,
+  tema: "#fad222ff",
+  icon: FaDatabase,
+},
   mongodb: {
     name: "MongoDB",
     src: "mongodb",
@@ -229,12 +239,13 @@ export const ProjetosData = [
         icon: SiBootstrap,
       },
       {
-        name: "MySQL",
-        src: "mysql",
-        txt: "Banco de Dados",
-        tema: "#fad222ff",
-        icon: SiMysql,
-      },
+  name: "SQL Server",
+  src: "SqlServer",
+  txt: "Banco de Dados",
+  level: 4,
+  tema: "#fad222ff",
+  icon: FaDatabase,
+},
     ],
   },
   {
@@ -345,3 +356,5 @@ export const CertificadosData = [
     arquivo: HTML_CSS_JS_basico,
   },
 ];
+
+

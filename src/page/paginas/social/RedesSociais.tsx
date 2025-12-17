@@ -66,7 +66,7 @@ export default function RedesSociais() {
         target="_blank"
         rel="noopener noreferrer"
         style={iconWrapper}
-        onMouseEnter={(e) => handleHover(e, "#90caf9")}
+        onMouseEnter={(e) => handleHover(e, "#ffffffff")}
         onMouseLeave={handleLeave}
       >
         <FaGithub size={32} style={iconStyle} />
@@ -88,7 +88,7 @@ export default function RedesSociais() {
       <a
         href="mailto:vitorgamarano1@gmail.com?subject=Assunto&body=Ol%C3%A1"
         style={iconWrapper}
-        onMouseEnter={(e) => handleHover(e, "#90caf9")}
+        onMouseEnter={(e) => handleHover(e, "#f55e54ff")}
         onMouseLeave={handleLeave}
       >
         <FaEnvelope size={32} style={iconStyle} />

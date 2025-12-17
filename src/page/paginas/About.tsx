@@ -6,34 +6,24 @@ import {
   useMediaQuery,
 } from "@mui/material";
 
-import { FaJava } from "react-icons/fa";
+import {  FaDatabase } from "react-icons/fa";
 
 import {
   SiReact,
   SiTypescript,
-  SiGit,
-  SiVite,
-  SiNodedotjs,
-  SiTailwindcss,
-  SiPython,
-  SiNpm,
-  SiMysql,
+  SiDotnet,
+  SiGithub,
 } from "react-icons/si";
 
 export default function Hero() {
   const isMobile = useMediaQuery("(max-width:600px)");
-
-  const techs = [
+  // Top 5 tecnologias principais
+  const topTechs = [
     { icon: <SiReact />, label: "React", color: "#61dafb" },
-    { icon: <SiTypescript />, label: "TypeScript", color: "#3178c6" },
-    { icon: <SiTailwindcss />, label: "TailwindCSS", color: "#38bdf8" },
-    { icon: <SiVite />, label: "Vite", color: "#a56eff" },
-    { icon: <SiNodedotjs />, label: "Node.js", color: "#83cd29" },
-    { icon: <SiPython />, label: "Python", color: "#ffd43b" },
-    { icon: <FaJava />, label: "Java", color: "#6db33f" },
-    { icon: <SiGit />, label: "Git", color: "#f1502f" },
-    { icon: <SiNpm />, label: "NPM", color: "#cb3837" },
-    { icon: <SiMysql />, label: "MySQL", color: "#00758f" },
+    { icon: <SiTypescript />, label: "TypeScript", color: "#61dafb" },
+    { icon: <SiDotnet />, label: ".NET", color: "#a56eff" },
+    { icon: <FaDatabase />, label: "MySQL", color: "#fad222ff" },
+    { icon: <SiGithub />, label: "GitHub", color: "#3c873a" },
   ];
 
   return (
@@ -82,11 +72,14 @@ export default function Hero() {
             px: { xs: 1, md: 6 },
           }}
         >
-          Sou um desenvolvedor apaixonado pelo ecossistema web, atuando tanto no
-          front-end quanto no back-end. Gosto de entender como cada parte se
-          conecta para criar aplicações completas, performáticas e bem
-          estruturadas. Este portfólio reflete minha busca por unir
-          funcionalidade, design moderno e boas práticas de código.
+          Sou um desenvolvedor fullstack apaixonado por criar aplicações web
+          completas e robustas. Tenho experiência com desenvolvimento frontend
+          utilizando React e TypeScript, criando interfaces modernas e
+          responsivas. No backend, trabalho com Node.js, Java, .NET e Python,
+          construindo APIs REST escaláveis e bem arquitetadas. Experiência com
+          bancos de dados relacionais (MySQL, SQL Server) e NoSQL (MongoDB),
+          além de práticas DevOps com Docker. Busco sempre unir funcionalidade,
+          performance e boas práticas de código.
         </Typography>
       </Box>
       <Box
@@ -104,7 +97,7 @@ export default function Hero() {
           justifyItems: "center",
         }}
       >
-        {techs.map((tech, index) => (
+        {topTechs.map((tech, index) => (
           <Chip
             key={index}
             icon={tech.icon}
