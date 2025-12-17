@@ -22,7 +22,7 @@ export default function Hero() {
     { icon: <SiReact />, label: "React", color: "#61dafb" },
     { icon: <SiTypescript />, label: "TypeScript", color: "#61dafb" },
     { icon: <SiDotnet />, label: ".NET", color: "#a56eff" },
-    { icon: <FaDatabase />, label: "MySQL", color: "#fad222ff" },
+    { icon: <FaDatabase />, label: "SQL Server", color: "#fad222ff" },
     { icon: <SiGithub />, label: "GitHub", color: "#3c873a" },
   ];
 
