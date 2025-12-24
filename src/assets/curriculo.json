@@ -1,49 +1,39 @@
 {
   "nome": "Vitor Gamarano",
+  "titulo": "Software Developer – ASP.NET Core / C#",
   "email": "vitorgamarano1@gmail.com",
+  "telefone": "(32) 991253434",
   "github": "https://github.com/Vitor-S-G-C",
-  "localizacao": "Juiz de Fora, MG",
-  "resumoProfissional": "Estudante de Engenharia de Software e programador júnior focado em desenvolvimento ASP.NET e .NET Core. Tenho experiência prática em backend, APIs REST e projetos full-stack. Sou dedicado, curioso e busco oportunidades para crescer em desenvolvimento de sistemas robustos e eficientes.",
+  "linkedin": "https://www.linkedin.com/in/vitor-gamarano/",
+  "localizacao": "Juiz de Fora, Minas Gerais",
+  "resumoProfissional": "Estudante de Engenharia de Software e programador júnior com experiência em ASP.NET Core 4.5, ASP.NET Core 8 e C#, manutenção de software legado e implementação de novas funcionalidades. Participante de hackathons como HackMeridian (2º lugar na categoria principal), desenvolvendo soluções full-stack e integrando tecnologias como React, TypeScript, Python e Docker. Aplicação de SOLID, POO e padrões de design. Busco crescimento técnico.",
   "experienciasProfissionais": [
     {
-      "titulo": "Programador Júnior – Desenvolvimento .NET",
-      "empresa": "Projetos Pessoais & Estudo",
-      "descricao": "Desenvolvimento de APIs e sistemas web utilizando ASP.NET Core e C#. Integração com bancos de dados SQL Server e MongoDB. Participação em projetos full-stack com front-end em React/TypeScript e consumo de APIs .NET. Aplicação de boas práticas, princípios SOLID e padrões de design em projetos reais."
-    },
-    {
-      "titulo": "Experiências Anteriores",
-      "empresa": "Atendimento, organização e trabalho em equipe (garçom/padeiro)",
-      "descricao": "Fortalece soft skills e proatividade."
+      "empresa": "AltPermut",
+      "titulo": "Programador Júnior – Desenvolvimento ASP.NET Core",
+      "periodo": "12/2025 - Atual",
+      "descricao": "Manutenção e atualização de software legado em ASP.NET Core 4.5 e C#. Implementação de novas funcionalidades em sistema. Integração com SQL Server e APIs internas. Aplicação de boas práticas, princípios SOLID e padrões de design. Colaboração com supervisor técnico em projetos full-stack, garantindo soluções robustas."
     }
   ],
   "formacaoAcademica": [
     {
       "grau": "Engenharia de Software",
-      "instituicao": "Universidade (cursando, 5º período noturno)"
-    }
-  ],
-  "projetosPessoais": [
-    {
-      "nome": "Sistema de RPG Local",
-      "descricao": "Backend em C# e ASP.NET Core, frontend em React, gerenciamento de fichas, inventário e dados locais."
-    },
-    {
-      "nome": "Scripts e Automações",
-      "descricao": "Python para aprendizado e experimentos pessoais."
-    },
-    {
-      "nome": "Projetos no GitHub",
-      "descricao": "Foco em ASP.NET Core e APIs REST"
+      "instituicao": "Centro Universitário Leonardo da Vinci (Uniasselvi)",
+      "periodo": "2023 - 2026",
+      "modalidade": "Noturno - EAD"
     }
   ],
   "habilidadesTecnicas": {
-    "linguagens": ["C#", "Python", "JavaScript/TypeScript"],
-    "frameworks": ["ASP.NET Core", "React"],
-    "bancoDados": ["SQL Server", "MongoDB"],
-    "ferramentas": ["Docker", "Git", "RabbitMQ", "WSL"],
-    "conceitos": ["POO", "APIs REST", "SOLID", "Padrões de Design", "Desenvolvimento Full-Stack", "Clean Architecture"]
+    "backend": ["C#", "ASP.NET Core", "SQL Server", "APIs REST", "POO", "SOLID", "MVC", "Git"],
+    "frontend": ["JavaScript", "TypeScript", "React", "Bootstrap", "Tailwind", "HTML", "CSS"],
+    "softSkills": ["Trabalho em equipe", "Comunicação", "Proatividade", "Resolução de problemas"],
+    "conceitos": ["SOLID", "POO", "Padrões de Design", "APIs REST", "Full-Stack Development"]
   },
   "idiomas": [
+    {
+      "idioma": "Português",
+      "nivel": "Nativo"
+    },
     {
       "idioma": "Inglês",
       "nivel": "Básico"
@@ -55,19 +45,21 @@
   ],
   "certificacoes": [
     {
-      "nome": "Desenvolvimento Web FrontEnd",
-      "instituicao": "Codi Academy",
-      "cargaHoraria": "180 horas"
+      "nome": "Desenvolvimento Web Front-End",
+      "instituicao": "Codi Academy / CRITT – UFJF",
+      "periodo": "2024 - 2025"
     },
     {
-      "nome": "Programação Orientada a Objetos",
+      "nome": "Programação Orientada a Objetos (POO) em Java",
       "instituicao": "Fundação Bradesco",
-      "cargaHoraria": "5 horas"
-    },
+      "periodo": "2025"
+    }
+  ],
+  "projetosPessoais": [
     {
-      "nome": "Desenvolvimento Mobile",
-      "instituicao": "Fundação Bradesco",
-      "cargaHoraria": "15 horas"
+      "nome": "HackMeridian",
+      "descricao": "2º lugar na categoria principal - Solução full-stack com React, TypeScript, Python e Docker"
     }
   ]
 }
+

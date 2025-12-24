@@ -13,58 +13,42 @@ import { FaDatabase } from "react-icons/fa";
 export default function Experiencia() {
   const experiencias = [
     {
-      titulo: "Programador Júnior - Desenvolvimento .NET",
-      empresa: "Projetos Pessoais & Estudo",
-      periodo: "2024 - Presente",
+      titulo: "Programador Júnior - Desenvolvimento ASP.NET Core / C#",
+      empresa: "AltPermut",
+      periodo: "12/2025 - Atual",
       descricao:
-        "Desenvolvimento de aplicações backend robustas utilizando ASP.NET Core com C#. Foco em arquitetura limpa, padrões SOLID e boas práticas de desenvolvimento.",
+        "Manutenção e atualização de software legado em ASP.NET Core 4.5 e C#. Implementação de novas funcionalidades em sistema. Integração com SQL Server e APIs internas. Colaboração com supervisor técnico em projetos full-stack.",
       responsabilidades: [
-        "Desenvolvimento de APIs REST escaláveis com ASP.NET Core",
-        "Integração com bancos de dados SQL Server e MongoDB",
-        "Implementação de padrões de design e princípios SOLID",
-        "Containerização de aplicações com Docker",
-        "Versionamento de código com Git/GitHub",
+        "Manutenção e atualização de software legado em ASP.NET Core 4.5 e C#",
+        "Implementação de novas funcionalidades em sistema",
+        "Integração com SQL Server e APIs internas",
+        "Aplicação de boas práticas, princípios SOLID e padrões de design",
+        "Colaboração com supervisor técnico em projetos full-stack",
       ],
       tecnologias: [
         { name: "C#", icon: SiDotnet, cor: "#a56eff" },
-        { name: ".NET Core", icon: SiDotnet, cor: "#a56eff" },
+        { name: "ASP.NET Core", icon: SiDotnet, cor: "#a56eff" },
         { name: "SQL Server", icon: FaDatabase, cor: "#fad222ff" },
-        { name: "MongoDB", icon: FaDatabase, cor: "#fad222ff" },
       ],
     },
     {
-      titulo: "Desenvolvedor Full-Stack - React & TypeScript",
-      empresa: "Projetos Pessoais",
-      periodo: "2023 - Presente",
+      titulo: "Desenvolvedor Full-Stack - Hackathons",
+      empresa: "HackMeridian",
+      periodo: "2025",
       descricao:
-        "Construção de interfaces modernas e responsivas utilizando React com TypeScript. Integração com APIs backend e consumo de dados.",
+        "Participante de hackathon HackMeridian, conquistando 2º lugar na categoria principal. Desenvolvimento de solução full-stack integrando múltiplas tecnologias.",
       responsabilidades: [
-        "Desenvolvimento de componentes React reutilizáveis",
-        "Tipagem estática com TypeScript",
-        "Estilização com Material-UI e Styled Components",
-        "Integração com APIs REST",
-        "Otimização de performance e lazy loading",
+        "Desenvolvimento full-stack em ambiente de hackathon",
+        "Integração de React, TypeScript, Python e Docker",
+        "Implementação rápida de funcionalidades",
+        "Trabalho colaborativo em equipe sob pressão",
+        "Criação de solução inovadora que conquistou 2º lugar",
       ],
       tecnologias: [
         { name: "React", icon: SiReact, cor: "#61dafb" },
         { name: "TypeScript", icon: SiTypescript, cor: "#61dafb" },
-        { name: ".NET API", icon: SiDotnet, cor: "#a56eff" },
+        { name: ".NET Core", icon: SiDotnet, cor: "#a56eff" },
       ],
-    },
-    {
-      titulo: "Experiência Profissional Anterior",
-      empresa: "Atendimento & Operações",
-      periodo: "2020 - 2023",
-      descricao:
-        "Experiência em atendimento ao cliente e operações, desenvolvendo soft skills essenciais para trabalho em equipe.",
-      responsabilidades: [
-        "Atendimento de clientes",
-        "Trabalho em equipe colaborativa",
-        "Organização e gestão de tempo",
-        "Proatividade e resolução de problemas",
-        "Comunicação efetiva",
-      ],
-      tecnologias: [],
     },
   ];
 
@@ -101,7 +85,7 @@ export default function Experiencia() {
             fontSize: 42,
           }}
         >
-          Experiência Profissional
+          Experiência 
         </Typography>
 
         <Box
@@ -259,19 +243,23 @@ export default function Experiencia() {
             }}
           >
             {[
-              { title: "Arquitetura", items: ["MVC", "MVVM", "Clean Architecture", "Domain-Driven Design"] },
-              {
-                title: "Padrões de Projeto",
-                items: ["SOLID", "Repository Pattern", "Dependency Injection", "Factory Pattern"],
-              },
-              {
-                title: "Desenvolvimento",
-                items: ["APIs REST", "Full-Stack Development", "Responsive Design", "Performance Optimization"],
-              },
-              {
-                title: "DevOps & Ferramentas",
-                items: ["Docker", "Git/GitHub", "Linux/WSL", "CI/CD Concepts"],
-              },
+              { 
+  title: "Arquitetura", 
+  items: ["MVC", "MVVM", "Arquitetura Limpa", "Domain-Driven Design (DDD)"] 
+},
+{
+  title: "Padrões de Projeto",
+  items: ["SOLID", "Padrão Repository", "Injeção de Dependência", "Padrão Factory"],
+},
+{
+  title: "Desenvolvimento",
+  items: ["APIs REST", "Desenvolvimento Full-Stack", "Design Responsivo", "Otimização de Performance"],
+},
+{
+  title: "DevOps & Ferramentas",
+  items: ["Docker", "Git/GitHub"],
+},
+
             ].map((categoria, idx) => (
               <Box key={idx}>
                 <Card

@@ -73,12 +73,11 @@ export default function Hero() {
             px: { xs: 1, md: 6 },
           }}
         >
-          Sou um desenvolvedor júnior especializado em <strong>ASP.NET Core</strong> e desenvolvimento backend .NET. 
-          Tenho experiência prática em construção de <strong>APIs REST escaláveis</strong>, implementação de padrões 
-          <strong> SOLID</strong> e arquitetura limpa. No frontend, trabalho com <strong>React e TypeScript</strong>, 
-          criando interfaces modernas e responsivas. Proficiente em bancos de dados 
-          <strong> SQL Server e MongoDB</strong>, além de containerização com <strong>Docker</strong>. 
-          Focado em desenvolvimento full-stack com ênfase em robustez, performance e manutenibilidade do código.
+          Sou um programador júnior com experiência em <strong>ASP.NET Core 4.5 e 8</strong>, especializado em <strong>C#</strong>. 
+          Trabalho com manutenção de software legado e implementação de novas funcionalidades, integrando <strong>SQL Server</strong> e APIs internas. 
+          No frontend, tenho experiência com <strong>React, TypeScript, Bootstrap e Tailwind</strong>. 
+          Aplicador de <strong>SOLID, POO e padrões de design</strong>, participante de hackathons como <strong>HackMeridian (2º lugar)</strong>. 
+          Busco crescimento técnico desenvolvendo soluções robustas e escaláveis.
         </Typography>
       </Box>
       <Box

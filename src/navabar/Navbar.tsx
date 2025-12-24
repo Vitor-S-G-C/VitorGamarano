@@ -13,8 +13,9 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import DownloadIcon from "@mui/icons-material/Download";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Avatar from "../assets/Avatar.png";
-import pdf from "../assets/CV.pdf";
+import pdf from "../assets/Vitor-curiculo-v1.pdf";
 
 interface NavItem {
   label: string;
@@ -135,6 +136,34 @@ export default function Sidebar() {
           <DownloadIcon aria-hidden="true" /> Download CV
         </StyledButton>
       </a>
+
+      {/* Links de Redes Sociais */}
+      <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mt: 3, mb: 3 }}>
+        <IconButton
+          href="https://github.com/Vitor-S-G-C"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          sx={{
+            color: "#fff",
+            "&:hover": { color: "#90caf9" },
+          }}
+        >
+          <FaGithub size={20} />
+        </IconButton>
+        <IconButton
+          href="https://www.linkedin.com/in/vitor-gamarano/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          sx={{
+            color: "#fff",
+            "&:hover": { color: "#90caf9" },
+          }}
+        >
+          <FaLinkedin size={20} />
+        </IconButton>
+      </Box>
 
       {/* Lista de navegação */}
       <List sx={{ mt: 4 }} component="nav" aria-label="Menu de navegação principal">
