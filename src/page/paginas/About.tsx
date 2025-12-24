@@ -117,7 +117,7 @@ export default function Hero() {
       </Box>
 
       <Box sx={{ mt: 6 }}>
-        <DownloadCurriculo />
+        
       </Box>
     </Paper>
   );

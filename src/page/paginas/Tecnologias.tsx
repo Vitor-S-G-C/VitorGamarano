@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+git meimport { Box, Container, Typography } from "@mui/material";
 import {CarrosselTech } from "./tecnologias/CarrosselTech";
 export default function Tecnologias() {
   return (
