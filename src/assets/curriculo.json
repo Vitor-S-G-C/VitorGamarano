@@ -1,0 +1,73 @@
+{
+  "nome": "Vitor Gamarano",
+  "email": "vitorgamarano1@gmail.com",
+  "github": "https://github.com/Vitor-S-G-C",
+  "localizacao": "Juiz de Fora, MG",
+  "resumoProfissional": "Estudante de Engenharia de Software e programador júnior focado em desenvolvimento ASP.NET e .NET Core. Tenho experiência prática em backend, APIs REST e projetos full-stack. Sou dedicado, curioso e busco oportunidades para crescer em desenvolvimento de sistemas robustos e eficientes.",
+  "experienciasProfissionais": [
+    {
+      "titulo": "Programador Júnior – Desenvolvimento .NET",
+      "empresa": "Projetos Pessoais & Estudo",
+      "descricao": "Desenvolvimento de APIs e sistemas web utilizando ASP.NET Core e C#. Integração com bancos de dados SQL Server e MongoDB. Participação em projetos full-stack com front-end em React/TypeScript e consumo de APIs .NET. Aplicação de boas práticas, princípios SOLID e padrões de design em projetos reais."
+    },
+    {
+      "titulo": "Experiências Anteriores",
+      "empresa": "Atendimento, organização e trabalho em equipe (garçom/padeiro)",
+      "descricao": "Fortalece soft skills e proatividade."
+    }
+  ],
+  "formacaoAcademica": [
+    {
+      "grau": "Engenharia de Software",
+      "instituicao": "Universidade (cursando, 5º período noturno)"
+    }
+  ],
+  "projetosPessoais": [
+    {
+      "nome": "Sistema de RPG Local",
+      "descricao": "Backend em C# e ASP.NET Core, frontend em React, gerenciamento de fichas, inventário e dados locais."
+    },
+    {
+      "nome": "Scripts e Automações",
+      "descricao": "Python para aprendizado e experimentos pessoais."
+    },
+    {
+      "nome": "Projetos no GitHub",
+      "descricao": "Foco em ASP.NET Core e APIs REST"
+    }
+  ],
+  "habilidadesTecnicas": {
+    "linguagens": ["C#", "Python", "JavaScript/TypeScript"],
+    "frameworks": ["ASP.NET Core", "React"],
+    "bancoDados": ["SQL Server", "MongoDB"],
+    "ferramentas": ["Docker", "Git", "RabbitMQ", "WSL"],
+    "conceitos": ["POO", "APIs REST", "SOLID", "Padrões de Design", "Desenvolvimento Full-Stack", "Clean Architecture"]
+  },
+  "idiomas": [
+    {
+      "idioma": "Inglês",
+      "nivel": "Básico"
+    },
+    {
+      "idioma": "Espanhol",
+      "nivel": "Intermediário"
+    }
+  ],
+  "certificacoes": [
+    {
+      "nome": "Desenvolvimento Web FrontEnd",
+      "instituicao": "Codi Academy",
+      "cargaHoraria": "180 horas"
+    },
+    {
+      "nome": "Programação Orientada a Objetos",
+      "instituicao": "Fundação Bradesco",
+      "cargaHoraria": "5 horas"
+    },
+    {
+      "nome": "Desenvolvimento Mobile",
+      "instituicao": "Fundação Bradesco",
+      "cargaHoraria": "15 horas"
+    }
+  ]
+}

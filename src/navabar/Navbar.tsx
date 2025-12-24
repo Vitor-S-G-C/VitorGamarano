@@ -61,6 +61,7 @@ export default function Sidebar() {
   const navItems: NavItem[] = [
     { label: "Certificados", id: "Certificados" },
     { label: "Habilidades", id: "tecnologias" },
+    { label: "Experiência", id: "experiencia" },
     { label: "Projetos", id: "projetos" },
     { label: "Contato", id: "Redes Sociais" },
   ];

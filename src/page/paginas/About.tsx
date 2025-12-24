@@ -14,6 +14,7 @@ import {
   SiDotnet,
   SiGithub,
 } from "react-icons/si";
+import { DownloadCurriculo } from "../../componentes/DownloadCurriculo";
 
 export default function Hero() {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -72,14 +73,12 @@ export default function Hero() {
             px: { xs: 1, md: 6 },
           }}
         >
-          Sou um desenvolvedor fullstack apaixonado por criar aplicações web
-          completas e robustas. Tenho experiência com desenvolvimento frontend
-          utilizando React e TypeScript, criando interfaces modernas e
-          responsivas. No backend, trabalho com Node.js, Java, .NET e Python,
-          construindo APIs REST escaláveis e bem arquitetadas. Experiência com
-          bancos de dados relacionais  e NoSQL,
-          além de práticas DevOps com Docker. Busco sempre unir funcionalidade,
-          performance e boas práticas de código.
+          Sou um desenvolvedor júnior especializado em <strong>ASP.NET Core</strong> e desenvolvimento backend .NET. 
+          Tenho experiência prática em construção de <strong>APIs REST escaláveis</strong>, implementação de padrões 
+          <strong> SOLID</strong> e arquitetura limpa. No frontend, trabalho com <strong>React e TypeScript</strong>, 
+          criando interfaces modernas e responsivas. Proficiente em bancos de dados 
+          <strong> SQL Server e MongoDB</strong>, além de containerização com <strong>Docker</strong>. 
+          Focado em desenvolvimento full-stack com ênfase em robustez, performance e manutenibilidade do código.
         </Typography>
       </Box>
       <Box
@@ -116,6 +115,10 @@ export default function Hero() {
             }}
           />
         ))}
+      </Box>
+
+      <Box sx={{ mt: 6 }}>
+        <DownloadCurriculo />
       </Box>
     </Paper>
   );

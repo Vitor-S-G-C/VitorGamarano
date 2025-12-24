@@ -6,6 +6,7 @@ import LoadingSpinner from "../componentes/LoadingSpinner";
 
 // Lazy loading para componentes pesados
 const Tecnologias = lazy(() => import("./paginas/Tecnologias"));
+const Experiencia = lazy(() => import("./paginas/Experiencia"));
 const Projetos = lazy(() => import("./paginas/Projetos/Project"));
 const RedesSociais = lazy(() => import("./paginas/social/RedesSociais"));
 const Certificados = lazy(() => import("./paginas/conquistas/Certificado"));
@@ -43,6 +44,11 @@ const Home = () => {
           <Suspense fallback={<LoadingSpinner />}>
             <section id="tecnologias">
               <Tecnologias />
+            </section>
+          </Suspense>
+          <Suspense fallback={<LoadingSpinner />}>
+            <section id="experiencia">
+              <Experiencia />
             </section>
           </Suspense>
           <Suspense fallback={<LoadingSpinner />}>

@@ -6,9 +6,9 @@ import {
   SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiVuedotjs,
   SiBootstrap, SiTailwindcss, SiVite, SiNpm, SiBun, SiSpring,
   SiPython, SiNodedotjs, SiDotnet, SiExpress, SiFastapi, SiDocker,
-  SiRabbitmq, SiGit, SiGithub, SiMongodb, SiMysql
+  SiRabbitmq, SiGit, SiGithub, SiMongodb, SiMysql, SiLinux
 } from "react-icons/si";
-import { FaJava, FaDatabase } from "react-icons/fa";
+import { FaJava, FaDatabase, FaCode } from "react-icons/fa";
 
 import type { IconType } from "react-icons";
 
@@ -112,6 +112,30 @@ export const imgData: Record<string, {
   },
 
   // BACKEND
+  csharp: {
+    name: "C#",
+    src: "csharp",
+    txt: "Backend",
+    level: 4,
+    tema: "#a56eff",
+    icon: FaCode,
+  },
+  dotnet: {
+    name: ".NET Core",
+    src: "dot-net",
+    txt: "Backend",
+    level: 4,
+    tema: "#a56eff",
+    icon: SiDotnet,
+  },
+  aspnetcore: {
+    name: "ASP.NET Core",
+    src: "asp-net",
+    txt: "Backend",
+    level: 4,
+    tema: "#a56eff",
+    icon: SiDotnet,
+  },
   spring: {
     name: "Spring",
     src: "spring",
@@ -144,14 +168,6 @@ export const imgData: Record<string, {
     tema: "#a56eff",
     icon: SiNodedotjs,
   },
-  dotnet: {
-    name: ".NET",
-    src: "dot-net",
-    txt: "Backend",
-    level: 4,
-    tema: "#a56eff",
-    icon: SiDotnet,
-  },  
   express: {
     name: "Express",
     src: "express",
@@ -168,7 +184,6 @@ export const imgData: Record<string, {
     tema: "#a56eff",
     icon: SiFastapi,
   },
-  docker: { name: "Docker", src: "docker", txt: "DevOps", level: 3, icon: SiDocker }, // DevOps sem cor
   rabbitmq: {
     name: "RabbitMQ",
     src: "rabbitmq",
@@ -193,17 +208,32 @@ export const imgData: Record<string, {
     tema: "#3c873a",
     icon: SiGithub,
   },
+  docker: {
+    name: "Docker",
+    src: "docker",
+    txt: "DevOps",
+    level: 3,
+    tema: "#1e90ff",
+    icon: SiDocker,
+  },
+  linux: {
+    name: "Linux / WSL",
+    src: "linux",
+    txt: "DevOps",
+    level: 3,
+    tema: "#1e90ff",
+    icon: SiLinux,
+  },
 
   // DATABASE
-  
   SqlServer: {
-  name: "SQL Server",
-  src: "SqlServer",
-  txt: "Banco de Dados",
-  level: 4,
-  tema: "#fad222ff",
-  icon: FaDatabase,
-},
+    name: "SQL Server",
+    src: "SqlServer",
+    txt: "Banco de Dados",
+    level: 4,
+    tema: "#fad222ff",
+    icon: FaDatabase,
+  },
   mongodb: {
     name: "MongoDB",
     src: "mongodb",
