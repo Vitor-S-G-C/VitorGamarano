@@ -1,70 +1,69 @@
 import { Container, Box } from "@mui/material";
-import { lazy, Suspense } from "react";
 import PermanentSidebar from "../navabar/Navbar";
 import Hero from "./paginas/About";
-import LoadingSpinner from "../componentes/LoadingSpinner";
-
-// Lazy loading para componentes pesados
-const Tecnologias = lazy(() => import("./paginas/Tecnologias"));
-const Experiencia = lazy(() => import("./paginas/Experiencia"));
-const Projetos = lazy(() => import("./paginas/Projetos/Project"));
-const RedesSociais = lazy(() => import("./paginas/social/RedesSociais"));
-const Certificados = lazy(() => import("./paginas/conquistas/Certificado"));
+import Tecnologias from "./paginas/Tecnologias";
+import Experiencia from "./paginas/Experiencia";
+import Projetos from "./paginas/Projetos/Project";
+// import RedesSociais from "./paginas/social/RedesSociais";
+// import Certificados from "./paginas/conquistas/Certificado";
 
 const SIDEBAR_WIDTH = 250;
 
 const Home = () => {
   return (
-    <>
-      <Container
-        bg-black
-        component="main"
-        maxWidth={false}
-        disableGutters
+    <Container
+      component="main"
+      maxWidth={false}
+      disableGutters
+      sx={{
+        minHeight: "100vh",
+        background:
+          "radial-gradient(circle at top, rgba(24, 76, 189, 0.18), transparent 28%), var(--bg-base)",
+        position: "relative",
+      }}
+    >
+      <PermanentSidebar />
+      <Box
         sx={{
-          backgroundColor: "black",
-          width: "100%",
-          height: "100%",
-
+          minHeight: "100vh",
+          px: { xs: 2, md: 3 },
+          py: { xs: 8, md: 3 },
           "@media (min-width:960px)": {
             ml: `${SIDEBAR_WIDTH}px`,
             width: `calc(100% - ${SIDEBAR_WIDTH}px)`,
           },
         }}
       >
-        <Box sx={{ p: 2 }}>
+        <Box
+          sx={{
+            maxWidth: 1280,
+            mx: "auto",
+            display: "flex",
+            flexDirection: "column",
+            gap: 2.5,
+          }}
+        >
           <section id="home">
             <Hero />
           </section>
-          <Suspense fallback={<LoadingSpinner />}>
-            <section id="Certificados">
-              <Certificados />
-            </section>
-          </Suspense>
-          <Suspense fallback={<LoadingSpinner />}>
-            <section id="tecnologias">
-              <Tecnologias />
-            </section>
-          </Suspense>
-          <Suspense fallback={<LoadingSpinner />}>
-            <section id="experiencia">
-              <Experiencia />
-            </section>
-          </Suspense>
-          <Suspense fallback={<LoadingSpinner />}>
-            <section id="projetos">
-              <Projetos />
-            </section>
-          </Suspense>
-          <Suspense fallback={<LoadingSpinner />}>
-            <section id="Redes Sociais">
-              <RedesSociais />
-            </section>
-          </Suspense>
+          <section id="tecnologias">
+            <Tecnologias />
+          </section>
+          <section id="projetos">
+            <Projetos />
+          </section>
+          <section id="experiencia">
+            <Experiencia />
+          </section>
+          {/* <section id="certificados">
+            <Certificados />
+          </section> */}
+          {/* <section id="contato">
+            <RedesSociais />
+          </section> */}
         </Box>
-        <PermanentSidebar />
-      </Container>
-    </>
+      </Box>
+    </Container>
   );
 };
 

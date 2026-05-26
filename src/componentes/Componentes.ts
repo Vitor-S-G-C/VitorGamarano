@@ -6,7 +6,8 @@ import {
   SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiVuedotjs,
   SiBootstrap, SiTailwindcss, SiVite, SiNpm, SiBun, SiSpring,
   SiPython, SiNodedotjs, SiDotnet, SiExpress, SiFastapi, SiDocker,
-  SiRabbitmq, SiGit, SiGithub, SiMongodb, SiMysql, SiLinux
+  SiRabbitmq, SiGit, SiGithub, SiMongodb, SiMysql, SiLinux,
+  SiSqlite
 } from "react-icons/si";
 import { FaJava, FaDatabase, FaCode } from "react-icons/fa";
 
@@ -349,6 +350,19 @@ export const ProjetosData = [
       { name: "CSS3", src: "css3", txt: "Frontend", tema: "#61dafb", icon: SiCss3 },
     ],
   },
+  {
+    name: "SimHub",
+    video: "https://www.youtube.com/watch?v=nh6GwDo8OIk",
+    github: "https://github.com/Vitor-S-G-C/SimHub",
+    description:
+      "Aplicativo para gerenciar linhas de telefone, permitindo criar, editar, concluir e excluir registros.",
+techs: [
+  { name: "React", src: "react", txt: "Frontend", tema: "#61dafb", icon: SiReact },
+  { name: "TypeScript", src: "typescript", txt: "Frontend", tema: "#61dafb", icon: SiTypescript },
+  { name: "Node.js", src: "nodejs", txt: "Backend", tema: "#a56eff", icon: SiNodedotjs },
+  { name: "SQLite", src: "sqlite", txt: "Banco de Dados", tema: "#003B57", icon: SiSqlite },
+]
+  }
 ];
 
 export const CertificadosData = [

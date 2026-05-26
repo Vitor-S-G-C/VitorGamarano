@@ -1,11 +1,7 @@
 import {
   Box,
-  Container,
   Typography,
-  Paper,
   Chip,
-  Card,
-  CardContent,
 } from "@mui/material";
 import { SiDotnet, SiReact, SiTypescript } from "react-icons/si";
 import { FaDatabase } from "react-icons/fa";
@@ -56,36 +52,27 @@ export default function Experiencia() {
     <Box
       id="experiencia"
       sx={{
-        position: "relative",
-        minHeight: "100vh",
-        py: 10,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        overflow: "hidden",
-        backgroundColor: "#050505",
+        background: "var(--panel-bg)",
+        border: "1px solid var(--panel-border)",
+        borderRadius: 6,
+        px: { xs: 2, md: 3 },
+        py: { xs: 2.5, md: 3 },
       }}
     >
-      <Container
-        maxWidth="lg"
-        sx={{
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
+      <Box>
         <Typography
-          variant="h4"
+          variant="h5"
           sx={{
-            color: "primary.main",
-            fontWeight: "bold",
-            textAlign: "center",
-            mb: 8,
-            fontFamily: "-apple-system, Roboto, sans-serif",
-            fontSize: 42,
+            color: "var(--text-main)",
+            fontWeight: 800,
+            mb: 0.7,
+            fontFamily: "var(--font-display)",
           }}
         >
-          Experiência 
+          Experiência
+        </Typography>
+        <Typography sx={{ color: "var(--text-muted)", mb: 2.5 }}>
+          Atuação com sistemas legados, evolução de produtos e entregas full stack orientadas a negócio.
         </Typography>
 
         <Box
@@ -97,16 +84,17 @@ export default function Experiencia() {
         >
           {experiencias.map((exp, index) => (
             <Box key={index}>
-              <Paper
-                elevation={3}
+              <Box
                 sx={{
                   p: 3,
-                  bgcolor: "rgba(14, 14, 14, 0.8)",
-                  backdropFilter: "blur(10px)",
+                  bgcolor: "rgba(7, 13, 28, 0.88)",
                   color: "white",
                   height: "100%",
-                  borderLeft: "4px solid",
-                  borderLeftColor:
+                  borderRadius: 5,
+                  border: "1px solid rgba(93, 145, 255, 0.12)",
+                  boxShadow: "0 16px 40px rgba(2, 8, 24, 0.25)",
+                  borderTop: "3px solid",
+                  borderTopColor:
                     index === 0
                       ? "#a56eff"
                       : index === 1
@@ -133,7 +121,7 @@ export default function Experiencia() {
                   <Typography
                     variant="body2"
                     sx={{
-                      color: "#bdbdbd",
+                      color: "var(--text-muted)",
                       mb: 0.5,
                     }}
                   >
@@ -142,7 +130,7 @@ export default function Experiencia() {
                   <Typography
                     variant="caption"
                     sx={{
-                      color: "#1976d2",
+                      color: "var(--brand)",
                       fontWeight: "bold",
                     }}
                   >
@@ -153,7 +141,7 @@ export default function Experiencia() {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: "#bdbdbd",
+                    color: "var(--text-muted)",
                     mb: 2,
                     lineHeight: 1.6,
                   }}
@@ -166,7 +154,7 @@ export default function Experiencia() {
                     <Typography
                       variant="subtitle2"
                       sx={{
-                        color: "#1976d2",
+                        color: "var(--brand)",
                         fontWeight: "bold",
                         mb: 1,
                       }}
@@ -177,7 +165,7 @@ export default function Experiencia() {
                       component="ul"
                       sx={{
                         pl: 2,
-                        color: "#bdbdbd",
+                        color: "var(--text-muted)",
                         fontSize: "0.875rem",
                         "& li": {
                           mb: 0.5,
@@ -203,33 +191,33 @@ export default function Experiencia() {
                           color: tech.cor,
                           fontWeight: 500,
                           fontSize: "0.75rem",
+                          border: "1px solid rgba(93, 145, 255, 0.08)",
                         }}
                       />
                     ))}
                   </Box>
                 )}
-              </Paper>
+              </Box>
             </Box>
           ))}
         </Box>
 
-        {/* Seção de Habilidades & Conceitos */}
-        <Paper
-          elevation={3}
+        <Box
           sx={{
-            p: 4,
-            mt: 6,
-            bgcolor: "rgba(14, 14, 14, 0.8)",
-            backdropFilter: "blur(10px)",
+            p: { xs: 2.2, md: 3 },
+            mt: 2.5,
+            bgcolor: "rgba(7, 13, 28, 0.88)",
             color: "white",
+            borderRadius: 5,
+            border: "1px solid rgba(93, 145, 255, 0.12)",
           }}
         >
           <Typography
-            variant="h5"
+            variant="h6"
             sx={{
               fontWeight: "bold",
               mb: 3,
-              color: "#1976d2",
+              color: "var(--text-main)",
             }}
           >
             Habilidades & Conceitos Técnicos
@@ -262,51 +250,53 @@ export default function Experiencia() {
 
             ].map((categoria, idx) => (
               <Box key={idx}>
-                <Card
+                <Box
                   sx={{
-                    bgcolor: "#111122",
-                    border: "1px solid rgba(25, 118, 210, 0.3)",
+                    bgcolor: "rgba(255,255,255,0.02)",
+                    border: "1px solid rgba(93, 145, 255, 0.08)",
+                    borderRadius: 4,
+                    p: 2,
+                    height: "100%",
                   }}
                 >
-                  <CardContent>
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        color: "#1976d2",
-                        fontWeight: "bold",
-                        mb: 1.5,
-                      }}
-                    >
-                      {categoria.title}
-                    </Typography>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: 0.8,
-                      }}
-                    >
-                      {categoria.items.map((item, i) => (
-                        <Typography
-                          key={i}
-                          variant="body2"
-                          sx={{
-                            color: "#bdbdbd",
-                            pl: 1,
-                            borderLeft: "2px solid #1976d2",
-                          }}
-                        >
-                          {item}
-                        </Typography>
-                      ))}
-                    </Box>
-                  </CardContent>
-                </Card>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      color: "var(--brand)",
+                      fontWeight: "bold",
+                      mb: 1.5,
+                      fontSize: "1rem",
+                    }}
+                  >
+                    {categoria.title}
+                  </Typography>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 0.8,
+                    }}
+                  >
+                    {categoria.items.map((item, i) => (
+                      <Typography
+                        key={i}
+                        variant="body2"
+                        sx={{
+                          color: "var(--text-muted)",
+                          pl: 1,
+                          borderLeft: "2px solid rgba(59, 130, 246, 0.4)",
+                        }}
+                      >
+                        {item}
+                      </Typography>
+                    ))}
+                  </Box>
+                </Box>
               </Box>
             ))}
           </Box>
-        </Paper>
-      </Container>
+        </Box>
+      </Box>
     </Box>
   );
 }

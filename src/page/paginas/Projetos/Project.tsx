@@ -1,279 +1,139 @@
-import { useState } from "react";
-import {
-  Box,
-  Container,
-  Typography,
-  IconButton,
-  styled,
-  useTheme,
-} from "@mui/material";
-import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+import { Box, Typography, Chip } from "@mui/material";
+import LaunchRoundedIcon from "@mui/icons-material/LaunchRounded";
 import { ProjetosData } from "../../../componentes/Componentes";
 import { FaGithub } from "react-icons/fa";
-import type { IconType } from "react-icons";
-
-
-// 🔸 Estilo do container dos vídeos
-const VideoContainer = styled("div")(({ theme }) => ({
-  position: "relative",
-  width: "100%",
-  overflow: "hidden",
-  borderRadius: 12,
-  boxShadow: "0 4px 16px rgba(0,0,0,0.5)",
-  "& video, & iframe": {
-    width: "100%",
-    height: "100%",
-    display: "block",
-    objectFit: "cover",
-    borderRadius: 12,
-  },
-  [theme.breakpoints.down("md")]: { borderRadius: 8 },
-  [theme.breakpoints.down("sm")]: { borderRadius: 6 },
-}));
 
 export default function Projetos() {
-  const theme = useTheme();
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const featuredProjects = ProjetosData.slice(0, 3).map((project) => {
+    const youtubeId = project.video?.match(/(?:embed\/|watch\?v=)([\w-]{11})/)?.[1];
 
-  const handlePrev = () =>
-    setCurrentIndex((prev) =>
-      prev === 0 ? ProjetosData.length - 1 : prev - 1
-    );
-
-  const handleNext = () =>
-    setCurrentIndex((prev) =>
-      prev === ProjetosData.length - 1 ? 0 : prev + 1
-    );
-
-  const currentProject = ProjetosData[currentIndex];
+    return {
+      ...project,
+      thumbnail: youtubeId
+        ? `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
+        : "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    };
+  });
 
   return (
     <Box
       id="projetos"
       sx={{
-        position: "relative",
-        backgroundColor: "#050505",
-        minHeight: "100vh",
-        py: 10,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        overflow: "hidden",
+        background: "var(--panel-bg)",
+        border: "1px solid var(--panel-border)",
+        borderRadius: 6,
+        px: { xs: 2, md: 3 },
+        py: { xs: 2.5, md: 3 },
       }}
     >
-     
-      {/* 🔹 CONTEÚDO PRINCIPAL */}
-      <Container
-        maxWidth="lg"
+      <Box
         sx={{
-          textAlign: "center",
-          position: "relative",
-          zIndex: 1,
-         
+          display: "flex",
+          alignItems: { xs: "flex-start", md: "center" },
+          justifyContent: "space-between",
+          flexDirection: { xs: "column", md: "row" },
+          gap: 1,
+          mb: 2.5,
         }}
       >
-        
-        <Typography
-          variant="h4"
-          sx={{
-            color: "primary.main",
-            fontWeight: "bold",
-            mb: 6,
-            fontFamily: "-apple-system, Roboto, sans-serif",
-            fontSize: 42,
-          }}
+        <Box>
+          <Typography variant="h5" sx={{ color: "var(--text-main)", fontWeight: 800, fontFamily: "var(--font-display)" }}>
+            Projetos em Destaque
+          </Typography>
+          <Typography sx={{ mt: 0.8, color: "var(--text-muted)" }}>
+            Soluções full stack com foco em APIs, integrações e interfaces modernas.
+          </Typography>
+        </Box>
+        <Box
+          component="a"
+          href="https://github.com/Vitor-S-G-C?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ color: "var(--brand)", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 0.7 }}
         >
-          Meus Projetos
-        </Typography>
+          Ver todos os projetos
+          <LaunchRoundedIcon sx={{ fontSize: 18 }} />
+        </Box>
+      </Box>
 
-        {/* 🧭 Carrossel de Projetos */}
-        <Box sx={{ position: "relative", margin: "auto", maxWidth: 900 }}>
-          {currentProject.video ? (
-            currentProject.video.includes("youtube") ? (
-              <VideoContainer style={{ height: 500 }}>
-                <iframe
-                  src={currentProject.video}
-                  title={currentProject.name}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </VideoContainer>
-            ) : (
-              <VideoContainer style={{ height: 500 }}>
-                <video src={currentProject.video} controls muted playsInline />
-              </VideoContainer>
-            )
-          ) : (
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", xl: "repeat(3, minmax(0, 1fr))" },
+          gap: 2,
+        }}
+      >
+        {featuredProjects.map((project) => (
+          <Box
+            key={project.name}
+            sx={{
+              height: "100%",
+              overflow: "hidden",
+              borderRadius: 5,
+              background: "rgba(7, 13, 28, 0.88)",
+              border: "1px solid rgba(93, 145, 255, 0.12)",
+              boxShadow: "0 16px 40px rgba(2, 8, 24, 0.32)",
+            }}
+          >
             <Box
               component="img"
-              alt={currentProject.name}
-              sx={{
-                width: "100%",
-                height: 500,
-                objectFit: "cover",
-                borderRadius: 3,
-                boxShadow: "0 4px 16px rgba(0,0,0,0.5)",
-              }}
+              src={project.thumbnail}
+              alt={project.name}
+              sx={{ width: "100%", height: 210, objectFit: "cover", display: "block" }}
             />
-          )}
+            <Box sx={{ p: 2.2 }}>
+              <Typography sx={{ color: "#62a3ff", fontWeight: 700, fontSize: "1.08rem" }}>
+                {project.name}
+              </Typography>
+              <Typography sx={{ color: "var(--text-muted)", mt: 1, minHeight: 72, lineHeight: 1.65, fontSize: "0.92rem" }}>
+                {project.description}
+              </Typography>
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.8, mt: 1.5 }}>
+                {project.techs?.slice(0, 4).map((tech) => {
+                  const Icon = tech.icon;
 
-          {/* Botões de navegação */}
-          <IconButton
-            onClick={handlePrev}
-            aria-label="Projeto anterior"
-            sx={{
-              position: "absolute",
-              top: "50%",
-              left: 10,
-              transform: "translateY(-50%)",
-              backgroundColor: "rgba(0,0,0,0.4)",
-              backdropFilter: "blur(4px)",
-              "&:hover": { backgroundColor: "rgba(0,0,0,0.6)" },
-              color: "#fff",
-            }}
-          >
-            <ArrowBackIos />
-          </IconButton>
-
-          <IconButton
-            onClick={handleNext}
-            aria-label="Próximo projeto"
-            sx={{
-              position: "absolute",
-              top: "50%",
-              right: 10,
-              transform: "translateY(-50%)",
-              backgroundColor: "rgba(0,0,0,0.4)",
-              backdropFilter: "blur(4px)",
-              "&:hover": { backgroundColor: "rgba(0,0,0,0.6)" },
-              color: "#fff",
-            }}
-          >
-            <ArrowForwardIos />
-          </IconButton>
-        </Box>
-
-        {/* 🔸 Nome e Descrição */}
-        <Typography
-          variant="h5"
-          sx={{
-            color: "white",
-            mt: 3,
-            fontWeight: "bold",
-            letterSpacing: 0.5,
-          }}
-        >
-          {currentProject.name}
-        </Typography>
-
-        <Typography
-          variant="body1"
-          sx={{
-            color: "grey.400",
-            mt: 1,
-            maxWidth: 700,
-            mx: "auto",
-            fontSize: 16,
-            lineHeight: 1.6,
-          }}
-        >
-          {currentProject.description}
-        </Typography>
-
-        {/* 🔸 Tecnologias */}
-        <Box
-          sx={{
-            mt: 4,
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            gap: 3,
-          }}
-        >
-          {currentProject.techs?.map((tech, idx) => {
-            const TechIconComponent = tech.icon as IconType | undefined;
-            return (
-              <Box
-                key={idx}
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  transition: "0.3s",
-                  "&:hover .tech-icon": {
-                    filter: "none",
-                    transform: "scale(1.1)",
-                  },
-                }}
-              >
-                {TechIconComponent ? (
-                  <Box
-                    className="tech-icon"
-                    sx={{
-                      height: 50,
-                      width: 50,
-                      mb: 1,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: tech.tema || "#ddd",
-                      filter: "grayscale(100%) brightness(0.7)",
-                      transition: "0.3s",
-                      "& svg": {
-                        width: "100%",
-                        height: "100%",
-                      },
-                    }}
-                  >
-                    <TechIconComponent />
-                  </Box>
-                ) : (
-                  <Box
-                    className="tech-icon"
-                    component="img"
-                    src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.src}/${tech.src}-original.svg`}
-                    alt={`${tech.name} logo`}
-                    sx={{
-                      height: 50,
-                      mb: 1,
-                      filter: "grayscale(100%) brightness(0.7)",
-                      transition: "0.3s",
-                    }}
-                  />
-                )}
-                <Typography
-                  variant="caption"
-                  sx={{ color: "grey.400", fontWeight: 500 }}
-                >
-                  {tech.name}
-                </Typography>
+                  return (
+                    <Chip
+                      key={`${project.name}-${tech.name}`}
+                      icon={Icon ? <Icon /> : undefined}
+                      label={tech.name}
+                      sx={{
+                        height: 28,
+                        color: "#cddcff",
+                        bgcolor: "rgba(255,255,255,0.04)",
+                        border: "1px solid rgba(93, 145, 255, 0.08)",
+                        "& .MuiChip-icon": { color: tech.tema || "var(--brand)", fontSize: 16 },
+                      }}
+                    />
+                  );
+                })}
               </Box>
-            );
-          })}
-        </Box>
-
-        {/* 🔸 Link do GitHub */}
-        {currentProject.github && (
-          <Box>
-            <a
-              href={currentProject.github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub
-                size={50}
-                color={theme.palette.primary.main}
-                style={{
-                  margin: "1.5rem",
-                  transition: "0.3s",
-                }}
-              />
-            </a>
+              <Box sx={{ display: "flex", gap: 2, mt: 2, flexWrap: "wrap" }}>
+                <Box
+                  component="a"
+                  href={project.video}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ color: "#62a3ff", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 0.6 }}
+                >
+                  Ver Projeto
+                  <LaunchRoundedIcon sx={{ fontSize: 16 }} />
+                </Box>
+                <Box
+                  component="a"
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ color: "#62a3ff", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 0.6 }}
+                >
+                  GitHub
+                  <FaGithub size={15} />
+                </Box>
+              </Box>
+            </Box>
           </Box>
-        )}
-      </Container>
+        ))}
+      </Box>
     </Box>
   );
 }
