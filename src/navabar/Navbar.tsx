@@ -18,7 +18,7 @@ import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
 import WorkOutlineRoundedIcon from "@mui/icons-material/WorkOutlineRounded";
 import FolderOpenRoundedIcon from "@mui/icons-material/FolderOpenRounded";
 // import MilitaryTechRoundedIcon from "@mui/icons-material/MilitaryTechRounded";
-// import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
+import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Avatar from "../assets/Avatar.png";
 import { DownloadCurriculo } from "../componentes/DownloadCurriculo";
@@ -57,7 +57,7 @@ export default function Sidebar() {
     { key: "projetos", label: "Projetos", id: "projetos", icon: <FolderOpenRoundedIcon fontSize="small" /> },
     { key: "experiencia", label: "Experiência", id: "experiencia", icon: <WorkOutlineRoundedIcon fontSize="small" /> },
     // { key: "certificados", label: "Certificados", id: "certificados", icon: <MilitaryTechRoundedIcon fontSize="small" /> },
-    // { key: "contato", label: "Contato", id: "contato", icon: <MailOutlineRoundedIcon fontSize="small" /> },
+    { key: "contato", label: "Contato", id: "contato", icon: <MailOutlineRoundedIcon fontSize="small" /> },
   ];
 
   const scrollToSection = (id: string) => {

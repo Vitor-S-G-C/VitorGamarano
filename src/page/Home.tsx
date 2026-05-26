@@ -4,7 +4,7 @@ import Hero from "./paginas/About";
 import Tecnologias from "./paginas/Tecnologias";
 import Experiencia from "./paginas/Experiencia";
 import Projetos from "./paginas/Projetos/Project";
-// import RedesSociais from "./paginas/social/RedesSociais";
+import RedesSociais from "./paginas/social/RedesSociais";
 // import Certificados from "./paginas/conquistas/Certificado";
 
 const SIDEBAR_WIDTH = 250;
@@ -58,9 +58,9 @@ const Home = () => {
           {/* <section id="certificados">
             <Certificados />
           </section> */}
-          {/* <section id="contato">
+          <section id="contato">
             <RedesSociais />
-          </section> */}
+          </section>
         </Box>
       </Box>
     </Container>
