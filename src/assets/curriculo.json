@@ -1,33 +1,78 @@
 {
-  "nome": "Vitor Gadamarano",
-  "titulo": "Programador Júnior – Full-Stack Desenvolvimento ASP.NET Core",
+  "nome": "Vitor Gamarano",
+  "titulo": "Desenvolvedor Back-end .NET Júnior | Desenvolvedor Full Stack Júnior",
   "email": "vitorgamarano1@gmail.com",
-  "telefone": "(32) 991253434",
+  "telefone": "(32) 99125-3434",
   "github": "https://github.com/Vitor-S-G-C",
   "linkedin": "https://www.linkedin.com/in/vitor-gamarano/",
-  "localizacao": "Juiz de Fora, Minas Gerais",
-  "resumoProfissional": "Estudante de Engenharia de Software e programador júnior com experiência em ASP.NET Core 4.5, ASP.NET Core 8 e C#, manutenção de software legado e implementação de novas funcionalidades. Participante de hackathons como HackMeridian (2º lugar na categoria principal), desenvolvendo soluções full-stack e integrando tecnologias como React, TypeScript, Python e Docker. Aplicação de SOLID, POO e padrões de design. Busco crescimento técnico.",
+  "localizacao": "Juiz de Fora, MG",
+  "resumoProfissional": "Desenvolvedor júnior com experiência profissional em manutenção e evolução de sistemas legados, criação de funcionalidades e modernização de interfaces em ambiente corporativo. Atuação com ASP.NET Framework 4.5.2, C#, JavaScript e Bootstrap, além de projetos próprios com .NET, Angular e TypeScript. Perfil focado em desenvolvimento full stack, integração com APIs e melhoria contínua de qualidade e usabilidade dos sistemas.",
   "experienciasProfissionais": [
     {
-      "empresa": "AltPermut",
-      "titulo": "Programador Júnior – Desenvolvimento ASP.NET Core",
+      "empresa": "AltPermuta",
+      "titulo": "Programador Júnior",
       "periodo": "12/2025 - Atual",
-      "descricao": "Manutenção e atualização de software legado em ASP.NET Core 4.5 e C#. Implementação de novas funcionalidades em sistema. Integração com SQL Server e APIs internas. Aplicação de boas práticas, princípios SOLID e padrões de design. Publicação de atualizações e correções de bugs no sistema. Criação, elaboração e planejamento de novos layouts."
+      "descricao": "Desenvolvimento e manutenção de funcionalidades em sistema legado corporativo com ASP.NET Framework 4.5.2 e C#. Atualização de layouts para melhorar usabilidade da plataforma. Correção de falhas críticas no módulo de moeda digital. Ajustes contínuos e sustentação de funcionalidades em produção.",
+      "tecnologias": [
+        "ASP.NET Framework 4.5.2",
+        "C#",
+        "JavaScript",
+        "Bootstrap",
+        "SQL Server"
+      ]
+    },
+    {
+      "empresa": "Autônomo",
+      "titulo": "Desenvolvedor de Software",
+      "periodo": "05/2026 - Atual",
+      "descricao": "Desenvolvimento de sistemas web e landing pages sob demanda. Implementação de interfaces responsivas e funcionalidades personalizadas conforme necessidade de negócio.",
+      "tecnologias": [
+        ".NET Core 2.1",
+        "Angular",
+        "TypeScript",
+        "JavaScript",
+        "Bootstrap"
+      ]
     }
   ],
   "formacaoAcademica": [
     {
       "grau": "Engenharia de Software",
-      "instituicao": "Centro Universitário Leonardo da Vinci (Uniasselvi)",
-      "periodo": "2023 - 2026",
-      "modalidade": "Noturno - EAD"
+      "instituicao": "Centro Universitário Leonardo da Vinci",
+      "periodo": "Previsão de conclusão: 06/2027",
+      "modalidade": "EAD"
     }
   ],
   "habilidadesTecnicas": {
-    "backend": ["C#", "ASP.NET Core", "SQL Server", "APIs REST", "POO", "SOLID", "MVC", "Git"],
-    "frontend": ["JavaScript", "TypeScript", "React", "Bootstrap", "Tailwind", "HTML", "CSS"],
-    "softSkills": ["Trabalho em equipe", "Comunicação", "Proatividade", "Resolução de problemas"],
-    "conceitos": ["SOLID", "POO", "Padrões de Design", "APIs REST", "Full-Stack Development"]
+    "backend": [
+      "C#",
+      "ASP.NET Framework",
+      "ASP.NET Core",
+      "APIs REST",
+      "SQL Server",
+      "MongoDB"
+    ],
+    "frontend": [
+      "React",
+      "Angular",
+      "TypeScript",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Bootstrap"
+    ],
+    "ferramentas": [
+      "Git",
+      "GitHub",
+      "Docker",
+      "Postman"
+    ],
+    "softSkills": [
+      "Trabalho em equipe",
+      "Comunicação",
+      "Proatividade",
+      "Resolução de problemas"
+    ]
   },
   "idiomas": [
     {
@@ -36,17 +81,16 @@
     },
     {
       "idioma": "Inglês",
-      "nivel": "Básico"
-    },
-    {
-      "idioma": "Espanhol",
-      "nivel": "Intermediário"
+      "nivel": "A2 (básico técnico)"
     }
+  ],
+  "conquistas": [
+    "2º lugar no Hackathon Stella Rio 2025"
   ],
   "certificacoes": [
     {
       "nome": "Desenvolvimento Web Front-End",
-      "instituicao": "Codi Academy / CRITT – UFJF",
+      "instituicao": "Codi Academy / CRITT - UFJF",
       "periodo": "2024 - 2025"
     },
     {
@@ -57,8 +101,18 @@
   ],
   "projetosPessoais": [
     {
-      "nome": "HackMeridian",
-      "descricao": "2º lugar na categoria principal - Solução full-stack com React, TypeScript, Python e Docker"
+      "nome": "TaskFlow",
+      "stack": "ASP.NET Core MVC, .NET, SQL Server, Bootstrap",
+      "github": "https://github.com/Vitor-S-G-C/TaskFlow",
+      "deploy": "https://www.youtube.com/embed/IyeQJJ6uFxQ",
+      "descricao": "Sistema de gestão de tarefas com arquitetura em camadas, incluindo criação, edição, filtros, conclusão e exclusão de tarefas com validações server-side."
+    },
+    {
+      "nome": "IAmeal",
+      "stack": "Python, FastAPI, Vue.js, JavaScript, MongoDB, Docker",
+      "github": "https://github.com/Vitor-S-G-C/IAmail",
+      "deploy": "https://www.youtube.com/embed/3OlFbIqDZnI",
+      "descricao": "Gerenciador de emails com IA para classificar mensagens e automatizar respostas, com suporte a conteúdos em PDF/TXT."
     }
   ]
 }

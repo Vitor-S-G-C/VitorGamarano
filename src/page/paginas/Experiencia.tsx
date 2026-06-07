@@ -9,36 +9,36 @@ import { FaDatabase } from "react-icons/fa";
 export default function Experiencia() {
   const experiencias = [
     {
-      titulo: "Programador Júnior - Desenvolvimento ASP.NET Core / C#",
-      empresa: "AltPermut",
+      titulo: "Programador Júnior - Desenvolvimento ASP.NET Framework / C#",
+      empresa: "AltPermuta",
       periodo: "12/2025 - Atual",
       descricao:
-        "Manutenção e atualização de software legado em ASP.NET Core 4.5 e C#. Implementação de novas funcionalidades em sistema. Integração com SQL Server e APIs internas. Colaboração com supervisor técnico em projetos full-stack.",
+        "Atuação em sistema legado corporativo com ASP.NET Framework 4.5.2 e C#, desenvolvendo novas funcionalidades, atualizando layouts e realizando sustentação técnica em produção.",
       responsabilidades: [
-        "Manutenção e atualização de software legado em ASP.NET Core 4.5 e C#",
-        "Implementação de novas funcionalidades em sistema",
+        "Manutenção e evolução de sistema legado em ASP.NET Framework 4.5.2 e C#",
+        "Desenvolvimento de novas funcionalidades para ambiente empresarial",
+        "Atualização de layouts para melhorar usabilidade da plataforma",
+        "Correção de falhas críticas no sistema de moeda digital",
         "Integração com SQL Server e APIs internas",
         "Aplicação de boas práticas, princípios SOLID e padrões de design",
-        "Colaboração com supervisor técnico em projetos full-stack",
       ],
       tecnologias: [
         { name: "C#", icon: SiDotnet, cor: "#a56eff" },
-        { name: "ASP.NET Core", icon: SiDotnet, cor: "#a56eff" },
+        { name: "ASP.NET Framework", icon: SiDotnet, cor: "#a56eff" },
         { name: "SQL Server", icon: FaDatabase, cor: "#fad222ff" },
       ],
     },
     {
-      titulo: "Desenvolvedor Full-Stack - Hackathons",
-      empresa: "HackMeridian",
-      periodo: "2025",
+      titulo: "Desenvolvedor de Software - Autônomo",
+      empresa: "Projetos Freelance",
+      periodo: "05/2026 - Atual",
       descricao:
-        "Participante de hackathon HackMeridian, conquistando 2º lugar na categoria principal. Desenvolvimento de solução full-stack integrando múltiplas tecnologias.",
+        "Desenvolvimento de sistemas web e landing pages sob demanda com foco em responsividade, experiência de usuário e entregas rápidas.",
       responsabilidades: [
-        "Desenvolvimento full-stack em ambiente de hackathon",
-        "Integração de React, TypeScript, Python e Docker",
-        "Implementação rápida de funcionalidades",
-        "Trabalho colaborativo em equipe sob pressão",
-        "Criação de solução inovadora que conquistou 2º lugar",
+        "Desenvolvimento de sistemas e landing pages para diferentes necessidades",
+        "Implementação de interfaces responsivas e modernas",
+        "Construção de funcionalidades personalizadas com foco em negócio",
+        "Atuação full stack com .NET Core, Angular e TypeScript",
       ],
       tecnologias: [
         { name: "React", icon: SiReact, cor: "#61dafb" },

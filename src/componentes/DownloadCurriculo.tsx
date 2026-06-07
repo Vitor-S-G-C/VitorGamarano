@@ -40,7 +40,7 @@ export function DownloadCurriculo() {
     doc.setFont("helvetica", "normal");
     doc.setFontSize(9);
     doc.setTextColor(80, 80, 80);
-    const contactLine = `${curriculo.localizacao}  |  ${curriculo.telefone}  |  ${curriculo.email}  |  ${curriculo.linkedin}`;
+    const contactLine = `${curriculo.localizacao}  |  ${curriculo.telefone}  |  ${curriculo.email}  |  ${curriculo.linkedin}  |  ${curriculo.github}`;
     doc.text(contactLine, margin, y, { maxWidth: contentW });
     y += 10;
 
@@ -48,6 +48,22 @@ export function DownloadCurriculo() {
     doc.setLineWidth(0.3);
     doc.line(margin, y, margin + contentW, y);
     y += 8;
+
+    // ── Objetivo ─────────────────────────────────────────────
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(12);
+    doc.setTextColor(20, 20, 20);
+    doc.text("Objetivo", margin, y);
+    y += 3;
+    drawSectionLine();
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(9.5);
+    doc.setTextColor(50, 50, 50);
+    const objetivoLines = doc.splitTextToSize(curriculo.titulo, contentW);
+    addPageIfNeeded(objetivoLines.length * 5);
+    doc.text(objetivoLines, margin, y);
+    y += objetivoLines.length * 5 + 8;
 
     // ── Resumo ───────────────────────────────────────────────
     doc.setFont("helvetica", "bold");
@@ -158,6 +174,88 @@ export function DownloadCurriculo() {
       y += valueLines.length * 5;
     }
     y += 4;
+
+    // ── Projetos ─────────────────────────────────────────────
+    addPageIfNeeded(20);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(12);
+    doc.setTextColor(20, 20, 20);
+    doc.text("Projetos", margin, y);
+    y += 3;
+    drawSectionLine();
+
+    for (const projeto of curriculo.projetosPessoais) {
+      addPageIfNeeded(24);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(10);
+      doc.setTextColor(20, 20, 20);
+      doc.text(projeto.nome, margin, y);
+      y += 5;
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(9.5);
+      doc.setTextColor(50, 50, 50);
+
+      if (projeto.stack) {
+        const stackLines = doc.splitTextToSize(`Stack: ${projeto.stack}`, contentW);
+        addPageIfNeeded(stackLines.length * 5);
+        doc.text(stackLines, margin + 2, y);
+        y += stackLines.length * 5;
+      }
+
+      const descricaoLines = doc.splitTextToSize(projeto.descricao, contentW - 2);
+      addPageIfNeeded(descricaoLines.length * 5);
+      doc.text(descricaoLines, margin + 2, y);
+      y += descricaoLines.length * 5;
+
+      const linkProjeto = projeto.github || projeto.deploy;
+      if (linkProjeto) {
+        const linkLines = doc.splitTextToSize(`Link: ${linkProjeto}`, contentW - 2);
+        addPageIfNeeded(linkLines.length * 5);
+        doc.text(linkLines, margin + 2, y);
+        y += linkLines.length * 5;
+      }
+
+      y += 4;
+    }
+
+    // ── Idiomas ──────────────────────────────────────────────
+    addPageIfNeeded(20);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(12);
+    doc.setTextColor(20, 20, 20);
+    doc.text("Idiomas", margin, y);
+    y += 3;
+    drawSectionLine();
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(9.5);
+    doc.setTextColor(50, 50, 50);
+    for (const idioma of curriculo.idiomas) {
+      addPageIfNeeded(6);
+      doc.text(`• ${idioma.idioma}: ${idioma.nivel}`, margin + 2, y);
+      y += 6;
+    }
+
+    // ── Conquistas ───────────────────────────────────────────
+    if (curriculo.conquistas?.length) {
+      addPageIfNeeded(20);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(12);
+      doc.setTextColor(20, 20, 20);
+      doc.text("Conquistas", margin, y);
+      y += 3;
+      drawSectionLine();
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(9.5);
+      doc.setTextColor(50, 50, 50);
+      for (const conquista of curriculo.conquistas) {
+        addPageIfNeeded(6);
+        doc.text(`• ${conquista}`, margin + 2, y);
+        y += 6;
+      }
+    }
 
     // ── Certificações ────────────────────────────────────────
     addPageIfNeeded(20);
