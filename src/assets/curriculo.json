@@ -10,7 +10,7 @@
   "experienciasProfissionais": [
     {
       "empresa": "AltPermuta",
-      "titulo": "Programador – Desenvolvimento .NET ",
+      "titulo": "Desenvolvedor Back-end .NET Júnior – Desenvolvimento .NET ",
       "periodo": "12/2025 - Atual",
       "descricao": "Manutenção e atualização de software legado em ASP.NET Framework 4.5.2 e C#. Implementação de novas funcionalidades para atender demandas de negócio e melhorias operacionais. Integração com SQL Server e APIs internas. Aplicação de boas práticas, princípios SOLID e padrões de design. Publicação de atualizações em ambiente de produção e correção de falhas identificadas pelos usuários. Criação, elaboração e planejamento de novos layouts."
     }
@@ -25,7 +25,7 @@
     }
   ],
   "habilidadesTecnicas": {
-    "backend": ["C#", "ASP.NET Framework", "ASP.NET Core", "APIs REST", "SQL Server", "MongoDB", "RabbitMQ", "Docker"],
+    "backend": ["C#", "ASP.NET Framework", "ASP.NET Core", "APIs REST", "SQL Server", "MongoDB", "RabbitMQ"],
     "frontend": ["JavaScript", "TypeScript", "React", "Bootstrap", "Tailwind", "HTML", "CSS"],
     "ferramentas": ["Git", "GitHub", "Docker"],
     "sistemasOperacionais": ["Windows", "Linux (WSL)"],
