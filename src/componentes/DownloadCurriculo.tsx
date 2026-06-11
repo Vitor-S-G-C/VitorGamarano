@@ -125,7 +125,14 @@ export function DownloadCurriculo() {
       doc.setFont("helvetica", "normal");
       doc.setFontSize(9.5);
       doc.setTextColor(60, 60, 60);
-      doc.text(`Graduação: ${edu.grau}  |  ${edu.modalidade}`, margin, y);
+      const detalhesFormacao = [
+        `Graduação: ${edu.grau}`,
+        `Modalidade: ${edu.modalidade}`,
+      ];
+      if (edu.previsaoConclusao) {
+        detalhesFormacao.push(`Previsão de conclusão: ${edu.previsaoConclusao}`);
+      }
+      doc.text(detalhesFormacao.join("  |  "), margin, y);
       y += 8;
     }
 
@@ -142,6 +149,8 @@ export function DownloadCurriculo() {
     const skillRows: [string, string][] = [
       ["Backend", skills.backend.join(", ")],
       ["Frontend", skills.frontend.join(", ")],
+      ["Ferramentas", (skills.ferramentas ?? []).join(", ")],
+      ["Sistemas Operacionais", (skills.sistemasOperacionais ?? []).join(", ")],
       ["Soft Skills", skills.softSkills.join(", ")],
     ];
     doc.setFontSize(9.5);
@@ -158,6 +167,62 @@ export function DownloadCurriculo() {
       y += valueLines.length * 5;
     }
     y += 4;
+
+    // ── Idiomas ─────────────────────────────────────────────
+    addPageIfNeeded(20);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(12);
+    doc.setTextColor(20, 20, 20);
+    doc.text("Idiomas", margin, y);
+    y += 3;
+    drawSectionLine();
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(9.5);
+    doc.setTextColor(50, 50, 50);
+    for (const idioma of curriculo.idiomas) {
+      addPageIfNeeded(6);
+      doc.text(`• ${idioma.idioma}: ${idioma.nivel}`, margin + 2, y);
+      y += 6;
+    }
+    y += 2;
+
+    // ── Projetos Pessoais ───────────────────────────────────
+    addPageIfNeeded(20);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(12);
+    doc.setTextColor(20, 20, 20);
+    doc.text("Projetos Pessoais", margin, y);
+    y += 3;
+    drawSectionLine();
+
+    for (const projeto of curriculo.projetosPessoais) {
+      addPageIfNeeded(12);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(10);
+      doc.setTextColor(20, 20, 20);
+      doc.text(`• ${projeto.nome}`, margin + 2, y);
+      y += 5;
+
+      if (projeto.github) {
+        addPageIfNeeded(6);
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(9.5);
+        doc.setTextColor(35, 35, 35);
+        const githubLine = doc.splitTextToSize(`GitHub: ${projeto.github}`, contentW - 6);
+        doc.text(githubLine, margin + 6, y);
+        y += githubLine.length * 5;
+      }
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(9.5);
+      doc.setTextColor(50, 50, 50);
+      const descricaoProjeto = doc.splitTextToSize(projeto.descricao, contentW - 6);
+      addPageIfNeeded(descricaoProjeto.length * 5);
+      doc.text(descricaoProjeto, margin + 6, y);
+      y += descricaoProjeto.length * 5 + 3;
+    }
+    y += 1;
 
     // ── Certificações ────────────────────────────────────────
     addPageIfNeeded(20);

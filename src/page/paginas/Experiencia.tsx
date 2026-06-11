@@ -9,13 +9,13 @@ import { FaDatabase } from "react-icons/fa";
 export default function Experiencia() {
   const experiencias = [
     {
-      titulo: "Programador Júnior - Desenvolvimento ASP.NET Core / C#",
-      empresa: "AltPermut",
+      titulo: "Programador Júnior - Desenvolvimento .NET (ASP.NET Framework 4.5.2)",
+      empresa: "AltPermuta",
       periodo: "12/2025 - Atual",
       descricao:
-        "Manutenção e atualização de software legado em ASP.NET Core 4.5 e C#. Implementação de novas funcionalidades em sistema. Integração com SQL Server e APIs internas. Colaboração com supervisor técnico em projetos full-stack.",
+        "Manutenção e atualização de software legado em ASP.NET Framework 4.5.2 e C#. Implementação de novas funcionalidades em sistema. Integração com SQL Server e APIs internas. Colaboração com supervisor técnico em projetos full-stack.",
       responsabilidades: [
-        "Manutenção e atualização de software legado em ASP.NET Core 4.5 e C#",
+        "Manutenção e atualização de software legado em ASP.NET Framework 4.5.2 e C#",
         "Implementação de novas funcionalidades em sistema",
         "Integração com SQL Server e APIs internas",
         "Aplicação de boas práticas, princípios SOLID e padrões de design",
@@ -23,7 +23,7 @@ export default function Experiencia() {
       ],
       tecnologias: [
         { name: "C#", icon: SiDotnet, cor: "#a56eff" },
-        { name: "ASP.NET Core", icon: SiDotnet, cor: "#a56eff" },
+        { name: "ASP.NET Framework 4.5.2", icon: SiDotnet, cor: "#a56eff" },
         { name: "SQL Server", icon: FaDatabase, cor: "#fad222ff" },
       ],
     },
@@ -226,7 +226,7 @@ export default function Experiencia() {
           <Box
             sx={{
               display: "grid",
-              gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(4, 1fr)" },
+              gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(5, 1fr)" },
               gap: 2,
             }}
           >
@@ -245,7 +245,11 @@ export default function Experiencia() {
 },
 {
   title: "DevOps & Ferramentas",
-  items: ["Docker", "Git/GitHub"],
+  items: ["Git", "GitHub", "Docker"],
+},
+{
+  title: "Sistemas Operacionais",
+  items: ["Windows", "Linux (WSL)"],
 },
 
             ].map((categoria, idx) => (

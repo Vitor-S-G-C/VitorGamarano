@@ -1,31 +1,34 @@
 {
-  "nome": "Vitor Gadamarano",
-  "titulo": "Programador Júnior – Full-Stack Desenvolvimento ASP.NET Core",
+  "nome": "Vitor Gamarano",
+  "titulo": "Programador Júnior – Desenvolvimento .NET (ASP.NET Framework e ASP.NET Core)",
   "email": "vitorgamarano1@gmail.com",
   "telefone": "(32) 991253434",
   "github": "https://github.com/Vitor-S-G-C",
   "linkedin": "https://www.linkedin.com/in/vitor-gamarano/",
   "localizacao": "Juiz de Fora, Minas Gerais",
-  "resumoProfissional": "Estudante de Engenharia de Software e programador júnior com experiência em ASP.NET Core 4.5, ASP.NET Core 8 e C#, manutenção de software legado e implementação de novas funcionalidades. Participante de hackathons como HackMeridian (2º lugar na categoria principal), desenvolvendo soluções full-stack e integrando tecnologias como React, TypeScript, Python e Docker. Aplicação de SOLID, POO e padrões de design. Busco crescimento técnico.",
+  "resumoProfissional": "Programador Júnior com experiência profissional em manutenção e evolução de sistemas corporativos utilizando C#, ASP.NET Framework 4.5.2 e SQL Server. Experiência no desenvolvimento de novas funcionalidades, correção de bugs e modernização de interfaces. Possui projetos próprios utilizando ASP.NET Core 8, React, TypeScript, Python e Docker. Cursando Engenharia de Software e em constante evolução técnica.",
   "experienciasProfissionais": [
     {
-      "empresa": "AltPermut",
-      "titulo": "Programador Júnior – Desenvolvimento ASP.NET Core",
+      "empresa": "AltPermuta",
+      "titulo": "Programador – Desenvolvimento .NET ",
       "periodo": "12/2025 - Atual",
-      "descricao": "Manutenção e atualização de software legado em ASP.NET Core 4.5 e C#. Implementação de novas funcionalidades em sistema. Integração com SQL Server e APIs internas. Aplicação de boas práticas, princípios SOLID e padrões de design. Publicação de atualizações e correções de bugs no sistema. Criação, elaboração e planejamento de novos layouts."
+      "descricao": "Manutenção e atualização de software legado em ASP.NET Framework 4.5.2 e C#. Implementação de novas funcionalidades para atender demandas de negócio e melhorias operacionais. Integração com SQL Server e APIs internas. Aplicação de boas práticas, princípios SOLID e padrões de design. Publicação de atualizações em ambiente de produção e correção de falhas identificadas pelos usuários. Criação, elaboração e planejamento de novos layouts."
     }
   ],
   "formacaoAcademica": [
     {
       "grau": "Engenharia de Software",
       "instituicao": "Centro Universitário Leonardo da Vinci (Uniasselvi)",
-      "periodo": "2023 - 2026",
+      "periodo": "2023 - Atual",
+      "previsaoConclusao": "2027",
       "modalidade": "Noturno - EAD"
     }
   ],
   "habilidadesTecnicas": {
-    "backend": ["C#", "ASP.NET Core", "SQL Server", "APIs REST", "POO", "SOLID", "MVC", "Git"],
+    "backend": ["C#", "ASP.NET Framework", "ASP.NET Core", "APIs REST", "SQL Server", "MongoDB", "RabbitMQ", "Docker"],
     "frontend": ["JavaScript", "TypeScript", "React", "Bootstrap", "Tailwind", "HTML", "CSS"],
+    "ferramentas": ["Git", "GitHub", "Docker"],
+    "sistemasOperacionais": ["Windows", "Linux (WSL)"],
     "softSkills": ["Trabalho em equipe", "Comunicação", "Proatividade", "Resolução de problemas"],
     "conceitos": ["SOLID", "POO", "Padrões de Design", "APIs REST", "Full-Stack Development"]
   },
@@ -36,7 +39,7 @@
     },
     {
       "idioma": "Inglês",
-      "nivel": "Básico"
+      "nivel": "Básico para leitura de documentação técnica (A2)"
     },
     {
       "idioma": "Espanhol",
@@ -57,8 +60,18 @@
   ],
   "projetosPessoais": [
     {
+      "nome": "TaskFlow",
+      "github": "https://github.com/Vitor-S-G-C/TaskFlow",
+      "descricao": "Sistema de gestão de tarefas com ASP.NET Core MVC, arquitetura em camadas, validações server-side e interface responsiva."
+    },
+    {
+      "nome": "IAmeal",
+      "github": "https://github.com/Vitor-S-G-C/IAmail",
+      "descricao": "Gerenciador de e-mails com IA para classificar, organizar e responder mensagens automaticamente, com suporte a PDF e TXT."
+    },
+    {
       "nome": "HackMeridian",
-      "descricao": "2º lugar na categoria principal - Solução full-stack com React, TypeScript, Python e Docker"
+      "descricao": "2º lugar na categoria principal. Desenvolvimento de solução full-stack utilizando React, TypeScript, Python e Docker em ambiente colaborativo e com prazo reduzido."
     }
   ]
 }
