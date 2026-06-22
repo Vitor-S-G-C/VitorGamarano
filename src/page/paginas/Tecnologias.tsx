@@ -8,8 +8,7 @@ export default function Tecnologias() {
   const { t } = useLanguage();
   const stackAtual = [
     { ...imgData.csharp, name: "C#" },
-    { ...imgData.dotnet, name: ".NET Core" },
-    { ...imgData.aspnetcore, name: "ASP.NET Core" },
+    { ...imgData.aspnetcore, name: "ASP.NET" },
     { ...imgData.SqlServer, name: "SQL Server" },
     { ...imgData.html5, name: "HTML" },
     { ...imgData.css3, name: "CSS" },

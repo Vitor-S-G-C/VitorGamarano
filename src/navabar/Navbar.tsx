@@ -10,12 +10,11 @@ import {
   IconButton,
   Typography,
   styled,
-  Chip,
   Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
-import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
+import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
 import WorkOutlineRoundedIcon from "@mui/icons-material/WorkOutlineRounded";
 import FolderOpenRoundedIcon from "@mui/icons-material/FolderOpenRounded";
 // import MilitaryTechRoundedIcon from "@mui/icons-material/MilitaryTechRounded";
@@ -55,12 +54,12 @@ export default function Sidebar() {
   const { language, setLanguage, t } = useLanguage();
 
   const navItems: NavItem[] = [
-    { key: "inicio", label: t("nav.inicio"), id: "home", icon: <HomeRoundedIcon fontSize="small" /> },
-    { key: "habilidades", label: t("nav.habilidades"), id: "tecnologias", icon: <AutoAwesomeRoundedIcon fontSize="small" /> },
-    { key: "projetos", label: t("nav.projetos"), id: "projetos", icon: <FolderOpenRoundedIcon fontSize="small" /> },
-    { key: "experiencia", label: t("nav.experiencia"), id: "experiencia", icon: <WorkOutlineRoundedIcon fontSize="small" /> },
-    // { key: "certificados", label: "Certificados", id: "certificados", icon: <MilitaryTechRoundedIcon fontSize="small" /> },
-    { key: "contato", label: t("nav.contato"), id: "contato", icon: <MailOutlineRoundedIcon fontSize="small" /> },
+    { key: "inicio", label: t("nav.inicio"), id: "home", icon: <HomeRoundedIcon sx={{ fontSize: 25 }} /> },
+    { key: "habilidades", label: t("nav.habilidades"), id: "tecnologias", icon: <CodeRoundedIcon sx={{ fontSize: 25 }} /> },
+    { key: "projetos", label: t("nav.projetos"), id: "projetos", icon: <FolderOpenRoundedIcon sx={{ fontSize: 25 }} /> },
+    { key: "experiencia", label: t("nav.experiencia"), id: "experiencia", icon: <WorkOutlineRoundedIcon sx={{ fontSize: 25 }} /> },
+    // { key: "certificados", label: "Certificados", id: "certificados", icon: <MilitaryTechRoundedIcon sx={{ fontSize: 25 }} /> },
+    { key: "contato", label: t("nav.contato"), id: "contato", icon: <MailOutlineRoundedIcon sx={{ fontSize: 25 }} /> },
   ];
 
   const scrollToSection = (id: string) => {
@@ -222,14 +221,7 @@ export default function Sidebar() {
               <ListItemText
                 primary={label}
                 sx={{
-                  ml: 1.2,
-                  color: activeSection === id ? COLORS.active : COLORS.link,
-                  transition: "color 0.3s ease",
-                  "&:hover": { color: COLORS.hover },
-                  "& .MuiTypography-root": {
-                    fontSize: "0.96rem",
-                    fontWeight: activeSection === id ? 700 : 500,
-                  },
+                  display: "none",
                 }}
               />
             </ListItemButton>
@@ -237,34 +229,6 @@ export default function Sidebar() {
         ))}
       </List>
 
-      <Box
-        sx={{
-          mt: 2,
-          borderRadius: 4,
-          border: "1px solid rgba(89, 126, 208, 0.1)",
-          bgcolor: "rgba(7, 14, 29, 0.65)",
-          py: 2.5,
-          px: 2,
-        }}
-      >
-        <Chip
-          label={t("header.description")}
-          sx={{
-            whiteSpace: "normal",
-            height: "auto",
-            py: 1.2,
-            px: 1,
-            color: "#dce7ff",
-            bgcolor: "transparent",
-            border: "1px solid rgba(92, 128, 210, 0.14)",
-            "& .MuiChip-label": {
-              display: "block",
-              whiteSpace: "normal",
-              textAlign: "center",
-            },
-          }}
-        />
-      </Box>
     </Box>
   );
 
