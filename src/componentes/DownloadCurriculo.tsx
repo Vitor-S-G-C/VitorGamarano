@@ -2,8 +2,13 @@ import { Button, Tooltip } from "@mui/material";
 import { FaDownload } from "react-icons/fa";
 import { jsPDF } from "jspdf";
 import curriculo from "../assets/curriculo.json";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function DownloadCurriculo() {
+  const { language, t } = useLanguage();
+  const getString = (value: string | Record<string, string>) =>
+    typeof value === "object" ? value[language] ?? value["pt"] ?? "" : value;
+
   const downloadCurriculo = () => {
     const doc = new jsPDF({ unit: "mm", format: "a4" });
     const pageW = doc.internal.pageSize.getWidth();
@@ -34,13 +39,13 @@ export function DownloadCurriculo() {
 
     doc.setFontSize(11);
     doc.setTextColor(60, 60, 60);
-    doc.text(curriculo.titulo, margin, y);
+    doc.text(getString(curriculo.titulo), margin, y);
     y += 7;
 
     doc.setFont("helvetica", "normal");
     doc.setFontSize(9);
     doc.setTextColor(80, 80, 80);
-    const contactLine = `${curriculo.localizacao}  |  ${curriculo.telefone}  |  ${curriculo.email}  |  ${curriculo.linkedin}`;
+    const contactLine = `${getString(curriculo.localizacao)}  |  ${curriculo.telefone}  |  ${curriculo.email}  |  ${curriculo.linkedin}`;
     doc.text(contactLine, margin, y, { maxWidth: contentW });
     y += 10;
 
@@ -53,14 +58,14 @@ export function DownloadCurriculo() {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(12);
     doc.setTextColor(20, 20, 20);
-    doc.text("Resumo", margin, y);
+    doc.text(t("cv.summary"), margin, y);
     y += 3;
     drawSectionLine();
 
     doc.setFont("helvetica", "normal");
     doc.setFontSize(9.5);
     doc.setTextColor(50, 50, 50);
-    const resumoLines = doc.splitTextToSize(curriculo.resumoProfissional, contentW);
+    const resumoLines = doc.splitTextToSize(getString(curriculo.resumoProfissional), contentW);
     addPageIfNeeded(resumoLines.length * 5);
     doc.text(resumoLines, margin, y);
     y += resumoLines.length * 5 + 8;
@@ -70,7 +75,7 @@ export function DownloadCurriculo() {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(12);
     doc.setTextColor(20, 20, 20);
-    doc.text("Experiências", margin, y);
+    doc.text(t("cv.experiences"), margin, y);
     y += 3;
     drawSectionLine();
 
@@ -85,13 +90,13 @@ export function DownloadCurriculo() {
       doc.setFont("helvetica", "italic");
       doc.setFontSize(9.5);
       doc.setTextColor(60, 60, 60);
-      doc.text(exp.titulo, margin, y);
+      doc.text(getString(exp.titulo), margin, y);
       y += 5;
 
       doc.setFont("helvetica", "normal");
       doc.setFontSize(9.5);
       doc.setTextColor(50, 50, 50);
-      const bullets = exp.descricao.split(". ").filter(Boolean);
+      const bullets = getString(exp.descricao).split(". ").filter(Boolean);
       for (const bullet of bullets) {
         const lines = doc.splitTextToSize(`• ${bullet.trim().replace(/\.$/, "")}`, contentW - 4);
         addPageIfNeeded(lines.length * 5);
@@ -106,7 +111,7 @@ export function DownloadCurriculo() {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(12);
     doc.setTextColor(20, 20, 20);
-    doc.text("Educação", margin, y);
+    doc.text(t("cv.education"), margin, y);
     y += 3;
     drawSectionLine();
 
@@ -115,22 +120,22 @@ export function DownloadCurriculo() {
       doc.setFont("helvetica", "bold");
       doc.setFontSize(10);
       doc.setTextColor(20, 20, 20);
-      doc.text(edu.instituicao, margin, y);
+      doc.text(getString(edu.instituicao), margin, y);
 
       doc.setFont("helvetica", "normal");
       doc.setFontSize(10);
-      doc.text(edu.periodo, margin + contentW, y, { align: "right" });
+      doc.text(getString(edu.periodo), margin + contentW, y, { align: "right" });
       y += 5;
 
       doc.setFont("helvetica", "normal");
       doc.setFontSize(9.5);
       doc.setTextColor(60, 60, 60);
       const detalhesFormacao = [
-        `Graduação: ${edu.grau}`,
-        `Modalidade: ${edu.modalidade}`,
+        `Graduação: ${getString(edu.grau)}`,
+        `Modalidade: ${getString(edu.modalidade)}`,
       ];
       if (edu.previsaoConclusao) {
-        detalhesFormacao.push(`Previsão de conclusão: ${edu.previsaoConclusao}`);
+        detalhesFormacao.push(`${t("cv.expectedCompletion")}: ${getString(edu.previsaoConclusao)}`);
       }
       doc.text(detalhesFormacao.join("  |  "), margin, y);
       y += 8;
@@ -141,17 +146,17 @@ export function DownloadCurriculo() {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(12);
     doc.setTextColor(20, 20, 20);
-    doc.text("Habilidades", margin, y);
+    doc.text(t("cv.skills"), margin, y);
     y += 3;
     drawSectionLine();
 
     const skills = curriculo.habilidadesTecnicas;
     const skillRows: [string, string][] = [
-      ["Backend", skills.backend.join(", ")],
-      ["Frontend", skills.frontend.join(", ")],
-      ["Ferramentas", (skills.ferramentas ?? []).join(", ")],
-      ["Sistemas Operacionais", (skills.sistemasOperacionais ?? []).join(", ")],
-      ["Soft Skills", skills.softSkills.join(", ")],
+      [t("cv.skillCategories.backend"), skills.backend.join(", ")],
+      [t("cv.skillCategories.frontend"), skills.frontend.join(", ")],
+      [t("cv.skillCategories.tools"), (skills.ferramentas ?? []).join(", ")],
+      [t("cv.skillCategories.os"), (skills.sistemasOperacionais ?? []).join(", ")],
+      [t("cv.skillCategories.softSkills"), skills.softSkills.join(", ")],
     ];
     doc.setFontSize(9.5);
     for (const [label, value] of skillRows) {
@@ -173,7 +178,7 @@ export function DownloadCurriculo() {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(12);
     doc.setTextColor(20, 20, 20);
-    doc.text("Idiomas", margin, y);
+    doc.text(t("cv.languages"), margin, y);
     y += 3;
     drawSectionLine();
 
@@ -182,7 +187,7 @@ export function DownloadCurriculo() {
     doc.setTextColor(50, 50, 50);
     for (const idioma of curriculo.idiomas) {
       addPageIfNeeded(6);
-      doc.text(`• ${idioma.idioma}: ${idioma.nivel}`, margin + 2, y);
+      doc.text(`• ${getString(idioma.idioma)}: ${getString(idioma.nivel)}`, margin + 2, y);
       y += 6;
     }
     y += 2;
@@ -192,7 +197,7 @@ export function DownloadCurriculo() {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(12);
     doc.setTextColor(20, 20, 20);
-    doc.text("Projetos Pessoais", margin, y);
+    doc.text(t("cv.projects"), margin, y);
     y += 3;
     drawSectionLine();
 
@@ -201,7 +206,7 @@ export function DownloadCurriculo() {
       doc.setFont("helvetica", "bold");
       doc.setFontSize(10);
       doc.setTextColor(20, 20, 20);
-      doc.text(`• ${projeto.nome}`, margin + 2, y);
+      doc.text(`• ${getString(projeto.nome)}`, margin + 2, y);
       y += 5;
 
       if (projeto.github) {
@@ -217,7 +222,7 @@ export function DownloadCurriculo() {
       doc.setFont("helvetica", "normal");
       doc.setFontSize(9.5);
       doc.setTextColor(50, 50, 50);
-      const descricaoProjeto = doc.splitTextToSize(projeto.descricao, contentW - 6);
+      const descricaoProjeto = doc.splitTextToSize(getString(projeto.descricao), contentW - 6);
       addPageIfNeeded(descricaoProjeto.length * 5);
       doc.text(descricaoProjeto, margin + 6, y);
       y += descricaoProjeto.length * 5 + 3;
@@ -229,7 +234,7 @@ export function DownloadCurriculo() {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(12);
     doc.setTextColor(20, 20, 20);
-    doc.text("Certificações", margin, y);
+    doc.text(t("cv.certifications"), margin, y);
     y += 3;
     drawSectionLine();
 
@@ -238,15 +243,15 @@ export function DownloadCurriculo() {
     doc.setTextColor(50, 50, 50);
     for (const cert of curriculo.certificacoes) {
       addPageIfNeeded(6);
-      doc.text(`• ${cert.nome} – ${cert.instituicao} (${cert.periodo})`, margin + 2, y);
+      doc.text(`• ${getString(cert.nome)} – ${getString(cert.instituicao)} (${cert.periodo})`, margin + 2, y);
       y += 6;
     }
 
-    doc.save("Vitor-curriculo-v1.pdf");
+    doc.save(language === "en" ? "Vitor-resume-v1.pdf" : "Vitor-curriculo-v1.pdf");
   };
 
   return (
-    <Tooltip title="Baixar Currículo em Formato PDF">
+    <Tooltip title={t("download.tooltip")}>
       <Button
         onClick={downloadCurriculo}
         startIcon={<FaDownload />}
@@ -269,7 +274,7 @@ export function DownloadCurriculo() {
           },
         }}
       >
-        Download CV
+        {t("download.button")}
       </Button>
     </Tooltip>
   );

@@ -1,12 +1,14 @@
 import Home from "./page/Home";
 import ErrorBoundary from "./componentes/ErrorBoundary";
-
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 const App = () => {
   return (
-    <ErrorBoundary>
-      <Home />
-    </ErrorBoundary>
+    <LanguageProvider>
+      <ErrorBoundary>
+        <Home />
+      </ErrorBoundary>
+    </LanguageProvider>
   );
 };
 

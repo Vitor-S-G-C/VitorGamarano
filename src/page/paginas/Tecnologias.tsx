@@ -2,8 +2,10 @@ import { Box, Typography, Chip } from "@mui/material";
 import LaunchRoundedIcon from "@mui/icons-material/LaunchRounded";
 import { FaAndroid } from "react-icons/fa";
 import { imgData } from "../../componentes/Componentes";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 export default function Tecnologias() {
+  const { t } = useLanguage();
   const stackAtual = [
     { ...imgData.csharp, name: "C#" },
     { ...imgData.dotnet, name: ".NET Core" },
@@ -46,10 +48,10 @@ export default function Tecnologias() {
             variant="h5"
             sx={{ color: "var(--text-main)", fontWeight: 800, fontFamily: "var(--font-display)" }}
           >
-            Tecnologias que Uso no Trabalho
+            {t("tecnologias.heading")}
           </Typography>
           <Typography sx={{ mt: 0.8, color: "var(--text-muted)", maxWidth: 680 }}>
-            Stack real que uso hoje no trabalho e ja apliquei em projetos desenvolvidos por mim.
+            {t("tecnologias.subheading")}
           </Typography>
         </Box>
         <Box
@@ -63,14 +65,14 @@ export default function Tecnologias() {
             gap: 0.6,
           }}
         >
-          Ver projetos com essa stack
+          {t("tecnologias.link")}
           <LaunchRoundedIcon sx={{ fontSize: 18 }} />
         </Box>
       </Box>
 
       <Box>
         <Typography sx={{ color: "#dce6ff", fontWeight: 700, mb: 1.1, fontSize: "0.95rem" }}>
-          Uso atualmente
+          {t("tecnologias.current")}
         </Typography>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
           {stackAtual.map((tech) => {

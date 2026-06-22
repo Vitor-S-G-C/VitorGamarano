@@ -1,27 +1,54 @@
 {
   "nome": "Vitor Gamarano",
-  "titulo": "Desenvolvedor Back-end .NET Júnior – Desenvolvimento .NET",
+  "titulo": {
+    "pt": "Desenvolvedor Back-end .NET Júnior – Desenvolvimento .NET",
+    "en": "Junior Back-end .NET Developer – .NET Development"
+  },
   "email": "vitorgamarano1@gmail.com",
   "telefone": "(32) 991253434",
   "github": "https://github.com/Vitor-S-G-C",
   "linkedin": "https://www.linkedin.com/in/vitor-gamarano/",
-  "localizacao": "Juiz de Fora, Minas Gerais",
-  "resumoProfissional": "Programador Júnior com experiência profissional em manutenção e evolução de sistemas corporativos utilizando C#, ASP.NET Framework 4.5.2 e SQL Server. Experiência no desenvolvimento de novas funcionalidades, correção de bugs e modernização de interfaces. Possui projetos próprios utilizando ASP.NET Core 8, React, TypeScript, Python e Docker. Cursando Engenharia de Software e em constante evolução técnica.",
+  "localizacao": {
+    "pt": "Juiz de Fora, Minas Gerais",
+    "en": "Juiz de Fora, Minas Gerais"
+  },
+  "resumoProfissional": {
+    "pt": "Programador Júnior com experiência profissional em manutenção e evolução de sistemas corporativos utilizando C#, ASP.NET Framework 4.5.2 e SQL Server. Experiência no desenvolvimento de novas funcionalidades, correção de bugs e modernização de interfaces. Possui projetos próprios utilizando ASP.NET Core 8, React, TypeScript, Python e Docker. Cursando Engenharia de Software e em constante evolução técnica.",
+    "en": "Junior developer with professional experience in maintaining and evolving corporate systems using C#, ASP.NET Framework 4.5.2 and SQL Server. Experience developing new features, fixing bugs and modernizing interfaces. Own projects built with ASP.NET Core 8, React, TypeScript, Python and Docker. Studying Software Engineering and constantly improving technically."
+  },
   "experienciasProfissionais": [
     {
       "empresa": "AltPermuta",
-      "titulo": "Desenvolvedor Back-end .NET Júnior – Desenvolvimento .NET ",
+      "titulo": {
+        "pt": "Desenvolvedor Back-end .NET Júnior – Desenvolvimento .NET",
+        "en": "Junior Back-end .NET Developer – .NET Development"
+      },
       "periodo": "12/2025 - Atual",
-      "descricao": "Manutenção e atualização de software legado em ASP.NET Framework 4.5.2 e C#. Implementação de novas funcionalidades para atender demandas de negócio e melhorias operacionais. Integração com SQL Server e APIs internas. Aplicação de boas práticas, princípios SOLID e padrões de design. Publicação de atualizações em ambiente de produção e correção de falhas identificadas pelos usuários. Criação, elaboração e planejamento de novos layouts."
+      "descricao": {
+        "pt": "Manutenção e atualização de software legado em ASP.NET Framework 4.5.2 e C#. Implementação de novas funcionalidades para atender demandas de negócio e melhorias operacionais. Integração com SQL Server e APIs internas. Aplicação de boas práticas, princípios SOLID e padrões de design. Publicação de atualizações em ambiente de produção e correção de falhas identificadas pelos usuários. Criação, elaboração e planejamento de novos layouts.",
+        "en": "Maintenance and updates of legacy software in ASP.NET Framework 4.5.2 and C#. Implementation of new features to meet business requirements and operational improvements. Integration with SQL Server and internal APIs. Applying best practices, SOLID principles and design patterns. Publishing updates in production and fixing user-reported issues. Creating, drafting and planning new layouts."
+      }
     }
   ],
   "formacaoAcademica": [
     {
-      "grau": "Engenharia de Software",
-      "instituicao": "Centro Universitário Leonardo da Vinci (Uniasselvi)",
+      "grau": {
+        "pt": "Engenharia de Software",
+        "en": "Software Engineering"
+      },
+      "instituicao": {
+        "pt": "Centro Universitário Leonardo da Vinci (Uniasselvi)",
+        "en": "Centro Universitário Leonardo da Vinci (Uniasselvi)"
+      },
       "periodo": "2023 - Atual",
-      "previsaoConclusao": "2027",
-      "modalidade": "Noturno - EAD"
+      "previsaoConclusao": {
+        "pt": "2027",
+        "en": "2027"
+      },
+      "modalidade": {
+        "pt": "Noturno - EAD",
+        "en": "Night - Distance Learning"
+      }
     }
   ],
   "habilidadesTecnicas": {
@@ -34,44 +61,92 @@
   },
   "idiomas": [
     {
-      "idioma": "Português",
-      "nivel": "Nativo"
+      "idioma": {
+        "pt": "Português",
+        "en": "Portuguese"
+      },
+      "nivel": {
+        "pt": "Nativo",
+        "en": "Native"
+      }
     },
     {
-      "idioma": "Inglês",
-      "nivel": "Básico para leitura de documentação técnica (A2)"
+      "idioma": {
+        "pt": "Inglês",
+        "en": "English"
+      },
+      "nivel": {
+        "pt": "Básico para leitura de documentação técnica (A2)",
+        "en": "Basic reading of technical documentation (A2)"
+      }
     },
     {
-      "idioma": "Espanhol",
-      "nivel": "Intermediário"
+      "idioma": {
+        "pt": "Espanhol",
+        "en": "Spanish"
+      },
+      "nivel": {
+        "pt": "Intermediário",
+        "en": "Intermediate"
+      }
     }
   ],
   "certificacoes": [
     {
-      "nome": "Desenvolvimento Web Front-End",
-      "instituicao": "Codi Academy / CRITT – UFJF",
+      "nome": {
+        "pt": "Desenvolvimento Web Front-End",
+        "en": "Front-End Web Development"
+      },
+      "instituicao": {
+        "pt": "Codi Academy / CRITT – UFJF",
+        "en": "Codi Academy / CRITT – UFJF"
+      },
       "periodo": "2024 - 2025"
     },
     {
-      "nome": "Programação Orientada a Objetos (POO) em Java",
-      "instituicao": "Fundação Bradesco",
+      "nome": {
+        "pt": "Programação Orientada a Objetos (POO) em Java",
+        "en": "Object-Oriented Programming (OOP) in Java"
+      },
+      "instituicao": {
+        "pt": "Fundação Bradesco",
+        "en": "Fundação Bradesco"
+      },
       "periodo": "2025"
     }
   ],
   "projetosPessoais": [
     {
-      "nome": "TaskFlow",
+      "nome": {
+        "pt": "TaskFlow",
+        "en": "TaskFlow"
+      },
       "github": "https://github.com/Vitor-S-G-C/TaskFlow",
-      "descricao": "Sistema de gestão de tarefas com ASP.NET Core MVC, arquitetura em camadas, validações server-side e interface responsiva."
+      "descricao": {
+        "pt": "Sistema de gestão de tarefas com ASP.NET Core MVC, arquitetura em camadas, validações server-side e interface responsiva.",
+        "en": "Task management system built with ASP.NET Core MVC, layered architecture, server-side validation and a responsive interface."
+      }
     },
     {
-      "nome": "IAmeal",
+      "nome": {
+        "pt": "IAmeal",
+        "en": "IAmeal"
+      },
       "github": "https://github.com/Vitor-S-G-C/IAmail",
-      "descricao": "Gerenciador de e-mails com IA para classificar, organizar e responder mensagens automaticamente, com suporte a PDF e TXT."
+      "descricao": {
+        "pt": "Gerenciador de e-mails com IA para classificar, organizar e responder mensagens automaticamente, com suporte a PDF e TXT.",
+        "en": "Email management tool with AI to classify, organize and reply to messages automatically, with support for PDF and TXT."
+      }
     },
     {
-      "nome": "HackMeridian",
-      "descricao": "2º lugar na categoria principal. Desenvolvimento de solução full-stack utilizando React, TypeScript, Python e Docker em ambiente colaborativo e com prazo reduzido."
+      "nome": {
+        "pt": "HackMeridian",
+        "en": "HackMeridian"
+      },
+      "descricao": {
+        "pt": "2º lugar na categoria principal. Desenvolvimento de solução full-stack utilizando React, TypeScript, Python e Docker em ambiente colaborativo e com prazo reduzido.",
+        "en": "2nd place in the main category. Full-stack solution developed using React, TypeScript, Python and Docker in a collaborative environment with a tight deadline."
+      }
     }
   ]
 }

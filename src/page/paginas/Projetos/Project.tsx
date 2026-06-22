@@ -2,8 +2,10 @@ import { Box, Typography, Chip } from "@mui/material";
 import LaunchRoundedIcon from "@mui/icons-material/LaunchRounded";
 import { ProjetosData } from "../../../componentes/Componentes";
 import { FaGithub } from "react-icons/fa";
+import { useLanguage } from "../../../contexts/LanguageContext";
 
 export default function Projetos() {
+  const { t } = useLanguage();
   const featuredProjects = ProjetosData.slice(0, 3).map((project) => {
     const youtubeId = project.video?.match(/(?:embed\/|watch\?v=)([\w-]{11})/)?.[1];
 
@@ -38,10 +40,10 @@ export default function Projetos() {
       >
         <Box>
           <Typography variant="h5" sx={{ color: "var(--text-main)", fontWeight: 800, fontFamily: "var(--font-display)" }}>
-            Projetos em Destaque
+            {t("projetos.heading")}
           </Typography>
           <Typography sx={{ mt: 0.8, color: "var(--text-muted)" }}>
-            Soluções full stack com foco em APIs, integrações e interfaces modernas.
+            {t("projetos.subheading")}
           </Typography>
         </Box>
         <Box
@@ -116,7 +118,7 @@ export default function Projetos() {
                   rel="noopener noreferrer"
                   sx={{ color: "#62a3ff", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 0.6 }}
                 >
-                  Ver Projeto
+                  {t("projetos.projectLink")}
                   <LaunchRoundedIcon sx={{ fontSize: 16 }} />
                 </Box>
                 <Box
@@ -126,7 +128,7 @@ export default function Projetos() {
                   rel="noopener noreferrer"
                   sx={{ color: "#62a3ff", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 0.6 }}
                 >
-                  GitHub
+                  {t("projetos.github")}
                   <FaGithub size={15} />
                 </Box>
               </Box>

@@ -11,8 +11,10 @@ import {
   SiTypescript,
   SiMongodb,
 } from "react-icons/si";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
   const topTechs = [
     { icon: <FaCode />, label: "C#", color: "#5b8cff", x: "6%", y: "12%" },
     { icon: <SiReact />, label: "React", color: "#38bdf8", x: "76%", y: "10%" },
@@ -63,7 +65,7 @@ export default function Hero() {
     >
       <Box sx={{ position: "relative", zIndex: 1 }}>
         <Chip
-          label="Oi, eu sou"
+          label={t("hero.greeting")}
           sx={{
             mb: 2.5,
             height: 32,
@@ -96,7 +98,7 @@ export default function Hero() {
             mb: 2.5,
           }}
         >
-          Desenvolvedor <Box component="span" sx={{ color: "var(--brand)" }}>Back-end</Box> &amp; Full Stack
+          {t("hero.title")}
         </Typography>
 
         <Typography
@@ -108,10 +110,7 @@ export default function Hero() {
             maxWidth: 620,
           }}
         >
-          Sou programador júnior com experiência em ASP.NET Core, C#, SQL Server e APIs. No
-          frontend, trabalho com React, TypeScript, Bootstrap e Tailwind. Aplicador de SOLID,
-          POO e padrões de design, participante de hackathons e apaixonado por construir
-          soluções robustas e escaláveis.
+          {t("hero.description")}
         </Typography>
 
         <Box
@@ -136,7 +135,7 @@ export default function Hero() {
               boxShadow: "0 16px 30px rgba(37, 99, 235, 0.35)",
             }}
           >
-            Ver Projetos
+            {t("hero.buttonProjects")}
           </Button>
           <Button
             href="#contato"
@@ -153,7 +152,7 @@ export default function Hero() {
               bgcolor: "rgba(10, 17, 36, 0.72)",
             }}
           >
-            Entre em Contato
+            {t("hero.buttonContact")}
           </Button>
         </Box>
 

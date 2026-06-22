@@ -11,6 +11,7 @@ import {
   Typography,
   styled,
   Chip,
+  Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
@@ -22,6 +23,7 @@ import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Avatar from "../assets/Avatar.png";
 import { DownloadCurriculo } from "../componentes/DownloadCurriculo";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface NavItem {
   key: string;
@@ -50,14 +52,15 @@ const StyledImg = styled("img")(({ theme }) => ({
 export default function Sidebar() {
   const [activeSection, setActiveSection] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const navItems: NavItem[] = [
-    { key: "inicio", label: "Início", id: "home", icon: <HomeRoundedIcon fontSize="small" /> },
-    { key: "habilidades", label: "Minhas Tecnologias", id: "tecnologias", icon: <AutoAwesomeRoundedIcon fontSize="small" /> },
-    { key: "projetos", label: "Projetos", id: "projetos", icon: <FolderOpenRoundedIcon fontSize="small" /> },
-    { key: "experiencia", label: "Experiência", id: "experiencia", icon: <WorkOutlineRoundedIcon fontSize="small" /> },
+    { key: "inicio", label: t("nav.inicio"), id: "home", icon: <HomeRoundedIcon fontSize="small" /> },
+    { key: "habilidades", label: t("nav.habilidades"), id: "tecnologias", icon: <AutoAwesomeRoundedIcon fontSize="small" /> },
+    { key: "projetos", label: t("nav.projetos"), id: "projetos", icon: <FolderOpenRoundedIcon fontSize="small" /> },
+    { key: "experiencia", label: t("nav.experiencia"), id: "experiencia", icon: <WorkOutlineRoundedIcon fontSize="small" /> },
     // { key: "certificados", label: "Certificados", id: "certificados", icon: <MilitaryTechRoundedIcon fontSize="small" /> },
-    { key: "contato", label: "Contato", id: "contato", icon: <MailOutlineRoundedIcon fontSize="small" /> },
+    { key: "contato", label: t("nav.contato"), id: "contato", icon: <MailOutlineRoundedIcon fontSize="small" /> },
   ];
 
   const scrollToSection = (id: string) => {
@@ -113,6 +116,24 @@ export default function Sidebar() {
         }}
       >
         <StyledImg src={Avatar} alt="Foto de perfil de Vitor Gamarano" />
+        <Box sx={{ display: "flex", justifyContent: "center", gap: 1.5, mb: 1 }}>
+          <Button
+            variant={language === "pt" ? "contained" : "outlined"}
+            size="small"
+            onClick={() => setLanguage("pt")}
+            sx={{ textTransform: "none", minWidth: 52 }}
+          >
+            PT
+          </Button>
+          <Button
+            variant={language === "en" ? "contained" : "outlined"}
+            size="small"
+            onClick={() => setLanguage("en")}
+            sx={{ textTransform: "none", minWidth: 52 }}
+          >
+            EN
+          </Button>
+        </Box>
         <Typography
           variant="h5"
           color="white"
@@ -128,7 +149,7 @@ export default function Sidebar() {
           sx={{ opacity: 0.72, mt: 0.5 }}
           component="p"
         >
-          Engenheiro de Software
+          {t("header.role")}
         </Typography>
 
         <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
@@ -227,7 +248,7 @@ export default function Sidebar() {
         }}
       >
         <Chip
-          label="Transformo ideias em soluções escaláveis"
+          label={t("header.description")}
           sx={{
             whiteSpace: "normal",
             height: "auto",

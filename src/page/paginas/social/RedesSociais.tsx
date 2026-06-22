@@ -1,7 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import { FaInstagram, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { useLanguage } from "../../../contexts/LanguageContext";
 
 export default function RedesSociais() {
+  const { t } = useLanguage();
   const contatos = [
     {
       href: "https://www.instagram.com/vitor.s.g.c/",
@@ -50,10 +52,10 @@ export default function RedesSociais() {
           }}
         >
           <Typography sx={{ color: "var(--text-main)", fontWeight: 800, fontFamily: "var(--font-display)", fontSize: "1.4rem" }}>
-            Vamos construir algo sólido
+            {t("contact.heading")}
           </Typography>
           <Typography sx={{ color: "var(--text-muted)", mt: 1.2, lineHeight: 1.8, maxWidth: 640 }}>
-            Disponível para conversar sobre oportunidades em backend, desenvolvimento full stack e evolução de produtos com foco em performance e qualidade técnica.
+            {t("contact.body")}
           </Typography>
         </Box>
 

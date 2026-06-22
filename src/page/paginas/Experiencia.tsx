@@ -5,8 +5,10 @@ import {
 } from "@mui/material";
 import { SiDotnet, SiReact, SiTypescript } from "react-icons/si";
 import { FaDatabase } from "react-icons/fa";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 export default function Experiencia() {
+  const { t } = useLanguage();
   const experiencias = [
     {
       titulo: "Programador Júnior - Desenvolvimento .NET (ASP.NET Framework 4.5.2)",
@@ -69,10 +71,10 @@ export default function Experiencia() {
             fontFamily: "var(--font-display)",
           }}
         >
-          Experiência
+          {t("experiencia.heading")}
         </Typography>
         <Typography sx={{ color: "var(--text-muted)", mb: 2.5 }}>
-          Atuação com sistemas legados, evolução de produtos e entregas full stack orientadas a negócio.
+          {t("experiencia.subheading")}
         </Typography>
 
         <Box
@@ -159,7 +161,7 @@ export default function Experiencia() {
                         mb: 1,
                       }}
                     >
-                      Principais Atividades:
+                      {t("experiencia.activitiesTitle")}
                     </Typography>
                     <Box
                       component="ul"
@@ -220,9 +222,8 @@ export default function Experiencia() {
               color: "var(--text-main)",
             }}
           >
-            Habilidades & Conceitos Técnicos
+            {t("experiencia.skillsTitle")}
           </Typography>
-
           <Box
             sx={{
               display: "grid",
@@ -231,27 +232,26 @@ export default function Experiencia() {
             }}
           >
             {[
-              { 
-  title: "Arquitetura", 
-  items: ["MVC", "MVVM", "Arquitetura Limpa", "Domain-Driven Design (DDD)"] 
-},
-{
-  title: "Padrões de Projeto",
-  items: ["SOLID", "Padrão Repository", "Injeção de Dependência", "Padrão Factory"],
-},
-{
-  title: "Desenvolvimento",
-  items: ["APIs REST", "Desenvolvimento Full-Stack", "Design Responsivo", "Otimização de Performance"],
-},
-{
-  title: "DevOps & Ferramentas",
-  items: ["Git", "GitHub", "Docker"],
-},
-{
-  title: "Sistemas Operacionais",
-  items: ["Windows", "Linux (WSL)"],
-},
-
+              {
+                title: "Arquitetura",
+                items: ["MVC", "MVVM", "Arquitetura Limpa", "Domain-Driven Design (DDD)"],
+              },
+              {
+                title: "Padrões de Projeto",
+                items: ["SOLID", "Padrão Repository", "Injeção de Dependência", "Padrão Factory"],
+              },
+              {
+                title: "Desenvolvimento",
+                items: ["APIs REST", "Desenvolvimento Full-Stack", "Design Responsivo", "Otimização de Performance"],
+              },
+              {
+                title: "DevOps & Ferramentas",
+                items: ["Git", "GitHub", "Docker"],
+              },
+              {
+                title: "Sistemas Operacionais",
+                items: ["Windows", "Linux (WSL)"],
+              },
             ].map((categoria, idx) => (
               <Box key={idx}>
                 <Box
